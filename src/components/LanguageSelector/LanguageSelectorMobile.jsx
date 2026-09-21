@@ -4,10 +4,12 @@ import styles from "./LanguageSelectorMobile.module.scss";
 
 const LANGUAGES = {
   it: {
+    code: "IT",
     label: "Italiano",
     flag: "fi fi-it",
   },
   en: {
+    code: "EN",
     label: "English",
     flag: "fi fi-gb",
   },
@@ -35,7 +37,7 @@ export default function LanguageSelectorMobile() {
       >
         <div className={styles.left}>
           <span className={current.flag} />
-          <span className={styles.label}>{current.label}</span>
+          <span className={styles.label}>{current.code}</span>
         </div>
 
         <span className={`material-symbols-outlined ${styles.chevron}`}>

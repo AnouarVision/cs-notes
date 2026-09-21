@@ -4,21 +4,24 @@ import styles from "./LanguageSelector.module.scss";
 
 const LANGUAGES = {
   it: {
-    label: "Italian",
+    code: "IT",
+    label: "Italiano",
     flag: "fi fi-it",
   },
   en: {
+    code: "EN",
     label: "English",
     flag: "fi fi-gb",
   },
 };
 
 export default function LanguageSelector() {
-  const { i18n }= useTranslation();
+  const { i18n } = useTranslation();
   const [open, setOpen] = useState(false);
   const ref = useRef(null);
 
   const lang = i18n.language;
+  const current = LANGUAGES[lang] || LANGUAGES.en;
 
   // Close dropdown on outside click
   useEffect(() => {
@@ -45,10 +48,10 @@ export default function LanguageSelector() {
       <button
         className={styles.trigger}
         aria-expanded={open}
-        aria-label={LANGUAGES[lang].label}
+        aria-label={current.code}
         onClick={() => setOpen((v) => !v)}
       >
-        <span className={LANGUAGES[lang].flag} />
+        <span className={current.flag} />
       </button>
 
       {open && (
