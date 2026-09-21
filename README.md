@@ -24,12 +24,33 @@ The project is available online via **Netlify**:
 
 This project is primarily a personal technical reference.
 
+For a detailed guide on how to work on the project, see [contributions.md](contributions.md).
+
 Contributions, suggestions and corrections are welcome through:
 - issues
 - pull requests
 - discussions
 
 Any contribution should aim to keep the repository clear, minimal and focused on technical accuracy.
+
+### Git workflow
+
+It is recommended to avoid committing directly to `main` and instead create a dedicated branch for each change.
+
+Example workflow:
+
+```bash
+git checkout main
+git pull --ff-only
+git checkout -b feature/my-change
+# make edits
+# test locally
+git add .
+git commit -m "Add my change"
+git push -u origin feature/my-change
+```
+
+This keeps the main branch stable and makes it easier to review and merge each change cleanly.
 
 ---
 
