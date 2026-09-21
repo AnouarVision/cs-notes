@@ -70,6 +70,8 @@
 
   .subtitle {
     font-size: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
 
   .cta {
@@ -86,8 +88,18 @@
     padding: variables.$space-4 0;
   }
 
+  .inner {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
   .title {
     font-size: clamp(32px, 9vw, 44px);
+  }
+
+  .subtitle {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
   }
 
   .cta {
