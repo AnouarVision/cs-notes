@@ -23,6 +23,8 @@
 
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    gap: variables.$space-2;
 
     font-weight: 600;
     font-size: 0.95rem;
@@ -35,6 +37,40 @@
         background-color 0.2s ease,
         transform 0.15s ease,
         box-shadow 0.15s ease;
+}
+
+.sectionTitle {
+  min-width: 0;
+}
+
+.statusFlag {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 9px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.statusDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.inProgress {
+  background: rgba(251, 191, 36, 0.12);
+  color: #fbbf24;
+}
+
+.completed {
+  background: rgba(30, 204, 113, 0.12);
+  color: #1ecc71;
 }
 
 .button:hover {
@@ -54,5 +90,16 @@
 @media (max-width: 480px) {
   .grid {
     grid-template-columns: 1fr;
+  }
+
+  .button {
+    padding: variables.$space-2;
+    font-size: 0.88rem;
+  }
+
+  .statusFlag {
+    gap: 5px;
+    padding: 5px 7px;
+    font-size: 0.68rem;
   }
 }

@@ -120,7 +120,59 @@
         "stepPlaceholder": "Inserisci un passaggio della soluzione.",
         "codeTitle": "Codice o calcoli",
         "codePlaceholder": "// Inserisci qui la soluzione",
+        "setDifferenceIdentity": {
+            "promptTitle": "Enunciato",
+            "prompt": "Siano A e B due insiemi. Dimostra formalmente l'uguaglianza A ∖ (A ∖ B) = A ∩ B usando le definizioni di differenza e intersezione.",
+            "definitionIntro": "Richiamiamo le definizioni:",
+            "solutionTitle": "Dimostrazione per equivalenze",
+            "proofIntro": "Sia x un elemento arbitrario. Riscriviamo l'appartenenza al primo insieme applicando le definizioni:",
+            "steps": {
+                "definition": "Definizione di differenza: x appartiene ad A e non appartiene ad A meno B.",
+                "negation": "Sostituiamo la definizione di A meno B e neghiamo la congiunzione.",
+                "deMorgan": "Per la legge di De Morgan, la negazione della congiunzione diventa una disgiunzione.",
+                "simplify": "Poiché sappiamo già che x appartiene ad A, x non può essere fuori da A: resta x appartenente a B.",
+                "intersection": "Per definizione di intersezione, x appartiene ad A e a B se e solo se appartiene ad A intersezione B."
+            },
+            "conclusion": "Abbiamo ottenuto la stessa condizione di appartenenza per ogni x. Per estensionalità, i due insiemi sono uguali.",
+            "diagramsTitle": "Interpretazione con i diagrammi di Eulero-Venn",
+            "diagramsIntro": "In entrambi i diagrammi è evidenziata la parte comune ad A e B: sottrarre da A la parte che non appartiene a B lascia esattamente l'intersezione.",
+            "diagramTitle": "Diagramma della regione comune per {{expression}}"
+        },
+        "setMembership": {
+            "givenTitle": "Dati",
+            "givenIntro": "Considera gli insiemi:",
+            "duplicateNote": "Poiché A = {1, 2}, l'elemento A coincide con {1, 2}. In un insieme gli elementi ripetuti si contano una sola volta: gli elementi distinti di B sono quindi {1, 2}, {1} e {2}.",
+            "task": "Per ogni affermazione, stabilisci se è vera o falsa.",
+            "true": "Vera",
+            "false": "Falsa",
+            "diagramTitle": "Diagramma per l'affermazione {{item}}",
+            "atomicElements": "numeri",
+            "diagramCaption": "Dentro B sono rappresentati gli insiemi che ne sono elementi; i numeri esterni sono elementi di quegli insiemi, ma non di B.",
+            "explanations": {
+                "a": "Vera: 1 è uno dei due elementi dell'insieme A = {1, 2}.",
+                "b": "Falsa: l'unico elemento di {2} è il numero 2. Per essere sottoinsieme di B, 2 dovrebbe appartenere a B; B contiene invece l'insieme {2}, non il numero 2.",
+                "c": "Vera: l'insieme {1} compare tra gli elementi di B.",
+                "d": "Falsa: 2 è un numero, ma gli elementi di B sono insiemi. In particolare {2} appartiene a B, mentre 2 no.",
+                "e": "Vera: {2}, considerato come insieme, è uno degli elementi di B.",
+                "f": "Vera: l'unico elemento di {{2}} è l'insieme {2}, che appartiene a B. Quindi ogni elemento di {{2}} appartiene a B.",
+                "g": "Falsa: gli elementi di A sono i numeri 1 e 2, e nessuno dei due appartiene a B come elemento diretto.",
+                "h": "Falsa: {1, 2} ha come elementi 1 e 2. Per essere sottoinsieme di B entrambi dovrebbero appartenere a B, ma B contiene gli insiemi {1} e {2}, non i numeri 1 e 2.",
+                "i": "Falsa: l'inclusione propria richiede prima di tutto A ⊆ B, ma questa inclusione è falsa perché 1 e 2 non appartengono a B.",
+                "j": "Falsa: {1, 2} non è nemmeno sottoinsieme di B, quindi non può esserne un sottoinsieme proprio.",
+                "k": "Vera: A = {1, 2}, e l'insieme {1, 2} è un elemento di B. Dunque A ∈ B."
+            }
+        },
         "items": {
+            "setDifferenceIdentity": {
+                "title": "Dimostrare un'identità tra insiemi",
+                "description": "Dimostra che A ∖ (A ∖ B) = A ∩ B usando le definizioni e interpreta il risultato con un diagramma di Eulero-Venn.",
+                "difficulty": "Intermedio"
+            },
+            "setMembership": {
+                "title": "Appartenenza e inclusione tra insiemi",
+                "description": "Stabilisci quali affermazioni sono vere o false distinguendo gli elementi di un insieme dagli insiemi che contiene.",
+                "difficulty": "Base"
+            },
             "javaControlFlow": {
                 "title": "Controllo del flusso in Java",
                 "description": "Scrivi un programma che analizzi una sequenza di numeri e conti quanti sono positivi, negativi e nulli.",
@@ -244,9 +296,41 @@
         }
     },
     "about": {
+        "kicker": "CS Notes / progetto personale",
+        "byline": "Appunti in evoluzione per il percorso L-31",
         "hero": {
-            "title": "Cos'è ",
-            "subtitle": "Un hub di studio personale dedicato a Informatica (L‑31), focalizzato su chiarezza, struttura e apprendimento duraturo."
+            "title": "Un posto solo per studiare con continuità.",
+            "subtitle": "CS Notes raccoglie appunti, esempi ed esercizi del percorso di Informatica. È pensato per ritrovare un concetto, ricostruire un ragionamento e ripartire senza dover ricominciare ogni volta da zero."
+        },
+        "approach": {
+            "label": "Il criterio",
+            "title": "Appunti da usare, non da accumulare.",
+            "description": "Ogni pagina parte dalle definizioni, costruisce i passaggi necessari e conserva esempi che vale la pena rivedere. L'obiettivo non è sostituire lezioni o manuali: è avere un riferimento personale, ordinato e verificabile mentre si studia.",
+            "read": {
+                "title": "Prima il ragionamento",
+                "description": "Definizioni, contesto e passaggi espliciti prima delle conclusioni."
+            },
+            "practice": {
+                "title": "Poi la verifica",
+                "description": "Esercizi svolti e piccoli strumenti per mettere alla prova ciò che si è appena letto."
+            }
+        },
+        "catalogue": {
+            "kicker": "Indice per materia",
+            "title": "Una mappa, non un archivio infinito.",
+            "description": "Le materie sono raggruppate per aiutare a orientarsi tra fondamenti, sistemi e strumenti matematici. Ogni voce porta direttamente ai relativi appunti.",
+            "groups": {
+                "computing": { "title": "Programmazione e calcolo" },
+                "systems": { "title": "Sistemi e software" },
+                "mathematics": { "title": "Matematica e modelli" }
+            }
+        },
+        "closing": {
+            "kicker": "Da qui",
+            "title": "Scegli un argomento e inizia dal punto che ti serve.",
+            "description": "Le note non sono una destinazione: sono un supporto per seguire il corso, preparare un esame e costruire collegamenti tra argomenti diversi.",
+            "notesAction": "Esplora gli appunti",
+            "exercisesAction": "Apri gli esercizi"
         },
         "mission": {
             "title": "Missione",
@@ -296,7 +380,11 @@
     "topicPage": {
         "overviewTitle": "Panoramica",
         "navigationTitle": "Navigazione",
-        "relatedSectionsTitle": "Sezioni correlate"
+        "relatedSectionsTitle": "Sezioni correlate",
+        "sectionStatus": {
+            "inProgress": "In corso",
+            "completed": "Completata"
+        }
     },
     "topics": {
         "physics": {
@@ -623,6 +711,113 @@
             "binary": "Binario",
             "hexadecimal": "Esadecimale",
             "octal": "Ottale"
+        }
+    },
+    "setsAndOperations": {
+        "hero": {
+            "titleStart": "Insiemi e",
+            "titleHighlight": "operazioni",
+            "subtitle": "Il linguaggio fondamentale per descrivere e confrontare collezioni di oggetti."
+        },
+        "actions": {
+            "print": "Stampa / Salva PDF"
+        },
+        "sections": {
+            "title": "In questa pagina",
+            "whatIsASet": "Che cos'è un insieme?",
+            "membership": "Appartenenza",
+            "emptySet": "Insieme vuoto",
+            "definingASet": "Come si definisce un insieme?",
+            "fundamentalProperties": "Proprietà fondamentali",
+            "subsets": "Sottoinsiemi e inclusione",
+            "emptySetProperties": "Proprietà dell'insieme vuoto",
+            "setEquality": "Inclusione impropria",
+            "setOperations": "Operazioni tra insiemi",
+            "intersectionUnion": "Intersezione e unione",
+            "familyOfSets": "Intersezione e unione di una famiglia di insiemi",
+            "complementDifference": "Complemento e differenza tra insiemi",
+            "vennDiagrams": "Diagrammi di Venn",
+            "cartesianProduct": "Prodotto cartesiano",
+            "symmetricDifference": "Differenza simmetrica",
+            "operationsProperties": "Proprietà delle operazioni tra insiemi"
+        },
+        "labels": {
+            "definition": "Definizione",
+            "example": "Esempio"
+        },
+        "content": {
+            "definition": "Un insieme è un <strong>concetto primitivo</strong> della matematica. Possiamo pensarlo intuitivamente come una collezione di oggetti, chiamati <strong>elementi dell'insieme</strong>.",
+            "numberExamplesIntro": "Alcuni insiemi numerici fondamentali sono:",
+            "naturalNumbers": "Numeri naturali",
+            "integers": "Numeri interi",
+            "rationals": "Numeri razionali",
+            "membershipIntro": "Per indicare che un elemento <strong>appartiene</strong> a un insieme utilizziamo il simbolo<belongs/>; per indicare che <strong>non appartiene</strong>, usiamo il simbolo<notBelongs/>.",
+            "belongs": "appartiene all'insieme A",
+            "doesNotBelong": "non appartiene all'insieme A",
+            "membershipExamples": "Esempi",
+            "threeIsNatural": "perché 3 è un numero naturale.",
+            "minusFiveIsInteger": "perché -5 è un numero intero.",
+            "minusFiveNotNatural": "se consideriamo N = {0, 1, 2, ...}.",
+            "emptySetDefinition": "L'insieme che non contiene alcun elemento è chiamato insieme vuoto.",
+            "emptySetPropertyIntro": "Per ogni elemento x, vale:",
+            "definingIntro": "Un insieme può essere definito principalmente in due modi:",
+            "listingTitle": "Elencando gli elementi",
+            "listingDescription": "Scriviamo direttamente tutti gli elementi tra parentesi graffe.",
+            "ellipsisIntro": "Quando la sequenza è evidente, possiamo abbreviare con i puntini:",
+            "propertyTitle": "Con una proprietà caratteristica",
+            "propertyDescription": "Descriviamo gli elementi specificando una proprietà che devono soddisfare.",
+            "propertyReading": "Si legge: A è l'insieme degli elementi n appartenenti a N tali che 5 < n < 20.",
+            "sameSetIntro": "Le due descrizioni individuano gli stessi elementi, quindi definiscono lo stesso insieme:",
+            "orderAndRepetition": "In un insieme l'ordine degli elementi non conta e ripetere un elemento non cambia l'insieme.",
+            "subsetIntro": "Siano A e B due insiemi. A è un sottoinsieme di B quando ogni elemento di A appartiene anche a B.",
+            "subsetDefinition": "La relazione di inclusione si indica con il simbolo sottoinsieme o uguale:",
+            "inclusionTypes": "Tipi di inclusione",
+            "properInclusion": "A è un sottoinsieme proprio di B: è incluso in B, ma non è uguale a B.",
+            "notIncluded": "A non è un sottoinsieme di B.",
+            "subsetNotationNote": "Qui usiamo ⊊ per l'inclusione propria, così da distinguerla chiaramente da ⊆.",
+            "logicalEquivalences": "Una conseguenza utile",
+            "logicalEquivalencesIntro": "La non-inclusione si verifica quando troviamo almeno un elemento di A che non appartiene a B:",
+            "powerSetTitle": "L'insieme delle parti",
+            "powerSetIntro": "L'insieme delle parti di A, indicato con P(A), contiene tutti e soli i sottoinsiemi di A. Per A = {a₁, a₂, a₃}:",
+            "powerSetCount": "Poiché A ha tre elementi, il suo insieme delle parti contiene 2³ = 8 sottoinsiemi.",
+            "membershipVsInclusion": "Appartenenza e inclusione non sono la stessa cosa",
+            "membershipVsInclusionIntro": "L'elemento a₁ appartiene ad A, mentre l'insieme che contiene solo a₁ è incluso in A:",
+            "emptySetPropertiesIntro": "Per ogni insieme A valgono entrambe le proprietà:",
+            "emptySetProofTitle": "Perché l'insieme vuoto è sottoinsieme di ogni insieme?",
+            "emptySetProofIntro": "Per dimostrare che l'insieme vuoto è incluso in A, dobbiamo verificare che ogni suo elemento appartenga ad A:",
+            "emptySetProofExplanation": "Non esistono elementi x appartenenti all'insieme vuoto, quindi non c'è alcun controesempio all'implicazione.",
+            "vacuousTruth": "L'implicazione è vera perché la premessa è falsa: questo principio si chiama <strong>verità vacua</strong>.",
+            "setEqualityIntro": "Due insiemi sono uguali se e solo se hanno gli stessi elementi. Ciò equivale a verificare l'inclusione in entrambe le direzioni:",
+            "intersectionDefinition": "L'intersezione di due insiemi A e B è l'insieme di tutti gli elementi che appartengono sia ad A sia a B.",
+            "unionDefinition": "L'unione di due insiemi A e B è l'insieme di tutti gli elementi che appartengono ad A oppure a B (o ad entrambi).",
+            "intersectionUnionExampleIntro": "Siano:",
+            "intersectionUnionExampleResult": "Allora:",
+            "familyOfSetsIntro": "In generale, data una famiglia di insiemi {Aα}α∈I, dove I è l'insieme degli indici, si definisce:",
+            "familyIntersectionExplanation": "Quindi x appartiene all'intersezione se e solo se appartiene a <strong>tutti</strong> gli insiemi della famiglia.",
+            "familyUnionIntro": "Analogamente:",
+            "familyUnionExplanation": "Quindi x appartiene all'unione se e solo se appartiene ad <strong>almeno uno</strong> degli insiemi della famiglia.",
+            "complementDefinition": "Siano A e B due insiemi. Il complemento di A in B è l'insieme degli elementi che appartengono a B ma non appartengono ad A.",
+            "vennDiagramsIntro": "I diagrammi di Venn permettono di rappresentare graficamente le operazioni tra insiemi.",
+            "vennIntersection": "contiene gli elementi comuni ad A e B.",
+            "vennUnion": "contiene tutti gli elementi di A e di B.",
+            "vennDifference": "contiene gli elementi di B che non appartengono ad A.",
+            "cartesianProductDefinition": "Siano A e B due insiemi. Il prodotto cartesiano tra A e B è l'insieme delle coppie ordinate (a,b) tali che a appartiene ad A e b appartiene a B.",
+            "cartesianProductExampleConclusion": "Ogni elemento di A viene quindi associato ad ogni elemento di B.",
+            "cartesianProductGeneralized": "In generale, dati A₁, ..., Aₙ insiemi, il loro prodotto cartesiano è definito come:",
+            "symmetricDifferenceDefinition": "Dati due insiemi A e B, la <strong>differenza simmetrica</strong> tra A e B è definita come:",
+            "symmetricDifferenceNote": "Intuitivamente, rappresenta l'unione meno l'intersezione degli insiemi.",
+            "operationsPropertiesIntro": "Siano A, B, C insiemi. Valgono le seguenti proprietà:",
+            "unionAssociative": "L'unione è associativa",
+            "unionCommutative": "L'unione è commutativa",
+            "intersectionAssociative": "L'intersezione è associativa",
+            "intersectionCommutative": "L'intersezione è commutativa",
+            "symmetricDifferenceAssociative": "La differenza simmetrica è associativa",
+            "symmetricDifferenceCommutative": "La differenza simmetrica è commutativa",
+            "distributiveProperty": "Proprietà distributiva",
+            "differenceCounterexampleTitle": "La differenza tra insiemi non è commutativa",
+            "differenceCounterexampleIntro": "Vogliamo verificare se A \\ B = B \\ A. Siano:",
+            "differenceCounterexampleCalc": "Calcoliamo le due differenze:",
+            "differenceCounterexampleConclusion": "Poiché {1} ≠ {3}, si deduce che A \\ B ≠ B \\ A. Quindi la differenza tra insiemi <strong>non è commutativa</strong>."
         }
     },
     "algorithmAnalysis": {

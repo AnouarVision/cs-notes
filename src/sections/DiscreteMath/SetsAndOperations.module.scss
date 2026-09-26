@@ -1,0 +1,287 @@
+@use "../../assets/styles/variables" as *;
+
+.page {
+  width: 100%;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: $space-3 $space-4 0;
+}
+
+.printButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-1;
+  min-height: 44px;
+  padding: 0 $space-2;
+  border: 1px solid $primary;
+  border-radius: 8px;
+  background: transparent;
+  color: $primary;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+
+  &:hover {
+    background: rgba($primary, 0.12);
+  }
+
+  &:focus-visible {
+    outline: 2px solid $primary;
+    outline-offset: 3px;
+  }
+}
+
+.lessonSection {
+  margin-bottom: $space-5;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  h2 {
+    scroll-margin-top: 96px;
+  }
+
+  h3 {
+    scroll-margin-top: 96px;
+  }
+
+  p {
+    line-height: 1.7;
+  }
+}
+
+.definition {
+  margin-bottom: $space-3;
+  padding: $space-2 $space-3;
+  border-left: 3px solid $primary;
+  background: rgba($primary, 0.07);
+
+  p {
+    margin: 0 0 $space-2;
+  }
+
+  p:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.calloutLabel {
+  display: block;
+  margin-bottom: $space-2;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $primary;
+}
+
+.note {
+  margin: $space-3 0;
+  padding: $space-2 $space-3;
+  border-left: 3px solid $border-color;
+  background: rgba(255, 255, 255, 0.035);
+
+  > :first-child {
+    margin-top: 0;
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+.proof {
+  margin-top: $space-3;
+  padding-top: $space-2;
+  border-top: 1px solid $border-color;
+
+  h4 {
+    margin-top: 0;
+  }
+}
+
+.setsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: $space-3;
+}
+
+.example {
+  min-width: 0;
+  padding-top: $space-2;
+  border-top: 1px solid $border-color;
+
+  h4 {
+    margin-top: 0;
+  }
+}
+
+.formula {
+  display: block;
+  max-width: 100%;
+  margin: $space-2 0;
+  padding: $space-2;
+  overflow-x: auto;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.04);
+  color: $text-white;
+  text-align: center;
+
+  :global(.katex-display) {
+    margin: 0;
+  }
+}
+
+.inlineFormula {
+  display: inline-block;
+  margin: 0 $space-1;
+  color: $text-white;
+}
+
+.inlineFormulaTight {
+  margin-right: 0;
+}
+
+.formulaPair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: $space-3;
+  margin: $space-3 0;
+
+  > div {
+    min-width: 0;
+  }
+
+  p {
+    text-align: center;
+  }
+}
+
+.mathList {
+  display: grid;
+  gap: $space-2;
+  padding-left: $space-3;
+
+  li {
+    color: $text-gray-400;
+    line-height: 1.7;
+  }
+}
+
+.methods {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: $space-4;
+  margin: $space-3 0;
+  list-style: none;
+  padding-left: 0;
+
+  > li {
+    min-width: 0;
+    padding: $space-3;
+    border-radius: $radius-card;
+    border: 1px solid $border-color;
+    background: rgba(255, 255, 255, 0.035);
+    color: $text-gray-400;
+
+    h4 {
+      margin-top: 0;
+    }
+  }
+}
+
+.conclusion {
+  margin-top: $space-4;
+  padding-top: $space-2;
+  border-top: 1px solid $border-color;
+}
+
+@media (max-width: 768px) {
+  .actions {
+    padding: $space-2 $space-3 0;
+  }
+
+  .setsGrid,
+  .methods {
+    grid-template-columns: 1fr;
+  }
+
+  .formulaPair {
+    gap: $space-2;
+  }
+}
+
+@page {
+  margin: 18mm;
+}
+
+@media print {
+  :global(body) {
+    background: #fff !important;
+    color: #111 !important;
+  }
+
+  :global(nav),
+  :global(footer),
+  .actions,
+  .page :global(aside) {
+    display: none !important;
+  }
+
+  .page {
+    background: #fff !important;
+    color: #111 !important;
+
+    :global(header) {
+      padding: 0 0 12px;
+      border-bottom: 1px solid #bbb;
+      background: transparent;
+      color: #111 !important;
+    }
+
+    :global(main) {
+      width: 100%;
+      max-width: none;
+      padding: 16px 0 0;
+      border: 0;
+      background: transparent;
+      color: #111 !important;
+    }
+
+    :global(h1),
+    :global(h2),
+    :global(h3),
+    :global(p),
+    :global(li),
+    :global(strong) {
+      color: #111 !important;
+    }
+  }
+
+  .lessonSection,
+  .example,
+  .definition,
+  .note,
+  .proof,
+  .formula,
+  .conclusion {
+    break-inside: avoid;
+  }
+
+  .definition,
+  .formula {
+    border-color: #999;
+    background: transparent;
+  }
+
+  .formula {
+    overflow: visible;
+  }
+}

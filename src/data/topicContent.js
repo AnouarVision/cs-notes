@@ -385,7 +385,8 @@ export const topicContent = {
     related: [
       {
         slug: "sets-and-operations",
-        titleKey: "topics.discreteMathLogic.related.setsAndOperations"
+        titleKey: "topics.discreteMathLogic.related.setsAndOperations",
+        status: "completed"
       },
       {
         slug: "relations-and-order",

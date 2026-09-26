@@ -16,7 +16,15 @@ export default function SectionRelated({ topicSlug, topics }) {
             to={`/topic/${topicSlug}/${item.slug}`}
             className={styles.button}
           >
-            {t(item.titleKey)}
+            <span className={styles.sectionTitle}>{t(item.titleKey)}</span>
+            <span
+              className={`${styles.statusFlag} ${
+                item.status === "completed" ? styles.completed : styles.inProgress
+              }`}
+            >
+              <span className={styles.statusDot} aria-hidden="true" />
+              {t(`topicPage.sectionStatus.${item.status === "completed" ? "completed" : "inProgress"}`)}
+            </span>
           </Link>
         ))}
       </div>

@@ -1,5 +1,6 @@
 import LowLevelRepresentation from "./FoundationsCS/LowLevelRepresentation";
 import AlgorithmAnalysis from "./AlgorithmsDataStructures/AlgorithmAnalysis";
+import SetsAndOperations from "./DiscreteMath/SetsAndOperations";
 
 export const sectionsMap = {
   "introductory-computer-science": {
@@ -7,5 +8,8 @@ export const sectionsMap = {
   },
   "data-structures": {
     "algorithm-analysis": AlgorithmAnalysis,
+  },
+  "discrete-mathematics-logic": {
+    "sets-and-operations": SetsAndOperations,
   },
 };

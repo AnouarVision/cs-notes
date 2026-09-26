@@ -80,3 +80,82 @@ export const algorithmAnalysisTOC = {
     }
   ]
 };
+
+export const setsAndOperationsTOC = {
+  title: "setsAndOperations.sections.title",
+  items: [
+    {
+      id: "what-is-a-set",
+      label: "setsAndOperations.sections.whatIsASet",
+      open: true,
+      children: [
+        {
+          id: "membership",
+          label: "setsAndOperations.sections.membership"
+        },
+        {
+          id: "empty-set",
+          label: "setsAndOperations.sections.emptySet"
+        },
+        {
+          id: "defining-a-set",
+          label: "setsAndOperations.sections.definingASet"
+        },
+        {
+          id: "set-properties",
+          label: "setsAndOperations.sections.fundamentalProperties"
+        }
+      ]
+    },
+    {
+      id: "subsets",
+      label: "setsAndOperations.sections.subsets",
+      open: true,
+      children: [
+        {
+          id: "empty-set-properties",
+          label: "setsAndOperations.sections.emptySetProperties"
+        },
+        {
+          id: "set-equality",
+          label: "setsAndOperations.sections.setEquality"
+        }
+      ]
+    },
+    {
+      id: "set-operations",
+      label: "setsAndOperations.sections.setOperations",
+      open: true,
+      children: [
+        {
+          id: "intersection-union",
+          label: "setsAndOperations.sections.intersectionUnion"
+        },
+        {
+          id: "family-of-sets",
+          label: "setsAndOperations.sections.familyOfSets"
+        },
+        {
+          id: "complement-difference",
+          label: "setsAndOperations.sections.complementDifference"
+        },
+        {
+          id: "venn-diagrams",
+          label: "setsAndOperations.sections.vennDiagrams"
+        },
+        {
+          id: "cartesian-product",
+          label: "setsAndOperations.sections.cartesianProduct"
+        },
+        {
+          id: "symmetric-difference",
+          label: "setsAndOperations.sections.symmetricDifference"
+        },
+        {
+          id: "operations-properties",
+          label: "setsAndOperations.sections.operationsProperties"
+        }
+      ]
+    }
+  ]
+};

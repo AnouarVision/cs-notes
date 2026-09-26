@@ -1,97 +1,127 @@
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import {
+  FaArrowRight,
+  FaBookOpen,
+  FaCode,
+  FaCompass,
+  FaLayerGroup,
+} from "react-icons/fa";
 import styles from "./About.module.scss";
 
-const emphasizeText = (text, words) => {
-  if (!words?.length) return text;
+const subjectGroups = [
+  {
+    id: "computing",
+    icon: FaCode,
+    topics: ["programming", "introCs", "computerArchitecture", "dataStructures"],
+  },
+  {
+    id: "systems",
+    icon: FaLayerGroup,
+    topics: ["databases", "networking", "cybersecurity", "objectOrientedProgramming"],
+  },
+  {
+    id: "mathematics",
+    icon: FaCompass,
+    topics: ["discreteMathLogic", "linearAlgebra", "analysis", "physics"],
+  },
+];
 
-  const escaped = words.map((word) => word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
-  const pattern = new RegExp(`(${escaped.join("|")})`, "gi");
-
-  return text.split(pattern).map((part, index) => {
-    const matched = words.some(
-      (word) => part.toLowerCase() === word.toLowerCase()
-    );
-
-    return matched ? (
-      <strong key={`${part}-${index}`} className={styles.emphasis}>
-        {part}
-      </strong>
-    ) : (
-      <span key={`${part}-${index}`}>{part}</span>
-    );
-  });
+const topicSlugs = {
+  analysis: "mathematical-analysis",
+  computerArchitecture: "computer-architecture",
+  dataStructures: "data-structures",
+  databases: "database-systems",
+  discreteMathLogic: "discrete-mathematics-logic",
+  introCs: "introductory-computer-science",
+  linearAlgebra: "linear-algebra-geometry",
+  objectOrientedProgramming: "object-oriented-programming",
 };
 
 export default function About() {
   const { t } = useTranslation();
 
   return (
-    <section className={styles.about}>
-      <div className={`${styles.inner} container`}>
-        <div className={styles.hero}>
-          <h1>
-            {t("about.hero.title")}
-            <span className={styles.highlight}>CS Notes</span>
-          </h1>
-          <p className={styles.subtitle}>{t("about.hero.subtitle")}</p>
+    <main className={styles.about}>
+      <section className={styles.intro}>
+        <div className={`${styles.introInner} container`}>
+          <p className={styles.kicker}>{t("about.kicker")}</p>
+          <h1>{t("about.hero.title")}</h1>
+          <p className={styles.lead}>{t("about.hero.subtitle")}</p>
+          <div className={styles.introRule} aria-hidden="true" />
+          <p className={styles.byline}>{t("about.byline")}</p>
         </div>
+      </section>
 
-        <div className={styles.card}>
-          <h2>{t("about.mission.title")}</h2>
-          <p>{emphasizeText(t("about.mission.p1"), ["uno posto", "chiara", "ordinata"])}</p>
-          <p>{emphasizeText(t("about.mission.p2"), ["scorciatoia", "base", "solida"])}</p>
-        </div>
-
-        <section className={styles.values}>
-          <h2 className={styles.valuesTitle}>{t("about.values.title")}</h2>
-
-          <div className={styles.valuesGrid}>
-            <div className={styles.valueCard}>
-              <span className={styles.check}>✓</span>
-              <h3>{t("about.values.clarity.title")}</h3>
-              <p>{emphasizeText(t("about.values.clarity.description"), ["semplice", "diretto"])}</p>
-            </div>
-
-            <div className={styles.valueCard}>
-              <span className={styles.check}>✓</span>
-              <h3>{t("about.values.practicality.title")}</h3>
-              <p>{emphasizeText(t("about.values.practicality.description"), ["Teoria", "pratica", "codice"])}</p>
-            </div>
-
-            <div className={styles.valueCard}>
-              <span className={styles.check}>✓</span>
-              <h3>{t("about.values.organization.title")}</h3>
-              <p>{emphasizeText(t("about.values.organization.description"), ["facile", "trovare"])}</p>
-            </div>
-
-            <div className={styles.valueCard}>
-              <span className={styles.check}>✓</span>
-              <h3>{t("about.values.completeness.title")}</h3>
-              <p>{emphasizeText(t("about.values.completeness.description"), ["fondamenti", "avanzati", "base solida"])}</p>
-            </div>
+      <section className={styles.statement}>
+        <div className={`${styles.statementInner} container`}>
+          <div className={styles.sectionLabel}>{t("about.approach.label")}</div>
+          <div className={styles.statementCopy}>
+            <h2>{t("about.approach.title")}</h2>
+            <p>{t("about.approach.description")}</p>
           </div>
-        </section>
-
-        <div className={styles.card}>
-          <h2>{t("about.coverage.title")}</h2>
-          <p>{emphasizeText(t("about.coverage.description"), ["principali", "informatica"])}</p>
-          <ul className={styles.list}>
-            <li>{t("about.coverage.list.cybersecurity")}</li>
-            <li>{t("about.coverage.list.dsa")}</li>
-            <li>{t("about.coverage.list.databases")}</li>
-            <li>{t("about.coverage.list.cs")}</li>
-            <li>{t("about.coverage.list.algebra")}</li>
-            <li>{t("about.coverage.list.analysis")}</li>
-            <li>{t("about.coverage.list.networking")}</li>
-            <li>{t("about.coverage.list.physics")}</li>
-          </ul>
+          <div className={styles.principles}>
+            <article>
+              <FaBookOpen aria-hidden="true" />
+              <h3>{t("about.approach.read.title")}</h3>
+              <p>{t("about.approach.read.description")}</p>
+            </article>
+            <article>
+              <FaCode aria-hidden="true" />
+              <h3>{t("about.approach.practice.title")}</h3>
+              <p>{t("about.approach.practice.description")}</p>
+            </article>
+          </div>
         </div>
+      </section>
 
-        <div className={styles.cardMuted}>
-          <h2>{t("about.audience.title")}</h2>
-          <p>{emphasizeText(t("about.audience.description"), ["studenti", "reference", "chiaro"])}</p>
+      <section className={styles.catalogue}>
+        <div className={`${styles.catalogueInner} container`}>
+          <div className={styles.catalogueHeader}>
+            <div>
+              <p className={styles.kicker}>{t("about.catalogue.kicker")}</p>
+              <h2>{t("about.catalogue.title")}</h2>
+            </div>
+            <p>{t("about.catalogue.description")}</p>
+          </div>
+          <div className={styles.groupGrid}>
+            {subjectGroups.map(({ id, icon: Icon, topics }) => (
+              <section className={styles.subjectGroup} key={id}>
+                <div className={styles.groupHeading}>
+                  <Icon aria-hidden="true" />
+                  <h3>{t(`about.catalogue.groups.${id}.title`)}</h3>
+                </div>
+                <ul>
+                  {topics.map((topic) => (
+                    <li key={topic}>
+                      <Link to={`/topic/${topicSlugs[topic] || topic}`}>
+                        <span>{t(`home.topics.${topic}.title`)}</span>
+                        <FaArrowRight aria-hidden="true" />
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <section className={styles.closing}>
+        <div className={`${styles.closingInner} container`}>
+          <p className={styles.kicker}>{t("about.closing.kicker")}</p>
+          <h2>{t("about.closing.title")}</h2>
+          <p>{t("about.closing.description")}</p>
+          <div className={styles.actions}>
+            <Link className={styles.primaryAction} to="/">
+              {t("about.closing.notesAction")} <FaArrowRight aria-hidden="true" />
+            </Link>
+            <Link className={styles.secondaryAction} to="/exercises">
+              {t("about.closing.exercisesAction")} <FaArrowRight aria-hidden="true" />
+            </Link>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }

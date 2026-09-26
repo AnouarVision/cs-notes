@@ -120,6 +120,48 @@
         "stepPlaceholder": "Add one step of the solution.",
         "codeTitle": "Code or calculations",
         "codePlaceholder": "// Add the solution here",
+        "setDifferenceIdentity": {
+            "promptTitle": "Statement",
+            "prompt": "Let A and B be sets. Prove the equality A ∖ (A ∖ B) = A ∩ B formally using the definitions of set difference and intersection.",
+            "definitionIntro": "Recall the definitions:",
+            "solutionTitle": "Proof by equivalences",
+            "proofIntro": "Let x be an arbitrary element. Rewrite membership in the first set using the definitions:",
+            "steps": {
+                "definition": "Definition of set difference: x belongs to A and does not belong to A minus B.",
+                "negation": "Substitute the definition of A minus B and negate the conjunction.",
+                "deMorgan": "By De Morgan's law, the negated conjunction becomes a disjunction.",
+                "simplify": "Since we already know x belongs to A, x cannot be outside A; what remains is x belonging to B.",
+                "intersection": "By the definition of intersection, x belongs to both A and B exactly when x belongs to A intersect B."
+            },
+            "conclusion": "We obtained the same membership condition for every x. By extensionality, the two sets are equal.",
+            "diagramsTitle": "Euler-Venn diagram interpretation",
+            "diagramsIntro": "Both diagrams highlight the part common to A and B: removing from A the part outside B leaves exactly the intersection.",
+            "diagramTitle": "Diagram of the shared region for {{expression}}"
+        },
+        "setMembership": {
+            "givenTitle": "Given",
+            "givenIntro": "Consider the sets:",
+            "duplicateNote": "Since A = {1, 2}, the element A is the same set as {1, 2}. Repeated elements are counted only once in a set, so the distinct elements of B are {1, 2}, {1}, and {2}.",
+            "task": "For each statement, decide whether it is true or false.",
+            "true": "True",
+            "false": "False",
+            "diagramTitle": "Diagram for statement {{item}}",
+            "atomicElements": "numbers",
+            "diagramCaption": "The sets that are elements of B appear inside it; the outside numbers are elements of those sets, but not elements of B.",
+            "explanations": {
+                "a": "True: 1 is one of the two elements of A = {1, 2}.",
+                "b": "False: the only element of {2} is the number 2. For {2} to be a subset of B, 2 would have to belong to B; B contains the set {2}, not the number 2.",
+                "c": "True: the set {1} appears among the elements of B.",
+                "d": "False: 2 is a number, while the elements of B are sets. In particular, {2} belongs to B, but 2 does not.",
+                "e": "True: {2}, considered as a set, is one of the elements of B.",
+                "f": "True: the only element of {{2}} is the set {2}, which belongs to B. Therefore every element of {{2}} belongs to B.",
+                "g": "False: the elements of A are the numbers 1 and 2, and neither is a direct element of B.",
+                "h": "False: the elements of {1, 2} are 1 and 2. For it to be a subset of B, both would have to belong to B, but B contains the sets {1} and {2}, not the numbers 1 and 2.",
+                "i": "False: a proper subset must first be a subset, but A ⊆ B is false because 1 and 2 do not belong to B.",
+                "j": "False: {1, 2} is not even a subset of B, so it cannot be a proper subset.",
+                "k": "True: A = {1, 2}, and the set {1, 2} is an element of B. Therefore A ∈ B."
+            }
+        },
         "items": {
             "javaControlFlow": {
                 "title": "Control flow in Java",
@@ -170,6 +212,16 @@
                 "title": "Analyze a pipeline",
                 "description": "Identify dependencies between RISC-V instructions and propose ways to resolve pipeline hazards.",
                 "difficulty": "Advanced"
+            },
+            "setDifferenceIdentity": {
+                "title": "Prove a set identity",
+                "description": "Prove that A ∖ (A ∖ B) = A ∩ B using the definitions and interpret the result with an Euler-Venn diagram.",
+                "difficulty": "Intermediate"
+            },
+            "setMembership": {
+                "title": "Set membership and inclusion",
+                "description": "Decide which statements are true or false by distinguishing set elements from sets contained in a set.",
+                "difficulty": "Beginner"
             },
             "combinatorics": {
                 "title": "Count the possibilities",
@@ -244,9 +296,41 @@
         }
     },
     "about": {
+        "kicker": "CS Notes / personal project",
+        "byline": "Living notes for the L-31 degree path",
         "hero": {
-            "title": "About ",
-            "subtitle": "A personal study hub for Computer Science (L‑31), focused on clarity, structure and long-term learning."
+            "title": "One place to keep studying with continuity.",
+            "subtitle": "CS Notes brings together notes, examples, and exercises from a Computer Science degree path. It is built to help you find a concept again, reconstruct an argument, and continue without starting from scratch."
+        },
+        "approach": {
+            "label": "The approach",
+            "title": "Notes to use, not notes to collect.",
+            "description": "Each page starts with definitions, develops the necessary steps, and keeps examples worth revisiting. The aim is not to replace lectures or textbooks, but to provide a personal reference that stays ordered and checkable while studying.",
+            "read": {
+                "title": "Reasoning first",
+                "description": "Definitions, context, and explicit steps before conclusions."
+            },
+            "practice": {
+                "title": "Then verify it",
+                "description": "Solved exercises and small tools to test what you have just read."
+            }
+        },
+        "catalogue": {
+            "kicker": "Subject index",
+            "title": "A map, not an endless archive.",
+            "description": "Subjects are grouped to make it easier to move between foundations, systems, and mathematical tools. Every entry leads directly to its notes.",
+            "groups": {
+                "computing": { "title": "Programming and computation" },
+                "systems": { "title": "Systems and software" },
+                "mathematics": { "title": "Mathematics and models" }
+            }
+        },
+        "closing": {
+            "kicker": "From here",
+            "title": "Choose a topic and begin where you need to.",
+            "description": "These notes are not the destination. They support a course, exam preparation, and the connections between different subjects.",
+            "notesAction": "Explore the notes",
+            "exercisesAction": "Open exercises"
         },
         "mission": {
             "title": "Mission",
@@ -296,7 +380,11 @@
     "topicPage": {
         "overviewTitle": "Overview",
         "navigationTitle": "Navigation",
-        "relatedSectionsTitle": "Related Sections"
+        "relatedSectionsTitle": "Related Sections",
+        "sectionStatus": {
+            "inProgress": "In progress",
+            "completed": "Completed"
+        }
     },
     "topics": {
         "physics": {
@@ -623,6 +711,113 @@
             "binary": "Binary",
             "hexadecimal": "Hexadecimal",
             "octal": "Octal"
+        }
+    },
+    "setsAndOperations": {
+        "hero": {
+            "titleStart": "Sets and",
+            "titleHighlight": "Operations",
+            "subtitle": "The fundamental language for describing and comparing collections of objects."
+        },
+        "actions": {
+            "print": "Print / Save as PDF"
+        },
+        "sections": {
+            "title": "On this page",
+            "whatIsASet": "What is a set?",
+            "membership": "Membership",
+            "emptySet": "The empty set",
+            "definingASet": "How can a set be defined?",
+            "fundamentalProperties": "Fundamental properties",
+            "subsets": "Subsets and inclusion",
+            "emptySetProperties": "Properties of the empty set",
+            "setEquality": "Improper inclusion",
+            "setOperations": "Set operations",
+            "intersectionUnion": "Intersection and union",
+            "familyOfSets": "Intersection and union of a family of sets",
+            "complementDifference": "Complement and difference of sets",
+            "vennDiagrams": "Venn diagrams",
+            "cartesianProduct": "Cartesian product",
+            "symmetricDifference": "Symmetric difference",
+            "operationsProperties": "Properties of set operations"
+        },
+        "labels": {
+            "definition": "Definition",
+            "example": "Example"
+        },
+        "content": {
+            "definition": "A set is a <strong>primitive concept</strong> in mathematics. Intuitively, we can think of it as a collection of objects, called the <strong>elements of the set</strong>.",
+            "numberExamplesIntro": "Some fundamental number sets are:",
+            "naturalNumbers": "Natural numbers",
+            "integers": "Integers",
+            "rationals": "Rational numbers",
+            "membershipIntro": "To indicate that an element <strong>belongs</strong> to a set, we use<belongs/>; to indicate that it <strong>does not belong</strong>, we use<notBelongs/>.",
+            "belongs": "belongs to set A",
+            "doesNotBelong": "does not belong to set A",
+            "membershipExamples": "Examples",
+            "threeIsNatural": "because 3 is a natural number.",
+            "minusFiveIsInteger": "because -5 is an integer.",
+            "minusFiveNotNatural": "if we define N = {0, 1, 2, ...}.",
+            "emptySetDefinition": "A set that contains no elements is called the empty set.",
+            "emptySetPropertyIntro": "For every element x, we have:",
+            "definingIntro": "A set can be defined in two main ways:",
+            "listingTitle": "Listing its elements",
+            "listingDescription": "Write all the elements directly inside curly braces.",
+            "ellipsisIntro": "When the sequence is clear, we can use an ellipsis:",
+            "propertyTitle": "Using a defining property",
+            "propertyDescription": "Describe the elements by specifying a property they must satisfy.",
+            "propertyReading": "This reads: A is the set of elements n in N such that 5 < n < 20.",
+            "sameSetIntro": "Both descriptions identify the same elements, so they define the same set:",
+            "orderAndRepetition": "The order of elements does not matter in a set, and repeating an element does not change the set.",
+            "subsetIntro": "Let A and B be sets. A is a subset of B when every element of A also belongs to B.",
+            "subsetDefinition": "The subset relation is written using the subset-or-equal symbol:",
+            "inclusionTypes": "Types of inclusion",
+            "properInclusion": "A is a proper subset of B: it is included in B but is not equal to B.",
+            "notIncluded": "A is not a subset of B.",
+            "subsetNotationNote": "Here we use ⊊ for proper inclusion, to distinguish it clearly from ⊆.",
+            "logicalEquivalences": "A useful consequence",
+            "logicalEquivalencesIntro": "Non-inclusion occurs when we can find at least one element of A that does not belong to B:",
+            "powerSetTitle": "The power set",
+            "powerSetIntro": "The power set of A, written P(A), contains all and only the subsets of A. For A = {a₁, a₂, a₃}:",
+            "powerSetCount": "Since A has three elements, its power set contains 2³ = 8 subsets.",
+            "membershipVsInclusion": "Membership and inclusion are different",
+            "membershipVsInclusionIntro": "The element a₁ belongs to A, while the set containing only a₁ is a subset of A:",
+            "emptySetPropertiesIntro": "For every set A, both properties hold:",
+            "emptySetProofTitle": "Why is the empty set a subset of every set?",
+            "emptySetProofIntro": "To prove that the empty set is a subset of A, we must verify that every one of its elements belongs to A:",
+            "emptySetProofExplanation": "There are no elements x in the empty set, so there is no counterexample to the implication.",
+            "vacuousTruth": "The implication is true because its premise is false; this principle is called <strong>vacuous truth</strong>.",
+            "setEqualityIntro": "Two sets are equal if and only if they have the same elements. This is equivalent to checking inclusion in both directions:",
+            "intersectionDefinition": "The intersection of two sets A and B is the set of all elements that belong to both A and B.",
+            "unionDefinition": "The union of two sets A and B is the set of all elements that belong to A or to B (or to both).",
+            "intersectionUnionExampleIntro": "Let:",
+            "intersectionUnionExampleResult": "Then:",
+            "familyOfSetsIntro": "In general, given a family of sets {Aα}α∈I, where I is the index set, we define:",
+            "familyIntersectionExplanation": "So x belongs to the intersection if and only if it belongs to <strong>every</strong> set in the family.",
+            "familyUnionIntro": "Similarly:",
+            "familyUnionExplanation": "So x belongs to the union if and only if it belongs to <strong>at least one</strong> set in the family.",
+            "complementDefinition": "Let A and B be sets. The complement of A in B is the set of elements that belong to B but not to A.",
+            "vennDiagramsIntro": "Venn diagrams provide a graphical way to represent operations between sets.",
+            "vennIntersection": "contains the elements common to A and B.",
+            "vennUnion": "contains all the elements of A and of B.",
+            "vennDifference": "contains the elements of B that do not belong to A.",
+            "cartesianProductDefinition": "Let A and B be sets. The Cartesian product of A and B is the set of ordered pairs (a,b) such that a belongs to A and b belongs to B.",
+            "cartesianProductExampleConclusion": "Each element of A is thus paired with every element of B.",
+            "cartesianProductGeneralized": "In general, given sets A₁, ..., Aₙ, their Cartesian product is defined as:",
+            "symmetricDifferenceDefinition": "Given two sets A and B, the <strong>symmetric difference</strong> of A and B is defined as:",
+            "symmetricDifferenceNote": "Intuitively, it represents the union minus the intersection of the sets.",
+            "operationsPropertiesIntro": "Let A, B, C be sets. The following properties hold:",
+            "unionAssociative": "Union is associative",
+            "unionCommutative": "Union is commutative",
+            "intersectionAssociative": "Intersection is associative",
+            "intersectionCommutative": "Intersection is commutative",
+            "symmetricDifferenceAssociative": "Symmetric difference is associative",
+            "symmetricDifferenceCommutative": "Symmetric difference is commutative",
+            "distributiveProperty": "Distributive property",
+            "differenceCounterexampleTitle": "Set difference is not commutative",
+            "differenceCounterexampleIntro": "We want to check whether A \\ B = B \\ A. Let:",
+            "differenceCounterexampleCalc": "Let's compute both differences:",
+            "differenceCounterexampleConclusion": "Since {1} ≠ {3}, we conclude that A \\ B ≠ B \\ A. Therefore set difference is <strong>not commutative</strong>."
         }
     },
     "algorithmAnalysis": {

@@ -358,6 +358,283 @@
   white-space: pre-wrap;
 }
 
+.setExercise {
+  display: grid;
+  gap: variables.$space-4;
+}
+
+.setExercisePrompt {
+  max-width: 860px;
+  padding: variables.$space-4;
+  border-left: 3px solid variables.$primary;
+  background: variables.$bg-surface;
+
+  h2,
+  h3 {
+    color: variables.$text-white;
+  }
+
+  h2 {
+    margin-bottom: variables.$space-2;
+  }
+
+  h3 {
+    margin: variables.$space-3 0 0;
+    font-size: 1rem;
+  }
+
+  p {
+    color: variables.$text-gray-400;
+    line-height: 1.65;
+  }
+}
+
+.exerciseFormula {
+  max-width: 100%;
+  margin: variables.$space-2 0;
+  padding: variables.$space-2;
+  overflow-x: auto;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.04);
+  color: variables.$text-white;
+  text-align: center;
+
+  :global(.katex-display) {
+    margin: 0;
+  }
+}
+
+.inlineExerciseFormula {
+  display: inline-block;
+  min-width: 0;
+  color: variables.$text-white;
+}
+
+.setAnswerGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: variables.$space-3;
+}
+
+.setAnswerCard {
+  min-width: 0;
+  padding: variables.$space-3;
+  border: 1px solid variables.$border-color;
+  border-radius: 8px;
+  background: variables.$bg-surface;
+}
+
+.setAnswerHeader {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: variables.$space-2;
+  min-height: 42px;
+  padding-bottom: variables.$space-2;
+  border-bottom: 1px solid variables.$border-color;
+}
+
+.answerLetter {
+  color: variables.$text-gray-500;
+  font-weight: 700;
+}
+
+.truthBadge {
+  margin-left: auto;
+  padding: 4px 9px;
+  border-radius: 999px;
+  font-size: variables.$fs-small;
+  font-weight: 700;
+}
+
+.trueBadge {
+  background: rgba(30, 204, 113, 0.14);
+  color: variables.$primary;
+}
+
+.falseBadge {
+  background: rgba(248, 113, 113, 0.14);
+  color: #fca5a5;
+}
+
+.answerReason {
+  min-height: 72px;
+  margin: variables.$space-2 0;
+  color: variables.$text-gray-400;
+  line-height: 1.6;
+}
+
+.setDiagram {
+  margin: 0;
+  padding: variables.$space-2;
+  border: 1px solid variables.$border-color;
+  border-radius: 6px;
+  background: variables.$bg-dark-1;
+
+  svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  figcaption {
+    margin-top: variables.$space-1;
+    color: variables.$text-gray-500;
+    font-size: 0.75rem;
+    line-height: 1.45;
+  }
+}
+
+.diagramBoundary {
+  fill: rgba(30, 204, 113, 0.045);
+  stroke: variables.$primary;
+  stroke-width: 2;
+}
+
+.diagramObject rect,
+.diagramAtom {
+  fill: variables.$bg-surface;
+  stroke: #6b7280;
+  stroke-width: 1.5;
+}
+
+.diagramLabel,
+.diagramAtomLabel,
+.diagramOutsideLabel {
+  fill: variables.$text-gray-300;
+  font-family: sans-serif;
+  font-size: 13px;
+}
+
+.diagramAtomLabel {
+  font-size: 12px;
+}
+
+.diagramOutsideLabel {
+  fill: variables.$text-gray-500;
+  font-size: 10px;
+}
+
+.diagramFocusTrue rect,
+.diagramFocusTrue.diagramAtom {
+  fill: rgba(30, 204, 113, 0.2);
+  stroke: variables.$primary;
+  stroke-width: 3;
+}
+
+.diagramFocusFalse rect,
+.diagramFocusFalse.diagramAtom {
+  fill: rgba(248, 113, 113, 0.16);
+  stroke: #f87171;
+  stroke-width: 3;
+}
+
+.identityExercise {
+  display: grid;
+  gap: variables.$space-4;
+  max-width: 900px;
+}
+
+.identitySolution,
+.identityDiagramSection {
+  padding: variables.$space-4;
+  border: 1px solid variables.$border-color;
+  border-radius: 8px;
+  background: variables.$bg-surface;
+
+  h2 {
+    margin-bottom: variables.$space-2;
+    color: variables.$text-white;
+    font-size: variables.$fs-card-title;
+  }
+
+  > p {
+    color: variables.$text-gray-400;
+    line-height: 1.65;
+  }
+}
+
+.identityDefinitions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: variables.$space-2;
+}
+
+.identitySteps {
+  display: grid;
+  gap: variables.$space-2;
+  margin: variables.$space-3 0;
+  padding-left: variables.$space-4;
+
+  li {
+    padding-left: variables.$space-1;
+    color: variables.$text-gray-400;
+    line-height: 1.6;
+  }
+}
+
+.identityConclusion {
+  padding-top: variables.$space-2;
+  border-top: 1px solid variables.$border-color;
+}
+
+.identityDiagrams {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: variables.$space-3;
+  margin-top: variables.$space-3;
+}
+
+.identityDiagram {
+  min-width: 0;
+  margin: 0;
+  padding: variables.$space-2;
+  border: 1px solid variables.$border-color;
+  border-radius: 6px;
+  background: variables.$bg-dark-1;
+
+  svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  figcaption {
+    padding-top: variables.$space-2;
+    border-top: 1px solid variables.$border-color;
+  }
+}
+
+.vennCircleA {
+  fill: rgba(96, 165, 250, 0.1);
+  stroke: #60a5fa;
+  stroke-width: 2;
+}
+
+.vennCircleB {
+  fill: rgba(251, 191, 36, 0.1);
+  stroke: #fbbf24;
+  stroke-width: 2;
+}
+
+.vennIntersection {
+  fill: rgba(30, 204, 113, 0.56);
+}
+
+.vennLabel {
+  fill: variables.$text-white;
+  font-family: sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+@media (max-width: 600px) {
+  .identityDefinitions,
+  .identityDiagrams {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 800px) {
   .modeGrid,
   .areaGrid {
@@ -382,6 +659,14 @@
   .modeGrid,
   .areaGrid {
     grid-template-columns: 1fr;
+  }
+
+  .setAnswerGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .answerReason {
+    min-height: 0;
   }
 
   .mobileLoader {

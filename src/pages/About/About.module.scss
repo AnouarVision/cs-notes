@@ -1,180 +1,183 @@
-@use "../../assets/styles/variables";
+@use "../../assets/styles/variables" as *;
 
-//Layout
-.about {
-  padding: variables.$space-6 0;
-  background-color: variables.$bg-dark-2;
-}
+.about { background: $bg-dark-2; }
 
-.inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: variables.$space-5;
-
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding-inline: 20px;
-}
-
-//Hero
-.hero {
-  text-align: center;
-  max-width: 720px;
-
-  h1 {
-    font-size: variables.$fs-hero-max;
-    font-weight: 800;
-    color: variables.$text-white;
-    margin-bottom: variables.$space-2;
-  }
-}
-
-.highlight {
-  color: variables.$primary;
-}
-
-.subtitle {
-  font-size: variables.$fs-body;
-  color: variables.$text-gray-400;
-  line-height: 1.6;
-}
-
-// Cards
-.card {
-  width: 100%;
-  padding: variables.$space-5;
-  border-radius: variables.$radius-card;
-  background: linear-gradient(180deg, rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.75));
-  border: 1px solid rgba(variables.$border-color, 0.8);
-  box-shadow: 0 14px 32px rgba(2, 6, 23, 0.2);
-
-  h2 {
-    margin: 0 0 variables.$space-3;
-    padding-bottom: variables.$space-2;
-    border-bottom: 1px solid rgba(variables.$primary, 0.25);
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: variables.$text-white;
-  }
-
-  p {
-    margin: 0 0 variables.$space-2;
-    font-size: variables.$fs-body;
-    color: variables.$text-gray-300;
-    line-height: 1.75;
-  }
-}
-
-.cardMuted {
-  @extend .card;
-  background: linear-gradient(180deg, rgba(11, 11, 11, 0.92), rgba(21, 21, 21, 0.82));
-  border-color: rgba(variables.$border-color, 0.9);
-
-  p {
-    font-size: variables.$fs-small;
-    color: variables.$text-gray-400;
-    margin-bottom: 0;
-  }
-}
-
-.values {
-  width: 100%;
-  text-align: center;
-}
-
-.valuesTitle {
-  font-size: variables.$fs-h2;
-  font-weight: 700;
-  color: variables.$text-white;
-  margin-bottom: variables.$space-4;
-}
-
-.valuesGrid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: variables.$space-4;
-}
-
-.valueCard {
+.intro {
   position: relative;
-  padding: variables.$space-4;
-  border-radius: variables.$radius-card;
-  background: linear-gradient(180deg, rgba(15, 23, 42, 0.82), rgba(15, 23, 42, 0.66));
-  border: 1px solid rgba(variables.$border-color, 0.85);
-  text-align: left;
-  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+  padding: clamp(72px, 10vw, 112px) 0 clamp(56px, 8vw, 88px);
+  background-color: $bg-dark-3;
 
-  &:hover {
-    transform: translateY(-2px);
-    border-color: rgba(variables.$primary, 0.45);
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.22);
-  }
-
-  h3 {
-    font-size: 1.15rem;
-    font-weight: 600;
-    color: variables.$text-white;
-    margin: 0 0 8px;
-    padding-top: variables.$space-1;
-  }
-
-  p {
-    font-size: variables.$fs-small;
-    color: variables.$text-gray-400;
-    line-height: 1.6;
-    margin: 0;
+  &::after {
+    position: absolute;
+    right: -80px;
+    bottom: -100px;
+    width: 360px;
+    height: 360px;
+    border: 1px solid rgba($primary, 0.22);
+    border-radius: 50%;
+    content: "";
+    box-shadow: 0 0 0 54px rgba($primary, 0.035), 0 0 0 108px rgba($primary, 0.02);
   }
 }
 
-.check {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.25rem;
-  height: 2.25rem;
-  margin-bottom: variables.$space-2;
-  border-radius: 999px;
-  background: rgba(variables.$primary, 0.12);
-  border: 1px solid rgba(variables.$primary, 0.35);
-  font-size: 1rem;
+.introInner, .statementInner, .catalogueInner, .closingInner {
+  position: relative;
+  z-index: 1;
+  padding-right: clamp(20px, 4vw, 48px);
+  padding-left: clamp(20px, 4vw, 48px);
+}
+.introInner { max-width: 880px; }
+
+.kicker, .sectionLabel {
+  margin: 0 0 $space-2;
+  color: $primary;
+  font-size: $fs-small;
   font-weight: 700;
-  color: variables.$primary;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-.list {
+.intro h1 {
+  max-width: 760px;
+  font-size: clamp(3rem, 6vw, 5rem);
+  line-height: 1.04;
+}
+
+.lead {
+  max-width: 640px;
+  margin-top: $space-3;
+  color: $text-gray-300;
+  font-size: 1.2rem;
+  line-height: 1.7;
+}
+
+.introRule { width: 64px; height: 2px; margin: clamp(32px, 5vw, 48px) 0 $space-2; background: $primary; }
+.byline { color: $text-gray-500; font-size: $fs-small; }
+
+.statement { border-bottom: 1px solid $border-color; background: $bg-dark-2; }
+
+.statementInner {
+  display: grid;
+  grid-template-columns: 0.65fr 1.4fr;
+  column-gap: $space-5;
+  row-gap: $space-4;
+  padding-top: clamp(48px, 7vw, 80px);
+  padding-bottom: clamp(48px, 7vw, 80px);
+}
+
+.statementCopy h2, .catalogueHeader h2, .closing h2 {
+  color: $text-white;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.15;
+}
+
+.statementCopy > p {
+  max-width: 690px;
+  margin-top: $space-3;
+  color: $text-gray-300;
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.principles {
+  grid-column: 2;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px 20px;
-  margin: variables.$space-3 0 0;
-  padding-left: 1.2rem;
-  list-style: disc;
+  gap: $space-3;
+  margin-top: $space-1;
 
-  li {
-    font-size: variables.$fs-body;
-    color: variables.$text-gray-300;
-    line-height: 1.6;
-    margin: 0;
-  }
+  article { padding-top: $space-3; border-top: 1px solid $border-color; }
+  svg { color: $primary; font-size: 1.1rem; }
+  h3 { margin: $space-2 0 $space-1; color: $text-white; font-size: $fs-card-title; }
+  p { color: $text-gray-400; font-size: $fs-small; line-height: 1.65; }
 }
 
-.emphasis {
-  color: variables.$primary;
+.catalogue { padding: clamp(56px, 8vw, 96px) 0; background: $bg-dark-1; }
+
+.catalogueHeader {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: end;
+  gap: $space-5;
+  margin-bottom: $space-5;
+
+  > p { max-width: 420px; color: $text-gray-400; line-height: 1.7; }
+}
+
+.groupGrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(24px, 3vw, 48px); }
+.subjectGroup { min-width: 0; border-top: 2px solid $primary; padding-top: $space-3; }
+
+.groupHeading {
+  display: flex;
+  align-items: center;
+  gap: $space-2;
+  margin-bottom: $space-3;
+
+  svg { color: $primary; font-size: 1.1rem; }
+  h3 { color: $text-white; font-size: $fs-card-title; }
+}
+
+.subjectGroup ul { margin: 0; padding: 0; list-style: none; }
+.subjectGroup li { border-top: 1px solid rgba($border-color, 0.7); }
+
+.subjectGroup a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $space-2;
+  min-height: 48px;
+  color: $text-gray-300;
+  font-size: $fs-small;
+  font-weight: 600;
+  text-decoration: none;
+
+  svg { flex: 0 0 auto; color: $text-gray-500; font-size: 0.8rem; transition: transform 0.2s ease, color 0.2s ease; }
+  &:hover, &:focus-visible { color: $primary; svg { color: $primary; transform: translateX(4px); } }
+}
+
+.closing { padding: clamp(56px, 8vw, 96px) 0; border-top: 1px solid $border-color; background: $bg-dark-2; }
+.closingInner { max-width: 760px; }
+.closing p:not(.kicker) { max-width: 600px; margin-top: $space-3; color: $text-gray-400; line-height: 1.7; }
+.actions { display: flex; flex-wrap: wrap; gap: $space-2; margin-top: $space-4; }
+
+.primaryAction, .secondaryAction {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-1;
+  min-height: 44px;
+  padding: 0 $space-2;
+  border: 1px solid $primary;
+  border-radius: 6px;
+  font-size: $fs-small;
   font-weight: 700;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+
+  svg { transition: transform 0.2s ease; }
+  &:hover, &:focus-visible { transform: translateY(-1px); svg { transform: translateX(3px); } }
 }
 
-// Responsive Design
-// Tablet: Reduce the grid to 2 columns
-@media (max-width: 1024px) {
-  .valuesGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.primaryAction { background: $primary; color: $bg-dark-1; }
+.secondaryAction { background: transparent; color: $primary; }
+
+@media (max-width: 850px) {
+  .statementInner, .catalogueHeader { grid-template-columns: 1fr; }
+  .principles { grid-column: auto; }
+  .groupGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: $space-4; }
+  .subjectGroup:last-child { grid-column: 1 / -1; }
 }
 
-// Mobile: Reduce the grid to 1 column for small screens
 @media (max-width: 600px) {
-  .valuesGrid {
-    grid-template-columns: 1fr;
-  }
+  .intro::after { right: -145px; bottom: -165px; width: 300px; height: 300px; }
+  .intro h1 { font-size: clamp(2.35rem, 12vw, 3rem); }
+  .lead { font-size: 1rem; line-height: 1.65; }
+  .statementCopy h2, .catalogueHeader h2, .closing h2 { font-size: 2rem; }
+  .principles { grid-template-columns: 1fr; }
+  .catalogueHeader { gap: $space-3; margin-bottom: $space-4; }
+  .groupGrid { grid-template-columns: 1fr; gap: $space-4; }
+  .subjectGroup:last-child { grid-column: auto; }
+  .subjectGroup a { min-height: 52px; }
+  .actions { display: grid; grid-template-columns: 1fr; width: 100%; }
+  .primaryAction, .secondaryAction { justify-content: space-between; width: 100%; padding: 0 $space-3; }
 }
