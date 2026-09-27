@@ -5,7 +5,9 @@
             "exercises": "Exercises"
         },
         "actions": {
-            "search": "Search"
+            "notFound": "No results found",
+            "search": "Search",
+            "placeholder": "Start typing to search topics and sections..."
         }
     },
     "home": {
@@ -492,7 +494,6 @@
                 "methodsAndRecursion": "Methods and Recursion"
             }
         },
-        "linearAlgebra": {
         "objectOrientedProgramming": {
             "title": "Object-Oriented Programming",
             "subtitle": "Classes, relationships, and reusable structures.",
@@ -507,6 +508,7 @@
                 "collections": "Collections"
             }
         },
+        "linearAlgebra": {
             "title": "Linear Algebra and Geometry",
             "subtitle": "Vector spaces, matrices, and linear transformations.",
             "overview": "Linear algebra and geometry introduces the fundamental mathematical structures used to describe and analyze linear systems in scientific and engineering contexts. The treatment begins with the study of Euclidean spaces and vectors, addressing coordinates, scalar and vector products, and the tools of analytic geometry in space.\n\nLinear systems and their representation through matrices are then introduced, with particular emphasis on the Gaussian elimination method as a fundamental tool for solving systems and analyzing their properties. Matrix algebra is developed systematically, including basic operations, invertible matrices, and the computation of the inverse.\n\nIt continues with the study of vector spaces and linear transformations, introducing concepts such as kernel and image, generators and linear independence, dimension and rank. In this framework, the representation theorem, the rank–nullity theorem, and Grassmann’s formula are presented.\n\nA central part is devoted to determinants, their properties and computational techniques, including Laplace expansions and the Binet theorem, as well as the relationship between determinant and rank. Eigenvalues and eigenvectors are subsequently introduced, together with the study of similar matrices and the problem of canonical forms.\n\nThe treatment concludes with the study of Euclidean spaces and orthogonal structures, including orthonormal bases, orthogonal matrices, orthogonal projections, and the Gram–Schmidt algorithm, leading to the method of least squares. Finally, spectral theorems, both in the real and complex cases and the study of quadratic forms are presented.",

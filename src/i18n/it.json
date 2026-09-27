@@ -5,7 +5,9 @@
             "exercises": "Esercizi"
         },
         "actions": {
-            "search": "Cerca"
+            "notFound": "Nessun risultato trovato",
+            "search": "Cerca",
+            "placeholder": "Digita per cercare argomenti e sezioni…"
         }
     },
     "home": {
@@ -492,7 +494,6 @@
                 "methodsAndRecursion": "Metodi e ricorsione"
             }
         },
-        "linearAlgebra": {
         "objectOrientedProgramming": {
             "title": "Programmazione Orientata agli Oggetti",
             "subtitle": "Classi, relazioni e strutture riutilizzabili.",
@@ -507,6 +508,7 @@
                 "collections": "Collezioni"
             }
         },
+        "linearAlgebra": {
             "title": "Geometria e Algebra Lineare",
             "subtitle": "Strutture vettoriali, matrici e applicazioni lineari.",
             "overview": "Geometria e algebra lineare introduce lo studio delle strutture matematiche fondamentali utilizzate per descrivere e analizzare sistemi lineari in ambito scientifico e ingegneristico. La trattazione inizia con lo studio dello spazio euclideo e dei vettori, affrontando il concetto di coordinate, il prodotto scalare e il prodotto vettoriale, e sviluppando gli strumenti della geometria analitica nello spazio.\n\nVengono quindi introdotti i sistemi lineari e la loro rappresentazione mediante matrici, con particolare riferimento al metodo di eliminazione di Gauss come strumento fondamentale per la risoluzione dei sistemi e lo studio delle loro proprietà. L’algebra delle matrici è analizzata in modo sistematico, includendo le operazioni fondamentali, le matrici invertibili e il calcolo dell’inversa.\n\nSi prosegue con lo studio degli spazi vettoriali e delle applicazioni lineari, introducendo concetti quali nucleo e immagine, generatori e indipendenza lineare, dimensione e rango. In questo contesto vengono presentati il teorema di rappresentazione, il teorema di nullità più rango e la formula di Grassmann.\n\nUna parte centrale è dedicata al determinante, alle sue proprietà e alle tecniche di calcolo, inclusi gli sviluppi di Laplace e il teorema di Binet, nonché alla relazione tra determinante e rango. Successivamente vengono introdotti autovalori e autovettori, lo studio delle matrici simili e il problema della forma canonica.\n\nLa trattazione si conclude con lo studio degli spazi euclidei e delle strutture ortogonali, includendo basi ortonormali, matrici ortogonali, proiezioni ortogonali e l’algoritmo di Gram-Schmidt, fino al metodo dei minimi quadrati. Vengono infine presentati i teoremi spettrali, sia nel caso reale che complesso e lo studio delle forme quadratiche.",

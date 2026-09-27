@@ -163,13 +163,13 @@ export default function Search({ isOpen, onClose }) {
               {(!results.topics || results.topics.length === 0) &&
                 (!results.sections || results.sections.length === 0) && (
                   <div className={styles.noResults}>
-                    <p>{t("navbar.actions.search")} - No results found</p>
+                    <p>{t("navbar.actions.notFound")}</p>
                   </div>
                 )}
             </>
           ) : (
             <div className={styles.noResults}>
-              <p>Start typing to search topics and sections...</p>
+              <p>{t("navbar.actions.placeholder")}</p>
             </div>
           )}
         </div>
