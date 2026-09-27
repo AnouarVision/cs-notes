@@ -55,7 +55,7 @@ export default function SidebarSection({ title, items = [] }) {
       item.children?.some(child => child.id === activeId);
 
     if (item.children) {
-      const isOpen = openItems[item.id] ?? (item.open ?? false);
+      const isOpen = openItems[item.id] ?? false;
 
       return (
         <li key={item.id} className={styles.expandable}>
