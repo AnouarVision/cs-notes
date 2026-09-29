@@ -159,3 +159,122 @@ export const setsAndOperationsTOC = {
     }
   ]
 };
+
+export const relationsOrdersEquivalencesTOC = {
+  title: "relationsOrdersEquivalences.sections.title",
+
+  items: [
+    {
+      id: "relations",
+      label: "relationsOrdersEquivalences.sections.relations",
+      open: true,
+      children: [
+        {
+          id: "relation-example",
+          label: "relationsOrdersEquivalences.sections.relationExample"
+        },
+        {
+          id: "inverse-relation",
+          label: "relationsOrdersEquivalences.sections.inverseRelation"
+        }
+      ]
+    },
+
+    {
+      id: "functions",
+      label: "relationsOrdersEquivalences.sections.functions",
+      open: true,
+      children: [
+        {
+          id: "function-image",
+          label: "relationsOrdersEquivalences.sections.functionImage"
+        },
+        {
+          id: "function-types",
+          label: "relationsOrdersEquivalences.sections.functionTypes"
+        },
+        {
+          id: "composition",
+          label: "relationsOrdersEquivalences.sections.composition"
+        },
+        {
+          id: "composition-proposition",
+          label: "relationsOrdersEquivalences.sections.compositionProposition"
+        },
+        {
+          id: "inverse-functions",
+          label: "relationsOrdersEquivalences.sections.inverseFunctions"
+        },
+        {
+          id: "invertibility",
+          label: "relationsOrdersEquivalences.sections.invertibility"
+        }
+      ]
+    }
+  ]
+};
+
+export const inductionRecursionTOC = {
+  title: "inductionRecursion.sections.title",
+
+  items: [
+    {
+      id: "induction-principle",
+      label: "inductionRecursion.sections.inductionPrinciple",
+      open: true,
+      children: [
+        {
+          id: "induction-principle-definition",
+          label: "inductionRecursion.sections.inductionPrincipleDefinition"
+        },
+        {
+          id: "induction-example",
+          label: "inductionRecursion.sections.example"
+        },
+        {
+          id: "power-set-cardinality",
+          label: "inductionRecursion.sections.powerSetCardinality"
+        }
+      ]
+    },
+    {
+      id: "strong-induction",
+      label: "inductionRecursion.sections.strongInduction"
+    },
+    {
+      id: "well-ordering-principle",
+      label: "inductionRecursion.sections.wellOrderingPrinciple"
+    },
+    {
+      id: "euclidean-division",
+      label: "inductionRecursion.sections.euclideanDivision"
+    },
+    {
+      id: "sequences",
+      label: "inductionRecursion.sections.sequences",
+      open: true,
+      children: [
+        {
+          id: "sequence-definition",
+          label: "inductionRecursion.sections.sequenceDefinition"
+        },
+        {
+          id: "recursive-sequence",
+          label: "inductionRecursion.sections.recursiveSequence"
+        },
+        {
+          id: "fibonacci",
+          label: "inductionRecursion.sections.fibonacci"
+        },
+        {
+          id: "linear-recurrence",
+          label: "inductionRecursion.sections.linearRecurrence"
+        },
+        {
+          id: "recurrence-examples",
+          label: "inductionRecursion.sections.recurrenceExamples"
+        }
+      ]
+    }
+  ]
+};

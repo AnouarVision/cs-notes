@@ -822,6 +822,246 @@
             "differenceCounterexampleConclusion": "Poiché {1} ≠ {3}, si deduce che A \\ B ≠ B \\ A. Quindi la differenza tra insiemi <strong>non è commutativa</strong>."
         }
     },
+    "relationsOrdersEquivalences": {
+        "hero": {
+            "titleStart": "Relazioni, ordini ed",
+            "titleHighlight": "equivalenze",
+            "subtitle": "Relazioni e funzioni: definizioni, proprietà e concetti fondamentali."
+        },
+        "actions": {
+            "print": "Stampa / Salva PDF"
+        },
+        "sections": {
+            "title": "In questa pagina",
+            "relations": "Relazioni",
+            "relationExample": "Esempio di relazione",
+            "inverseRelation": "Relazione inversa",
+            "functions": "Funzioni",
+            "functionImage": "Immagine e controimmagine",
+            "functionTypes": "Funzioni iniettive, suriettive e biiettive",
+            "composition": "Composizione di funzioni",
+            "compositionProposition": "Proposizione della composizione",
+            "inverseFunctions": "Relazione inversa e funzioni invertibili",
+            "invertibility": "Definizione di invertibilità"
+        },
+        "labels": {
+            "definition": "Definizione",
+            "example": "Esempio",
+            "proposition": "Proposizione",
+            "proof": "Dimostrazione",
+            "observation": "Osservazione"
+        },
+        "content": {
+            "relationDefinition": "Una <strong>relazione</strong> R da un insieme A ad un insieme B è un sottoinsieme R contenuto in A × B.",
+            "domainCodomain": "A si dice <strong>dominio</strong> di R e B si dice <strong>codominio</strong>.",
+            "relationNotation": "Di solito, invece di scrivere (a,b) ∈ R, scriveremo:",
+            "florenceExampleIntro": "Siano:",
+            "florenceExampleRelationIntro": "Allora:",
+            "florenceExampleConclusion": "è una <strong>relazione</strong>. Siano inoltre:",
+
+            "inverseRelationDefinition": "Data una relazione R ⊆ A × B, la <strong>relazione inversa</strong> di R è R⁻¹ ⊆ B × A ed è definita da:",
+            "inverseRelationExample": "La relazione inversa scambia il ruolo degli elementi del dominio e del codominio.",
+
+            "functionDefinitionIntro": "Siano A e B due insiemi. Una <strong>funzione</strong> f da A a B è una relazione",
+            "functionDefinitionCondition": "tale che:",
+            "functionNotationIntro": "Se f ⊆ A × B è una funzione, scriveremo:",
+            "functionPairIntro": "Inoltre, se (a,b) ∈ f, denoteremo:",
+            "functionValueIntro": "Il valore della funzione in a è quindi:",
+
+            "imageDefinition": "Siano S ⊆ A e T ⊆ B e sia f : A → B.",
+            "imageIntro": "L'<strong>immagine di S tramite f</strong> è:",
+            "preimageIntro": "La <strong>controimmagine di T tramite f</strong> è:",
+
+            "functionTypesIntro": "Sia f : A → B.",
+            "injectiveDefinition": "Si dice <strong>iniettiva</strong> se:",
+            "surjectiveDefinition": "Si dice <strong>suriettiva</strong> se:",
+            "bijectiveDefinition": "Si dice <strong>biiettiva</strong> se f è <strong>iniettiva e suriettiva</strong>.",
+
+            "compositionDefinitionIntro": "Siano f : A → B e g : B → C, con A, B e C insiemi. La <strong>composizione</strong> di f con g è la funzione g ∘ f : A → C definita da:",
+            "compositionFunctionQuestion": "La composizione g ∘ f è una funzione?",
+            "compositionFunctionAnswer": "Sì. La composizione è una <strong>funzione</strong>.",
+            "compositionReasonIntro": "Il motivo è che per ogni a ∈ A:",
+            "compositionReasonFirst": "f associa ad a <strong>uno e un solo</strong> elemento f(a) ∈ B.",
+            "compositionReasonSecond": "g associa a f(a) <strong>uno e un solo</strong> elemento g(f(a)) ∈ C.",
+            "compositionReasonConclusion": "Quindi anche g ∘ f associa a ogni a ∈ A <strong>uno e un solo</strong> elemento di C: per definizione, è una funzione.",
+            "compositionExampleTitle": "Esempio",
+            "compositionExampleIntro": "Siano:",
+            "compositionExampleThen": "Allora:",
+            "compositionExampleValues": "Per esempio:",
+            "compositionExampleConclusion": "Quindi g ∘ f : A → C è effettivamente una funzione.",
+
+            "compositionPropositionIntro": "Siano <strong>f : A → B</strong> e <strong>g : B → C</strong> due funzioni.",
+            "compositionPropositionInjective": "Se <strong>f</strong> e <strong>g</strong> sono iniettive, allora <strong>g ∘ f</strong> è iniettiva.",
+            "compositionPropositionSurjective": "Se <strong>f</strong> e <strong>g</strong> sono suriettive, allora <strong>g ∘ f</strong> è suriettiva.",
+
+            "compositionInjectiveProofIntro": "g ∘ f è iniettiva se e solo se, per ogni a, a' ∈ A, da:",
+            "compositionInjectiveProofStepOne": "Se (g ∘ f)(a) = (g ∘ f)(a'), allora g(f(a)) = g(f(a')). Siccome g è iniettiva, questo implica:",
+            "compositionInjectiveProofStepTwo": "Siccome f è iniettiva, da f(a) = f(a') segue:",
+            "compositionInjectiveProofConclusion": "Abbiamo così provato che g ∘ f è iniettiva.",
+
+            "injectiveEquivalent": "Una funzione f : A → B è iniettiva se e solo se, per ogni a, a' ∈ A, vale f(a) = f(a') ⇒ a = a'.",
+            "injectiveEquivalentOr": "Equivalentemente:",
+
+            "compositionSurjectiveProofIntro": "g ∘ f è suriettiva vuol dire che per ogni c ∈ C esiste a ∈ A tale che:",
+            "compositionSurjectiveProofStepOne": "Prendiamo c ∈ C. Siccome g è suriettiva, esiste b ∈ B tale che:",
+            "compositionSurjectiveProofStepTwo": "Siccome f è suriettiva, esiste a ∈ A tale che:",
+            "compositionSurjectiveProofConclusion": "Quindi:",
+
+            "inverseFunctionsIntro": "Abbiamo visto che, per ogni relazione R ⊆ A × B, possiamo definire la relazione inversa:",
+            "inverseFunctionExampleIntro": "Siano A = B = {1, 2} e:",
+            "inverseFunctionExampleInverse": "La relazione inversa è:",
+            "inverseFunctionExampleConclusion": "Verificando, R è una funzione, mentre R⁻¹ <strong>non</strong> è una funzione.",
+            "inverseFunctionCondition": "Se R⁻¹ è una funzione, allora per ogni b ∈ B esiste uno ed un solo a ∈ A tale che:",
+            "bijectiveInverseCondition": "Dunque, per una funzione f : A → B, f è biettiva se e solo se per ogni b ∈ B esiste uno ed un solo a ∈ A tale che f(a) = b.",
+            "inverseFunctionDefinitionIntro": "Quindi, per una funzione biettiva f : A → B ha senso parlare della <strong>funzione inversa</strong> f⁻¹ : B → A, definita da:",
+
+            "identityFunction": "Dato un insieme A, la <strong>funzione identità</strong> idₐ : A → A è definita da:",
+
+            "inverseComposition": "Se f : A → B è biettiva, allora:",
+            "inverseCompositionVerification": "Verifica:",
+
+            "invertibleFunctionDefinition": "Una funzione f : A → B si dice <strong>invertibile</strong> se esiste g : B → A tale che:",
+            "invertibilityProposition": "Una funzione f : A → B è invertibile se e solo se è biettiva.",
+
+            "invertibilityProofForward": "Se f è biettiva, allora è definita la funzione inversa f⁻¹ : B → A, e possiamo prendere g = f⁻¹.",
+            "invertibilityProofBackwardIntro": "Se f è invertibile, esiste g : B → A tale che:",
+            "invertibilityProofSurjective": "<strong>f è suriettiva:</strong> per ogni b ∈ B, possiamo considerare a = g(b) e verificare che:",
+            "invertibilityProofInjective": "<strong>f è iniettiva:</strong> siano a₁, a₂ ∈ A tali che f(a₁) = f(a₂). Applicando g:",
+            "invertibilityProofConclusion": "Pertanto f è iniettiva e suriettiva, dunque è biettiva."
+        }
+    },
+    "inductionRecursion": {
+        "hero": {
+            "titleStart": "Induzione e",
+            "titleHighlight": "ricorsione",
+            "subtitle": "Principio di induzione, dimostrazioni per induzione e concetti fondamentali della ricorsione."
+        },
+        "actions": {
+            "print": "Stampa / Salva PDF"
+        },
+        "sections": {
+            "title": "In questa pagina",
+            "inductionPrinciple": "Principio di induzione",
+            "inductionPrincipleDefinition": "Principio di induzione (I forma)",
+            "example": "Esempio",
+            "powerSetCardinality": "Cardinalità dell'insieme delle parti",
+            "strongInduction": "Principio di induzione forte (II forma)",
+            "wellOrderingPrinciple": "Principio del minimo (o del buon ordinamento)",
+            "euclideanDivision": "Divisione euclidea",
+            "sequences": "Successioni",
+            "recursiveSequences": "Successioni ricorsive",
+            "fibonacci": "Numeri di Fibonacci",
+            "linearRecurrences": "Relazioni di ricorrenza lineari",
+            "recurrenceExamples": "Esempi applicativi"
+        },
+        "labels": {
+            "definition": "Definizione",
+            "example": "Esempio",
+            "base": "Base dell'induzione",
+            "inductiveStep": "Passo induttivo",
+            "proposition": "Proposizione",
+            "proof": "Dimostrazione",
+            "theorem": "Teorema",
+            "naturalNumbersAxiom": "Assioma dei numeri naturali",
+            "observation": "Osservazione",
+            "homework": "Esercizio per casa"
+        },
+        "content": {
+            "propositionIntro": "Consideriamo la proposizione:",
+
+            "inductionPrincipleIntro": "Sia S ⊆ ℕ tale che:",
+            "inductionPrincipleFirst": "n₀ ∈ S.",
+            "inductionPrincipleSecond": "Se n ∈ S, allora n + 1 ∈ S.",
+            "inductionPrincipleConclusion": "Allora:",
+            "inductionPrincipleParticular": "In particolare, se n₀ = 1 e ℕ = {1, 2, 3, …}, allora:",
+
+            "exampleIntro": "Definiamo:",
+            "exampleGoal": "Vogliamo dimostrare che:",
+            "baseIntro": "Per n = 1:",
+            "baseConclusion": "Quindi:",
+            "inductiveStepIntro": "Supponiamo che:",
+            "inductiveHypothesis": "Per ipotesi induttiva:",
+            "inductiveStepGoal": "Dobbiamo dimostrare che:",
+            "inductiveStepAddition": "Aggiungiamo il termine successivo 2n + 1:",
+            "inductiveStepConclusion": "Pertanto:",
+            "finalConclusion": "Per il principio di induzione:",
+            "finalStatement": "Quindi abbiamo dimostrato che:",
+
+            "inductionPrincipleStepsIntro": "Il principio di induzione standard (I forma) si sviluppa in due passaggi fondamentali:",
+            "inductionPrincipleBaseStep": "<strong>Base dell'induzione:</strong> si verifica che la proprietà valga per l'elemento iniziale n₀ ∈ S.",
+            "inductionPrincipleInductiveStep": "<strong>Passo induttivo:</strong> si dimostra l'implicazione che, assumendo la proprietà vera per un generico n ∈ S, essa valga anche per il successivo:",
+
+            "powerSetIntro": "Vogliamo dimostrare che per ogni insieme finito X, la cardinalità del suo insieme delle parti P(X) (o ℘(X)) è 2^{|X|}, procedendo per induzione su n = |X| ≥ 0.",
+            "powerSetBaseIntro": "Se X = ∅, allora |X| = 0. L'insieme delle parti è:",
+            "powerSetBaseConclusion": "La cui cardinalità è:",
+            "powerSetBaseStatement": "L'affermazione è quindi verificata.",
+            "powerSetInductiveIntro": "Supponiamo che per tutti gli insiemi Y con |Y| = n si abbia |P(Y)| = 2ⁿ.",
+            "powerSetInductiveSet": "Prendiamo un insieme X tale che |X| = n + 1. Fissiamo un elemento x₀ ∈ X.",
+            "powerSetPartitionIntro": "Osserviamo che l'insieme delle parti P(X) può essere partizionato in due sottoinsiemi disgiunti:",
+            "powerSetFirstFamilyIntro": "Possiamo stabilire una biiezione tra la prima famiglia, dove x₀ ∈ Y, e l'insieme delle parti di X \\ {x₀}. Se Y ⊆ X è tale che x₀ ∈ Y, ponendo Z = Y \\ {x₀} si ha Z ⊆ X \\ {x₀} con |Z| = n.",
+            "powerSetFirstFamilyConclusion": "Pertanto:",
+            "powerSetSecondFamilyIntro": "Analogamente, per la seconda famiglia, dove x₀ ∉ Y, ogni tale Y è un sottoinsieme di X \\ {x₀}, quindi:",
+            "powerSetFinalIntro": "Sommando i due contributi disgiunti, otteniamo:",
+            "powerSetFinalConclusion": "La proprietà è così dimostrata per induzione.",
+
+            "strongInductionIntro": "Sia S ⊆ ℕ, con n₀ ∈ ℕ, tale che:",
+            "strongInductionFirst": "n₀ ∈ S.",
+            "strongInductionSecond": "Per ogni n ≥ n₀, se per ogni k tale che n₀ ≤ k ≤ n si ha k ∈ S, allora n + 1 ∈ S.",
+            "strongInductionEquivalent": "Ovvero:",
+            "strongInductionConclusion": "Allora:",
+            "inductionEquivalence": "Il principio di induzione (I forma) e il principio di induzione forte (II forma) sono equivalenti.",
+
+            "wellOrderingTheoremIntro": "Ogni sottoinsieme non vuoto S ⊆ ℕ ha un elemento minimo.",
+
+            "euclideanDivisionIntro": "Siano a, b ∈ ℕ con b ≠ 0. Usando il Principio del Minimo, dimostrare che esistono unici q, r ∈ ℕ tali che:",
+            "euclideanDivisionProofIntro": "Consideriamo l'insieme:",
+            "euclideanDivisionNonEmpty": "L'insieme S non è vuoto, poiché per un q sufficientemente grande, ad esempio q = a, si ha (q + 1)b > a.",
+            "euclideanDivisionMinimum": "Per il Principio del Minimo, l'insieme S ammette un elemento minimo, che chiamiamo q.",
+            "euclideanDivisionPrevious": "Se q > 0, allora q − 1 ∉ S per la minimalità di q. Dalla definizione di S segue:",
+            "euclideanDivisionRemainder": "Poniamo:",
+            "euclideanDivisionRemainderBounds": "Dalla definizione di S sappiamo che q ∈ S, quindi:",
+            "euclideanDivisionConclusion": "Pertanto abbiamo trovato r = a − qb tale che 0 ≤ r < b e, di conseguenza:",
+            "euclideanDivisionFinal": "Abbiamo quindi dimostrato l'esistenza della divisione euclidea.",
+
+            "sequenceDefinition": "Una <strong>successione</strong> è una funzione a: ℕ → S, dove S è un insieme. Di solito si scrive aₙ := a(n).",
+            "sequenceExamples": "Esempi:",
+            "sequenceExampleFirst": "a: ℕ → ℕ, a(n) = n, quindi a₀ = 0, a₁ = 1, a₂ = 2, …",
+            "sequenceExampleSecond": "aₙ = 1/n, per n ≥ 1, quindi a₁ = 1, a₂ = 1/2, a₃ = 1/3, …",
+            "sequenceExampleThird": "aₙ = 5ⁿ, per n ≥ 0, quindi a₀ = 5⁰ = 1, a₁ = 5¹, a₂ = 5², …",
+            "sequenceRecursiveExample": "Possiamo anche definire la successione mediante:",
+
+            "recursiveSequenceDefinition": "Una successione si dice <strong>ricorsiva</strong> se:",
+            "recursiveSequenceBase": "<strong>(Base)</strong> si definiscono i valori della successione per i primi k numeri naturali.",
+            "recursiveSequenceStep": "<strong>(Passo induttivo)</strong> si dà una regola per determinare gli altri termini a partire dai valori precedenti.",
+            "recursiveSequenceObservation": "Per il principio di induzione, definire una successione in modo ricorsivo dà davvero una successione!",
+
+            "fibonacciIntro": "Poniamo f₀ = 0, f₁ = 1 e consideriamo la relazione di ricorrenza:",
+            "fibonacciTermsIntro": "Calcoliamo i primi termini:",
+            "fibonacciObservation": "Notiamo che, se ci fosse una soluzione della forma fₙ = rⁿ per qualche r ∈ ℝ, avremmo:",
+            "fibonacciDivide": "Dividendo per rⁿ⁻², con r ≠ 0:",
+            "fibonacciRoots": "Le radici sono:",
+            "fibonacciHomeworkIntro": "Tutte le successioni della forma:",
+            "fibonacciHomeworkConclusion": "sono soluzioni di fₙ = fₙ₋₁ + fₙ₋₂, a meno delle condizioni iniziali f₀, f₁.",
+            "fibonacciInitialConditions": "Se C₁, C₂ soddisfacessero anche le condizioni iniziali:",
+            "fibonacciSubstitution": "Sostituendo C₂ = −C₁:",
+            "fibonacciBinetIntro": "Otteniamo la formula esatta di Binet:",
+
+            "linearRecurrenceDefinition": "Una successione {aₙ}ₙ∈ℕ soddisfa una <strong>relazione di ricorrenza lineare</strong> di grado K se esistono α₁, α₂, …, αₖ ∈ ℝ, con αₖ ≠ 0, tali che:",
+            "linearRecurrenceHomogeneous": "Se il termine noto è nullo, si dice <strong>omogenea</strong>. L'equazione fₙ = fₙ₋₁ + fₙ₋₂ è un'equazione di ricorrenza lineare di grado 2.",
+
+            "linearRecurrencePropositionIntro": "Sia data una relazione di ricorrenza lineare di grado K omogenea, ossia:",
+            "linearRecurrenceCharacteristicIntro": "E si supponga che l'equazione caratteristica:",
+            "linearRecurrenceDistinctRoots": "abbia radici distinte r₁, r₂, …, rₖ. Allora una successione {aₙ}ₙ∈ℕ è soluzione di tale relazione ricorsiva se e solo se:",
+            "linearRecurrenceConstants": "con C₁, …, Cₖ costanti. Non dimostriamo la proposizione in questo caso.",
+
+            "recurrenceExampleIntro": "Risolvere la relazione aₙ = 2aₙ₋₁ con n ≥ 1 e a₀ = 5.",
+            "recurrenceExampleDegree": "Si tratta di una relazione di ricorrenza di grado 1.",
+            "recurrenceExampleCharacteristic": "L'equazione caratteristica è:",
+            "recurrenceExampleGeneralSolution": "Quindi la soluzione generale è:",
+            "recurrenceExampleInitialCondition": "Sfruttando la condizione iniziale:",
+            "recurrenceExampleFinal": "La soluzione particolare è dunque:"
+        }
+    },
     "algorithmAnalysis": {
         "hero": {
             "titleStart": "Analisi degli ",

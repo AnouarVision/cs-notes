@@ -822,6 +822,249 @@
             "differenceCounterexampleConclusion": "Since {1} ≠ {3}, we conclude that A \\ B ≠ B \\ A. Therefore set difference is <strong>not commutative</strong>."
         }
     },
+    "relationsOrdersEquivalences": {
+        "hero": {
+            "titleStart": "Relations, orders and",
+            "titleHighlight": "equivalences",
+            "subtitle": "Relations and functions: definitions, properties, and fundamental concepts."
+        },
+        "actions": {
+            "print": "Print / Save PDF"
+        },
+        "sections": {
+            "title": "On this page",
+            "relations": "Relations",
+            "relationExample": "Example of a relation",
+            "inverseRelation": "Inverse relation",
+            "functions": "Functions",
+            "functionImage": "Image and preimage",
+            "functionTypes": "Injective, surjective, and bijective functions",
+            "composition": "Composition of functions",
+            "compositionProposition": "Proposition on composition",
+            "inverseFunctions": "Inverse relation and invertible functions",
+            "invertibility": "Definition of invertibility"
+        },
+        "labels": {
+            "definition": "Definition",
+            "example": "Example",
+            "proposition": "Proposition",
+            "proof": "Proof",
+            "observation": "Observation"
+        },
+        "content": {
+            "relationDefinition": "A <strong>relation</strong> R from a set A to a set B is a subset R of A × B.",
+            "domainCodomain": "A is called the <strong>domain</strong> of R, while B is called the <strong>codomain</strong>.",
+            "relationNotation": "Usually, instead of writing (a,b) ∈ R, we write:",
+            "florenceExampleIntro": "Let:",
+            "florenceExampleRelationIntro": "Then:",
+            "florenceExampleConclusion": "is a <strong>relation</strong>. Let also:",
+
+            "inverseRelationDefinition": "Given a relation R ⊆ A × B, the <strong>inverse relation</strong> of R is R⁻¹ ⊆ B × A and is defined by:",
+            "inverseRelationExample": "The inverse relation swaps the roles of the elements of the domain and codomain.",
+
+            "functionDefinitionIntro": "Let A and B be two sets. A <strong>function</strong> f from A to B is a relation",
+            "functionDefinitionCondition": "such that:",
+            "functionNotationIntro": "If f ⊆ A × B is a function, we write:",
+            "functionPairIntro": "Moreover, if (a,b) ∈ f, we denote:",
+            "functionValueIntro": "The value of the function at a is therefore:",
+
+            "imageDefinition": "Let S ⊆ A and T ⊆ B, and let f : A → B.",
+            "imageIntro": "The <strong>image of S under f</strong> is:",
+            "preimageIntro": "The <strong>preimage of T under f</strong> is:",
+
+            "functionTypesIntro": "Let f : A → B.",
+            "injectiveDefinition": "It is said to be <strong>injective</strong> if:",
+            "surjectiveDefinition": "It is said to be <strong>surjective</strong> if:",
+            "bijectiveDefinition": "It is said to be <strong>bijective</strong> if f is <strong>injective and surjective</strong>.",
+
+            "compositionDefinitionIntro": "Let f : A → B and g : B → C, where A, B, and C are sets. The <strong>composition</strong> of f with g is the function g ∘ f : A → C defined by:",
+            "compositionFunctionQuestion": "Is g ∘ f a function?",
+            "compositionFunctionAnswer": "Yes. The composition is a <strong>function</strong>.",
+            "compositionReasonIntro": "The reason is that for every a ∈ A:",
+            "compositionReasonFirst": "f associates <strong>one and only one</strong> element f(a) ∈ B with a.",
+            "compositionReasonSecond": "g associates <strong>one and only one</strong> element g(f(a)) ∈ C with f(a).",
+            "compositionReasonConclusion": "Therefore, g ∘ f also associates <strong>one and only one</strong> element of C with every a ∈ A: by definition, it is a function.",
+
+            "compositionExampleTitle": "Example",
+            "compositionExampleIntro": "Let:",
+            "compositionExampleThen": "Then:",
+            "compositionExampleValues": "For example:",
+            "compositionExampleConclusion": "Therefore, g ∘ f : A → C is indeed a function.",
+
+            "compositionPropositionIntro": "Let <strong>f : A → B</strong> and <strong>g : B → C</strong> be two functions.",
+            "compositionInjective": "If <strong>f</strong> and <strong>g</strong> are injective, then <strong>g ∘ f</strong> is injective.",
+            "compositionSurjective": "If <strong>f</strong> and <strong>g</strong> are surjective, then <strong>g ∘ f</strong> is surjective.",
+
+            "compositionInjectiveProofIntro": "g ∘ f is injective if and only if, for every a, a' ∈ A, we have:",
+            "compositionInjectiveProofStep": "If (g ∘ f)(a) = (g ∘ f)(a'), then g(f(a)) = g(f(a')). Since g is injective, this implies f(a) = f(a'). Since f is injective, f(a) = f(a') implies a = a'.",
+            "compositionInjectiveProofConclusion": "Thus, we have proved that g ∘ f is injective.",
+
+            "injectiveEquivalent": "A function f : A → B is injective if and only if, for every a, a' ∈ A, f(a) = f(a') ⇒ a = a'.",
+            "injectiveEquivalentOr": "Equivalently:",
+
+            "compositionSurjectiveProofIntro": "g ∘ f is surjective means that for every c ∈ C there exists a ∈ A such that:",
+            "compositionSurjectiveProofStep": "Take c ∈ C. Since g is surjective, there exists b ∈ B such that g(b) = c. Since f is surjective, there exists a ∈ A such that f(a) = b.",
+            "compositionSurjectiveProofConclusion": "Therefore:",
+
+            "inverseFunctionsIntro": "We have seen that, for every relation R ⊆ A × B, we can define the inverse relation:",
+            "inverseFunctionExampleIntro": "Let A = B = {1, 2} and:",
+            "inverseFunctionExampleInverse": "The inverse relation is:",
+            "inverseFunctionExampleConclusion": "Checking this, R is a function, whereas R⁻¹ is <strong>not</strong> a function.",
+
+            "inverseFunctionCondition": "If R⁻¹ is a function, then for every b ∈ B there exists one and only one a ∈ A such that:",
+            "bijectiveInverseCondition": "Therefore, for a function f : A → B, f is bijective if and only if for every b ∈ B there exists one and only one a ∈ A such that f(a) = b.",
+
+            "inverseFunctionDefinitionIntro": "Therefore, for a bijective function f : A → B, it makes sense to speak of the <strong>inverse function</strong> f⁻¹ : B → A, defined by:",
+
+            "identityFunction": "Given a set A, the <strong>identity function</strong> idₐ : A → A is defined by:",
+            "inverseComposition": "If f : A → B is bijective, then:",
+            "inverseCompositionVerification": "Verification:",
+
+            "invertibleFunctionDefinition": "A function f : A → B is said to be <strong>invertible</strong> if there exists g : B → A such that:",
+            "invertibilityProposition": "A function f : A → B is invertible if and only if it is bijective.",
+
+            "invertibilityProofForward": "If f is bijective, then the inverse function f⁻¹ : B → A is defined, and we can take g = f⁻¹.",
+            "invertibilityProofBackwardIntro": "If f is invertible, there exists g : B → A such that:",
+
+            "invertibilityProofSurjective": "<strong>f is surjective:</strong> For every b ∈ B, we can consider a = g(b) and verify that f(a) = f(g(b)) = (f ∘ g)(b) = id_B(b) = b.",
+            "invertibilityProofInjective": "<strong>f is injective:</strong> Let a₁, a₂ ∈ A such that f(a₁) = f(a₂). Applying g:",
+            "invertibilityProofConclusion": "Since g ∘ f = id_A, we have:",
+
+            "invertibilityConclusion": "Therefore, f is injective and surjective, and hence bijective."
+        }
+    },
+    "inductionRecursion": {
+        "hero": {
+            "titleStart": "Induction and",
+            "titleHighlight": "recursion",
+            "subtitle": "The induction principle, induction proofs, and fundamental concepts of recursion."
+        },
+        "actions": {
+            "print": "Print / Save PDF"
+        },
+        "sections": {
+            "title": "On this page",
+            "inductionPrinciple": "Induction Principle",
+            "inductionPrincipleDefinition": "Induction Principle (I form)",
+            "example": "Example",
+            "powerSetCardinality": "Cardinality of the Power Set",
+            "strongInduction": "Strong Induction Principle (II form)",
+            "wellOrderingPrinciple": "Well-Ordering Principle",
+            "euclideanDivision": "Euclidean Division",
+            "sequences": "Sequences",
+            "recursiveSequences": "Recursive Sequences",
+            "fibonacci": "Fibonacci Numbers",
+            "linearRecurrences": "Linear Recurrence Relations",
+            "recurrenceExamples": "Applications"
+        },
+        "labels": {
+            "definition": "Definition",
+            "example": "Example",
+            "base": "Induction Base Case",
+            "inductiveStep": "Inductive Step",
+            "proposition": "Proposition",
+            "proof": "Proof",
+            "theorem": "Theorem",
+            "naturalNumbersAxiom": "Axiom of the Natural Numbers",
+            "observation": "Observation",
+            "homework": "Homework Exercise"
+        },
+        "content": {
+            "propositionIntro": "Consider the proposition:",
+
+            "inductionPrincipleIntro": "Let S ⊆ ℕ such that:",
+            "inductionPrincipleFirst": "n₀ ∈ S.",
+            "inductionPrincipleSecond": "If n ∈ S, then n + 1 ∈ S.",
+            "inductionPrincipleConclusion": "Then:",
+            "inductionPrincipleParticular": "In particular, if n₀ = 1 and ℕ = {1, 2, 3, …}, then:",
+
+            "exampleIntro": "Define:",
+            "exampleGoal": "We want to prove that:",
+            "baseIntro": "For n = 1:",
+            "baseConclusion": "Therefore:",
+            "inductiveStepIntro": "Suppose that:",
+            "inductiveHypothesis": "By the induction hypothesis:",
+            "inductiveStepGoal": "We need to prove that:",
+            "inductiveStepAddition": "Add the next term 2n + 1:",
+            "inductiveStepConclusion": "Therefore:",
+            "finalConclusion": "By the induction principle:",
+            "finalStatement": "Therefore, we have proved that:",
+
+            "inductionPrincipleStepsIntro": "The standard induction principle (I form) consists of two fundamental steps:",
+            "inductionPrincipleBaseStep": "<strong>Induction base case:</strong> verify that the property holds for the initial element n₀ ∈ S.",
+            "inductionPrincipleInductiveStep": "<strong>Inductive step:</strong> prove that, assuming the property holds for an arbitrary n ∈ S, it also holds for its successor:",
+
+            "powerSetIntro": "We want to prove that for every finite set X, the cardinality of its power set P(X) (or ℘(X)) is 2^{|X|}, using induction on n = |X| ≥ 0.",
+            "powerSetBaseIntro": "If X = ∅, then |X| = 0. The power set is:",
+            "powerSetBaseConclusion": "Its cardinality is:",
+            "powerSetBaseStatement": "The statement is therefore verified.",
+            "powerSetInductiveIntro": "Suppose that for every set Y with |Y| = n, we have |P(Y)| = 2ⁿ.",
+            "powerSetInductiveSet": "Take a set X such that |X| = n + 1. Fix an element x₀ ∈ X.",
+            "powerSetPartitionIntro": "Observe that the power set P(X) can be partitioned into two disjoint subsets:",
+            "powerSetFirstFamilyIntro": "We can establish a bijection between the first family, where x₀ ∈ Y, and the power set of X \\ {x₀}. If Y ⊆ X is such that x₀ ∈ Y, by setting Z = Y \\ {x₀}, we have Z ⊆ X \\ {x₀} with |Z| = n.",
+            "powerSetFirstFamilyConclusion": "Therefore:",
+            "powerSetSecondFamilyIntro": "Similarly, for the second family, where x₀ ∉ Y, every such Y is a subset of X \\ {x₀}, hence:",
+            "powerSetFinalIntro": "Adding the two disjoint contributions, we obtain:",
+            "powerSetFinalConclusion": "The property has therefore been proved by induction.",
+
+            "strongInductionIntro": "Let S ⊆ ℕ, with n₀ ∈ ℕ, such that:",
+            "strongInductionFirst": "n₀ ∈ S.",
+            "strongInductionSecond": "For every n ≥ n₀, if for every k such that n₀ ≤ k ≤ n we have k ∈ S, then n + 1 ∈ S.",
+            "strongInductionEquivalent": "Equivalently:",
+            "strongInductionConclusion": "Then:",
+            "inductionEquivalence": "The induction principle (I form) and the strong induction principle (II form) are equivalent.",
+
+            "wellOrderingTheoremIntro": "Every non-empty subset S ⊆ ℕ has a minimum element.",
+
+            "euclideanDivisionIntro": "Let a, b ∈ ℕ with b ≠ 0. Using the Well-Ordering Principle, prove that there exist unique q, r ∈ ℕ such that:",
+            "euclideanDivisionProofIntro": "Consider the set:",
+            "euclideanDivisionNonEmpty": "The set S is non-empty, since for a sufficiently large q, for example q = a, we have (q + 1)b > a.",
+            "euclideanDivisionMinimum": "By the Well-Ordering Principle, the set S has a minimum element, which we call q.",
+            "euclideanDivisionPrevious": "If q > 0, then q − 1 ∉ S by the minimality of q. From the definition of S it follows that:",
+            "euclideanDivisionRemainder": "Set:",
+            "euclideanDivisionRemainderBounds": "From the definition of S, we know that q ∈ S, hence:",
+            "euclideanDivisionConclusion": "Therefore, we have found r = a − qb such that 0 ≤ r < b and, consequently:",
+            "euclideanDivisionFinal": "We have therefore proved the existence of the Euclidean division.",
+
+            "sequenceDefinition": "A <strong>sequence</strong> is a function a: ℕ → S, where S is a set. It is usually written as aₙ := a(n).",
+            "sequenceExamples": "Examples:",
+            "sequenceExampleFirst": "a: ℕ → ℕ, a(n) = n, hence a₀ = 0, a₁ = 1, a₂ = 2, …",
+            "sequenceExampleSecond": "aₙ = 1/n, for n ≥ 1, hence a₁ = 1, a₂ = 1/2, a₃ = 1/3, …",
+            "sequenceExampleThird": "aₙ = 5ⁿ, for n ≥ 0, hence a₀ = 5⁰ = 1, a₁ = 5¹, a₂ = 5², …",
+            "sequenceRecursiveExample": "We can also define the sequence recursively by:",
+
+            "recursiveSequenceDefinition": "A sequence is said to be <strong>recursive</strong> if:",
+            "recursiveSequenceBase": "<strong>(Base)</strong> the values of the sequence are defined for the first k natural numbers.",
+            "recursiveSequenceStep": "<strong>(Inductive step)</strong> a rule is given to determine the remaining terms from the preceding values.",
+            "recursiveSequenceObservation": "By the induction principle, defining a sequence recursively really does define a sequence!",
+
+            "fibonacciIntro": "Let f₀ = 0, f₁ = 1 and consider the recurrence relation:",
+            "fibonacciTermsIntro": "Let us calculate the first terms:",
+            "fibonacciObservation": "Suppose there were a solution of the form fₙ = rⁿ for some r ∈ ℝ. Then we would have:",
+            "fibonacciDivide": "Dividing by rⁿ⁻², with r ≠ 0:",
+            "fibonacciRoots": "The roots are:",
+            "fibonacciHomeworkIntro": "All sequences of the form:",
+            "fibonacciHomeworkConclusion": "are solutions of fₙ = fₙ₋₁ + fₙ₋₂, subject to the initial conditions f₀, f₁.",
+            "fibonacciInitialConditions": "If C₁ and C₂ also satisfy the initial conditions:",
+            "fibonacciSubstitution": "Substituting C₂ = −C₁:",
+            "fibonacciBinetIntro": "We obtain the exact Binet formula:",
+
+            "linearRecurrenceDefinition": "A sequence {aₙ}ₙ∈ℕ satisfies a <strong>linear recurrence relation</strong> of degree K if there exist α₁, α₂, …, αₖ ∈ ℝ, with αₖ ≠ 0, such that:",
+            "linearRecurrenceHomogeneous": "If the non-homogeneous term is zero, the recurrence is called <strong>homogeneous</strong>. The equation fₙ = fₙ₋₁ + fₙ₋₂ is a linear recurrence relation of degree 2.",
+
+            "linearRecurrencePropositionIntro": "Let a homogeneous linear recurrence relation of degree K be given, namely:",
+            "linearRecurrenceCharacteristicIntro": "Suppose that the characteristic equation:",
+            "linearRecurrenceDistinctRoots": "has distinct roots r₁, r₂, …, rₖ. Then a sequence {aₙ}ₙ∈ℕ is a solution of the recurrence relation if and only if:",
+            "linearRecurrenceConstants": "where C₁, …, Cₖ are constants. We do not prove the proposition in this case.",
+
+            "recurrenceExampleIntro": "Solve the recurrence relation aₙ = 2aₙ₋₁ with n ≥ 1 and a₀ = 5.",
+            "recurrenceExampleDegree": "This is a recurrence relation of degree 1.",
+            "recurrenceExampleCharacteristic": "The characteristic equation is:",
+            "recurrenceExampleGeneralSolution": "Therefore, the general solution is:",
+            "recurrenceExampleInitialCondition": "Using the initial condition:",
+            "recurrenceExampleFinal": "The particular solution is therefore:"
+        }
+    },
     "algorithmAnalysis": {
         "hero": {
             "titleStart": "Analysis of ",
