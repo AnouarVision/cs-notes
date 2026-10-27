@@ -1,0 +1,301 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathpazo}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{tabularx}
+\usepackage{booktabs}
+
+\geometry{top=2.05cm,bottom=2.0cm,left=2.15cm,right=2.15cm}
+\definecolor{examNavy}{HTML}{18324A}
+\definecolor{examGold}{HTML}{AD8549}
+\definecolor{examPale}{HTML}{F5F2EC}
+\definecolor{examRule}{HTML}{D8D2C7}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.3em}
+\setlength{\headheight}{15pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textsc{Corso di laurea in Informatica}}
+\fancyhead[R]{\small\textsc{Matematica discreta e logica}}
+\fancyfoot[C]{\small Pagina \thepage\ di \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{examGold}\leaders\hrule height \headrulewidth\hfill}}
+\renewcommand{\footrulewidth}{0pt}
+\setlist[enumerate,1]{label=\textbf{(\Alph*)},leftmargin=1.35cm,itemsep=0.12em,topsep=0.18em}
+\renewcommand{\arraystretch}{1.45}
+
+\newcommand{\quesito}[2]{%
+    \par\addvspace{0.55em}%
+    \noindent\colorbox{examPale}{%
+        \parbox{\dimexpr\linewidth-2\fboxsep\relax}{%
+            \color{examNavy}\textbf{QUESITO #1}\hfill\textbf{#2 punti}}}%
+    \par\nobreak\vspace{0.15em}%
+}
+
+\newcommand{\casella}{\fbox{\rule{0pt}{1.1ex}\hspace{1.1ex}}}
+
+\begin{document}
+
+\begin{center}
+    \begin{tabularx}{\linewidth}{@{}>{\centering\arraybackslash}p{1.65cm}X@{}}
+        \fcolorbox{examGold}{examPale}{%
+            \parbox[c][1.55cm][c]{1.4cm}{\centering
+                {\small\scshape Corso}\\[0.1em]
+                {\Large\bfseries\color{examNavy} Informatica}}}
+        &
+        {\raggedright
+            {\small\scshape Universit\`a degli Studi}\\[0.2em]
+            {\LARGE\bfseries\color{examNavy} Matematica discreta e logica}\\[0.15em]
+            {\large Prova scritta}}
+    \end{tabularx}
+    \vspace{0.45em}
+    {\color{examGold}\rule{\linewidth}{1.1pt}}
+\end{center}
+
+\vspace{0.2em}
+\begin{tabularx}{\linewidth}{@{}lXr@{}}
+    \textbf{Durata} & 120 minuti & \textbf{Data} \rule{2.8cm}{0.4pt}\\[0.8em]
+    \textbf{Cognome e nome} & \multicolumn{2}{l}{\rule{12cm}{0.4pt}}\\[0.8em]
+    \textbf{Matricola} & \multicolumn{2}{l}{\rule{5cm}{0.4pt}}
+\end{tabularx}
+
+\vspace{0.6em}
+\colorbox{examPale}{%
+    \parbox{\dimexpr\linewidth-2\fboxsep\relax}{%
+        \textbf{\color{examNavy}Indicazioni e punteggio}\\[-0.1em]
+        Per ogni quesito selezionare una sola risposta.
+        Dal quesito 1 al quesito 8 sono assegnati 3 punti per ogni risposta
+        corretta. Dal quesito 9 al quesito 11 sono assegnati 2 punti per ogni
+        risposta corretta. Alle risposte errate o omesse sono assegnati 0 punti.
+        Il voto in trentesimi coincide con il punteggio totale.
+        Punteggio massimo: \textbf{30/30}. Voto minimo: \textbf{18/30}.}}
+
+\begin{samepage}
+\quesito{1}{3}
+La successione definita dalla relazione ricorsiva
+\[
+    a_{n+2}=12a_{n+1}-35a_n+2^n,
+    \qquad a_0=1,\quad a_1=2,
+\]
+\`e
+\begin{enumerate}
+    \item $\displaystyle a_n=\frac{7\cdot5^n-7\cdot7^n+2^n}{15}$
+    \item $\displaystyle a_n=\frac{35\cdot5^n+21\cdot7^n+2^n}{15}$
+    \item $\displaystyle a_n=\frac{35\cdot5^n-21\cdot7^n+2^n}{15}$
+    \item $\displaystyle a_n=\frac{35\cdot5^n-21\cdot7^n-2^n}{15}$
+    \item $\displaystyle a_n=5^n+7^n+2^n$
+\end{enumerate}
+\end{samepage}
+
+\begin{samepage}
+\quesito{2}{3}
+Il numero di funzioni suriettive $f:A\to B$, dove
+$A=\{1,2,3,4,5,6\}$ e $B=\{a,b,c\}$, \`e
+\begin{enumerate}
+    \item $360$
+    \item $540$
+    \item $729$
+    \item $720$
+    \item $486$
+\end{enumerate}
+\end{samepage}
+
+\begin{samepage}
+\quesito{3}{3}
+Il numero di interi $x$ tali che $500\leq x\leq1500$ e
+\[
+    \begin{cases}
+        2x\equiv4\pmod 7,\\
+        3x\equiv3\pmod 8,\\
+        4x\equiv8\pmod 9
+    \end{cases}
+\]
+\`e
+\begin{enumerate}
+    \item $1$
+    \item $2$
+    \item $3$
+    \item $4$
+    \item un numero diverso
+\end{enumerate}
+\end{samepage}
+
+\begin{samepage}
+\quesito{4}{3}
+Il numero degli elementi invertibili nell'anello $\mathbb{Z}/1386\mathbb{Z}$,
+espresso in base $5$, \`e
+\begin{enumerate}
+    \item $2420_5$
+    \item $4560_5$
+    \item $1220_5$
+    \item $5500_5$
+    \item $11300_5$
+\end{enumerate}
+\end{samepage}
+
+\begin{samepage}
+\quesito{5}{3}
+Il resto della divisione per $73$ della potenza
+$987654321^{123}$ \`e
+\begin{enumerate}
+    \item $2$
+    \item $25$
+    \item $9$
+    \item $43$
+    \item $1$
+\end{enumerate}
+\end{samepage}
+
+\begin{samepage}
+\quesito{6}{3}
+Il numero di password di 10 simboli scelti con ripetizione dall'insieme
+$\{a,e,i,o,u,w,x,y,z\}$ che contengono esattamente quattro vocali e le cui
+consonanti compaiono in ordine alfabetico \`e
+\begin{enumerate}
+    \item $44100000$
+    \item $11025000$
+    \item un numero diverso
+    \item $840000$
+    \item $3652000$
+\end{enumerate}
+\end{samepage}
+
+\begin{samepage}
+\quesito{7}{3}
+Sia $A=\{a,b,c,d\}$ e sia
+\[
+    R=\{(a,a),(b,b),(c,c),(d,d),(a,b),(b,c),(c,d)\}
+\]
+una relazione su $A$. La relazione $R$ \`e
+\begin{enumerate}
+    \item riflessiva, antisimmetrica e non transitiva
+    \item riflessiva, non antisimmetrica e non transitiva
+    \item riflessiva, non antisimmetrica e transitiva
+    \item una relazione di ordine parziale
+    \item simmetrica e transitiva
+\end{enumerate}
+\end{samepage}
+
+\begin{samepage}
+\quesito{8}{3}
+Ponendo, per $a,b\in\mathbb{N}$,
+\[
+    a*b=\min\{a,b\},
+\]
+allora $(\mathbb{N},*)$ \`e
+\begin{enumerate}
+    \item un semigruppo, ma non un monoide
+    \item un monoide, ma non un gruppo
+    \item un gruppo
+    \item non \`e un semigruppo
+    \item un gruppo abeliano
+\end{enumerate}
+\end{samepage}
+
+\begin{samepage}
+\quesito{9}{2}
+L'insieme
+\[
+    A=\{1,2,3,5,6,10,15\}
+\]
+ordinato rispetto alla relazione di divisibilit\`a
+\`e
+\begin{enumerate}
+    \item un'algebra di Boole
+    \item un reticolo distributivo
+    \item non \`e un reticolo
+    \item una catena
+    \item un gruppo rispetto alla moltiplicazione
+\end{enumerate}
+\end{samepage}
+
+\begin{samepage}
+\quesito{10}{2}
+Alla permutazione
+\[
+    \begin{pmatrix}
+        1&2&3&4&5&6&7&8\\
+        2&3&1&5&4&7&8&6
+    \end{pmatrix}
+\]
+corrisponde la coppia (ordine, segno)
+\begin{enumerate}
+    \item $(6,\text{pari})$
+    \item $(4,\text{dispari})$
+    \item $(3,\text{pari})$
+    \item $(6,\text{dispari})$
+    \item $(8,\text{dispari})$
+\end{enumerate}
+\end{samepage}
+
+\begin{samepage}
+\quesito{11}{2}
+Il numero delle stringhe ottenute permutando gli elementi dell'insieme
+$A=\{a,b,c,d,e,f,g,h,i\}$ che non contengono la sottostringa \texttt{ab}
+n\'e la sottostringa \texttt{cd} \`e
+\begin{enumerate}
+    \item $282240$
+    \item $342120$
+    \item un numero diverso
+    \item $287280$
+    \item $352800$
+\end{enumerate}
+\end{samepage}
+
+\clearpage
+\begin{center}
+    {\Large\bfseries\color{examNavy} Scheda delle risposte}
+\end{center}
+Selezionare una casella per ogni quesito. Trascrivere il punteggio ottenuto
+nel riquadro finale.
+
+\vspace{0.8em}
+\noindent
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{tabular}{c*{5}{c}c}
+        \toprule
+        Quesito & A & B & C & D & E & Punti\\
+        \midrule
+        1 & $\square$ & $\square$ & $\square$ & $\square$ & $\square$ & \rule{0.45cm}{0.4pt}\\
+        2 & $\square$ & $\square$ & $\square$ & $\square$ & $\square$ & \rule{0.45cm}{0.4pt}\\
+        3 & $\square$ & $\square$ & $\square$ & $\square$ & $\square$ & \rule{0.45cm}{0.4pt}\\
+        4 & $\square$ & $\square$ & $\square$ & $\square$ & $\square$ & \rule{0.45cm}{0.4pt}\\
+        5 & $\square$ & $\square$ & $\square$ & $\square$ & $\square$ & \rule{0.45cm}{0.4pt}\\
+        6 & $\square$ & $\square$ & $\square$ & $\square$ & $\square$ & \rule{0.45cm}{0.4pt}\\
+        \bottomrule
+    \end{tabular}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{tabular}{c*{5}{c}c}
+        \toprule
+        Quesito & A & B & C & D & E & Punti\\
+        \midrule
+        7 & $\square$ & $\square$ & $\square$ & $\square$ & $\square$ & \rule{0.45cm}{0.4pt}\\
+        8 & $\square$ & $\square$ & $\square$ & $\square$ & $\square$ & \rule{0.45cm}{0.4pt}\\
+        9 & $\square$ & $\square$ & $\square$ & $\square$ & $\square$ & \rule{0.45cm}{0.4pt}\\
+        10 & $\square$ & $\square$ & $\square$ & $\square$ & $\square$ & \rule{0.45cm}{0.4pt}\\
+        11 & $\square$ & $\square$ & $\square$ & $\square$ & $\square$ & \rule{0.45cm}{0.4pt}\\
+        \bottomrule
+    \end{tabular}
+\end{minipage}
+
+\vspace{2em}
+\noindent
+\colorbox{examPale}{%
+    \parbox{\dimexpr\linewidth-2\fboxsep\relax}{%
+        \textbf{Punteggio totale} \hfill
+        \rule{1.5cm}{0.4pt}\,/\,30
+        \hspace{1.5em}
+        \textbf{Voto finale} \hfill
+        \rule{1.5cm}{0.4pt}\,/\,30}}
+
+\end{document}

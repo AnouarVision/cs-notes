@@ -2,12 +2,87 @@
     "navbar": {
         "links": {
             "topics": "Topics",
-            "exercises": "Exercises"
+            "exercises": "Exercises",
+            "exams": "Exams"
         },
         "actions": {
             "notFound": "No results found",
             "search": "Search",
             "placeholder": "Start typing to search topics and sections..."
+        }
+    },
+    "exams": {
+        "eyebrow": "Exam preparation",
+        "title": "Exams",
+        "description": "Browse exam papers and available resources for each subject.",
+        "subjectsTitle": "Exams by subject",
+        "openExam": "Open exam",
+        "openNotes": "Open notes",
+        "tabsLabel": "Exam content",
+        "examTab": "Exam",
+        "solutionsTab": "Solutions",
+        "notFound": "Subject not found",
+        "backToExams": "All exams",
+        "examTitle": "Official exam paper",
+        "examDescription": "Official Discrete Mathematics and Logic exam paper.",
+        "examOverview": "Exam overview",
+        "examSummary": "Key details, scoring and available materials.",
+        "durationValue": "120 min",
+        "durationLabel": "Exam duration",
+        "questionCount": "11",
+        "questionCountLabel": "multiple-choice questions",
+        "totalPointsLabel": "Maximum score",
+        "totalPoints": "30 points",
+        "passingGradeLabel": "Passing score",
+        "passingGrade": "18/30",
+        "scoreRule": "Questions 1 to 8 are worth 3 points each. Questions 9 to 11 are worth 2 points each. Incorrect or blank answers receive 0 points.",
+        "downloadPdf": "Download the PDF",
+        "downloadPdfDescription": "Complete exam, ready to print",
+        "downloadLatex": "Download the LaTeX source",
+        "downloadHint": "The exam is available as a PDF and as LaTeX source.",
+        "solutionsTitle": "Solutions and workings",
+        "solutionsDescription": "Open a question to see the correct answer and the working.",
+        "solutionPrompt": "Question {{number}}",
+        "correctAnswer": "Correct answer",
+        "workingLabel": "Working",
+        "solutions": {
+            "q1": "The characteristic equation is (r−5)(r−7)=0. For the nonhomogeneous term 2ⁿ, try a particular solution c·2ⁿ; substitution gives 15c=1, so c=1/15. The initial conditions determine the coefficients in the general solution and give the expression in answer C.",
+            "q2": "By inclusion and exclusion, subtract the functions that omit one of the three elements of B, then add back the constant functions: 3⁶−3·2⁶+3=540.",
+            "q3": "Dividing each congruence by its invertible coefficient gives x≡2 (mod 7), x≡1 (mod 8), and x≡2 (mod 9). The Chinese remainder theorem gives x≡65 (mod 504). In the stated interval, the solutions are 569 and 1073.",
+            "q4": "Factor 1386=2·3²·7·11. Thus φ(1386)=1386·(1−1/2)·(1−1/3)·(1−1/7)·(1−1/11)=360. Converting 360 to base 5 gives 2420₅.",
+            "q5": "Reducing the base modulo 73 gives 987654321≡18. By Fermat's little theorem, 18¹²³≡18⁵¹ (mod 73); modular exponentiation gives remainder 9.",
+            "q6": "Choose the four vowel positions, fill them with vowels with repetition, and choose six consonants in nondecreasing order from four symbols. The count is C(10,4)·5⁴·C(9,6)=210·625·84=11025000.",
+            "q7": "The relation contains every diagonal pair, so it is reflexive. It contains no distinct pair in both directions, so it is antisymmetric. It is not transitive: (a,b) and (b,c) belong to R, but (a,c) does not.",
+            "q8": "The minimum operation is associative because the minimum of three elements does not depend on grouping. There is no identity for minimum on ℕ: it would have to be greater than or equal to every natural number. This is a semigroup, but not a monoid.",
+            "q9": "For this to be a lattice, every pair must have a least upper bound in the set. The divisors 6 and 10 have least common multiple 30, which is not in A. The divisibility order is therefore not a lattice.",
+            "q10": "The permutation decomposes into disjoint cycles (1 2 3), (4 5), and (6 7 8). Its order is lcm(3,2,3)=6. The two 3-cycles are even and the transposition is odd, so the permutation is odd.",
+            "q11": "By inclusion and exclusion, start with 9!, subtract arrangements containing adjacent ab and adjacent cd, then add back arrangements containing both blocks: 9!−2·8!+7!=287280."
+        },
+        "answers": {
+            "q1": "C",
+            "q2": "B",
+            "q3": "B",
+            "q4": "A",
+            "q5": "C",
+            "q6": "B",
+            "q7": "A",
+            "q8": "A",
+            "q9": "C",
+            "q10": "D",
+            "q11": "D"
+        },
+        "problems": {
+            "q1": "Recurrence relations",
+            "q2": "Surjective functions",
+            "q3": "Systems of congruences",
+            "q4": "Units modulo an integer",
+            "q5": "Modular powers",
+            "q6": "Combinatorics",
+            "q7": "Relations",
+            "q8": "Algebraic structures",
+            "q9": "Lattices",
+            "q10": "Permutations",
+            "q11": "Constrained permutations"
         }
     },
     "home": {
@@ -109,6 +184,8 @@
         "openNotes": "Open notes",
         "openExercises": "View exercises",
         "topicExercisesTitle": "Subject exercises",
+        "topicSectionsTitle": "Notes sections",
+        "noExercisesForSection": "There are no exercises associated with this section yet.",
         "backToExercises": "Back to exercises",
         "backToSubject": "Back to subject",
         "notFound": "Exercise area not found",
@@ -122,6 +199,24 @@
         "stepPlaceholder": "Add one step of the solution.",
         "codeTitle": "Code or calculations",
         "codePlaceholder": "// Add the solution here",
+        "powerSetIntersection": {
+            "promptTitle": "Statement",
+            "prompt": "Let A and B be sets. Prove that the power set of their intersection equals the intersection of their power sets.",
+            "diagramTitle": "Read the identity in a diagram",
+            "diagramIntro": "Take A = {1, 2} and B = {2, 3}. The rectangle contains all subsets of A ∪ B; the circles contain the subsets of A and B, respectively.",
+            "diagramDescription": "Euler-Venn diagram of the power sets P(A) and P(B). Their shared region contains the empty set and the set {2}.",
+            "diagramCaption": "The shared region contains ∅ and {2}: exactly the subsets of A ∩ B = {2}. Therefore P(A) ∩ P(B) = P(A ∩ B).",
+            "diagramOutside": "{1, 3} and {1, 2, 3} lie outside both circles",
+            "solutionTitle": "Step-by-step proof",
+            "proofIntro": "To prove two sets are equal, show that they have the same elements. Take any set X and follow the equivalences:",
+            "steps": {
+                "powerSet": "Definition of power set: X belongs to P(A ∩ B) exactly when X is a subset of A ∩ B.",
+                "intersection": "A set is contained in an intersection exactly when it is contained in both A and B.",
+                "subsets": "By the definition of power set again, these two inclusions mean X ∈ P(A) and X ∈ P(B).",
+                "finish": "X belongs to both power sets, so it belongs to their intersection. This holds for every X."
+            },
+            "conclusion": "The two sets have the same elements; by extensionality, they are equal: P(A ∩ B) = P(A) ∩ P(B)."
+        },
         "setDifferenceIdentity": {
             "promptTitle": "Statement",
             "prompt": "Let A and B be sets. Prove the equality A ∖ (A ∖ B) = A ∩ B formally using the definitions of set difference and intersection.",
@@ -164,7 +259,56 @@
                 "k": "True: A = {1, 2}, and the set {1, 2} is an element of B. Therefore A ∈ B."
             }
         },
+        "nestedSetOperations": {
+            "promptTitle": "Given and find",
+            "prompt": "Let A = {0}, B = {0, A}, and C = {0, {0}, {A}}. Find A ∩ B, B ∖ (A ∖ B), A △ B, (B ∪ C) ∖ A, and (A ∩ B) ∪ (A ∩ C).",
+            "notationNote": "0, ∅, and A = {0} are different objects.",
+            "diagramDescription": "Euler-Venn diagram with A inside B and B inside C. 0 is in A, A is in B but not A, and {A} is in C but not B.",
+            "diagramCaption": "A ⊂ B ⊂ C: 0 is in A, A is in B, and {A} is in C.",
+            "solutionTitle": "Step-by-step solution",
+            "steps": {
+                "intersection": "Intersection A ∩ B",
+                "intersectionExplanation": "0 is the only element of A and it also belongs to B.",
+                "nestedDifference": "Evaluate the inner difference first",
+                "nestedDifferenceExplanation": "A ∖ B = ∅ because 0 is in B; therefore B ∖ ∅ = B.",
+                "symmetricDifference": "Symmetric difference A △ B",
+                "symmetricDifferenceExplanation": "B ∖ A = {A} and A ∖ B = ∅, so the result is {A}.",
+                "unionDifference": "Union and difference with C",
+                "unionDifferenceExplanation": "B ∪ C = {0, A, {A}}; removing 0 leaves {A, {A}}.",
+                "intersectionUnion": "Union of two intersections",
+                "intersectionUnionExplanation": "A ∩ B = A ∩ C = {0}; their union is {0}."
+            },
+            "sourceCorrection": "Correction: ∅ is not an element of B. The correct result is {0, A}."
+        },
+        "inductionInequality": {
+            "promptTitle": "Statement",
+            "prompt": "Prove by induction that the inequality holds for every integer n ≥ 4.",
+            "solutionTitle": "Proof",
+            "baseTitle": "1. Base case",
+            "baseIntro": "Check the statement at n = 4:",
+            "hypothesisTitle": "2. Inductive hypothesis",
+            "hypothesisIntro": "Assume the statement holds for a fixed n ≥ 4:",
+            "stepTitle": "3. Inductive step",
+            "stepIntro": "Use the hypothesis to prove it for the successor n + 1:",
+            "stepReason": "The final comparison holds because n ≥ 4, so n + 9 ≥ 0.",
+            "conclusion": "The base case and inductive step both hold; therefore the inequality holds for every n ≥ 4."
+        },
         "items": {
+            "inductionInequality": {
+                "title": "Proving an inequality by induction",
+                "description": "Step by step, prove that 2ⁿ ≥ n + 10 for every n ≥ 4.",
+                "difficulty": "Beginner"
+            },
+            "nestedSetOperations": {
+                "title": "Operations on nested sets",
+                "description": "Compute intersections, differences, and unions while distinguishing numbers, sets, and sets of sets.",
+                "difficulty": "Intermediate"
+            },
+            "powerSetIntersection": {
+                "title": "Power set of an intersection",
+                "description": "Prove P(A ∩ B) = P(A) ∩ P(B) and interpret the intersection with an Euler-Venn diagram.",
+                "difficulty": "Intermediate"
+            },
             "javaControlFlow": {
                 "title": "Control flow in Java",
                 "description": "Write a program that analyzes a sequence of numbers and counts the positive, negative, and zero values.",
@@ -933,6 +1077,65 @@
             "invertibilityConclusion": "Therefore, f is injective and surjective, and hence bijective."
         }
     },
+    "realNumbers": {
+        "sections": {
+            "title": "On this page",
+            "naturalNumbers": "Natural numbers and induction",
+            "rationalsIrrationals": "Rational and irrational numbers",
+            "completeness": "Completeness of the reals",
+            "topology": "Intervals and topology",
+            "bounds": "Maximum, minimum, and boundedness",
+            "supInf": "Supremum and infimum",
+            "extremeExamples": "Examples of extrema",
+            "existence": "Existence of extrema",
+            "successor": "Naturals and successor",
+            "induction": "Principle of induction",
+            "gaussSum": "Gauss sum",
+            "bernoulli": "Bernoulli inequality",
+            "integers": "Integers",
+            "rationals": "Rational numbers",
+            "sqrtTwo": "Irrationality of √2",
+            "completenessAxiom": "Completeness axiom",
+            "intervals": "Intervals",
+            "neighborhoods": "Neighborhoods",
+            "openSets": "Open sets",
+            "maxMin": "Maximum and minimum",
+            "upperLowerBounds": "Upper and lower bounds",
+            "supInfDefinitions": "Definitions",
+            "epsilon": "ε-characterization",
+            "unboundedIntervals": "Unbounded intervals",
+            "maxNoMin": "Maximum without minimum",
+            "unboundedAbove": "Unbounded above",
+            "supExistence": "Existence of the supremum",
+            "infExistence": "Existence of the infimum"
+        }
+    },
+    "functions": {
+        "sections": {
+            "title": "On this page",
+            "definition": "Definition of a function",
+            "injectivity": "Injectivity and surjectivity",
+            "preimage": "Image and preimage",
+            "inverse": "Inverse function",
+            "domain": "Natural domain",
+            "graph": "Graph and vertical line test",
+            "symmetry": "Parity and periodicity",
+            "monotonicity": "Monotonicity",
+            "composition": "Composition",
+            "elementary": "Elementary functions",
+            "trigonometric": "Trigonometric functions",
+            "formulas": "Trigonometric formulas",
+            "affine": "Affine functions",
+            "absoluteValue": "Absolute value",
+            "powersRoots": "Powers and roots",
+            "realPowers": "Real powers",
+            "exponential": "Exponential",
+            "logarithm": "Logarithm",
+            "tangent": "Tangent",
+            "inverseTrig": "Inverse trigonometric",
+            "trigEquations": "Trigonometric equations"
+        }
+    },
     "inductionRecursion": {
         "hero": {
             "titleStart": "Induction and",
@@ -952,6 +1155,7 @@
             "wellOrderingPrinciple": "Well-Ordering Principle",
             "euclideanDivision": "Euclidean Division",
             "sequences": "Sequences",
+            "sequenceDefinition": "Sequence Definition",
             "recursiveSequences": "Recursive Sequences",
             "fibonacci": "Fibonacci Numbers",
             "linearRecurrences": "Linear Recurrence Relations",
@@ -965,6 +1169,7 @@
             "proposition": "Proposition",
             "proof": "Proof",
             "theorem": "Theorem",
+            "intuition": "Intuition",
             "naturalNumbersAxiom": "Axiom of the Natural Numbers",
             "observation": "Observation",
             "homework": "Homework Exercise"
@@ -991,10 +1196,16 @@
             "finalStatement": "Therefore, we have proved that:",
 
             "inductionPrincipleStepsIntro": "The standard induction principle (I form) consists of two fundamental steps:",
+            "inductionDominoes": "Imagine an infinite row of dominoes: the base case knocks down the first one; the inductive step guarantees that each domino knocks down the next. So they all fall. In a proof, the base checks the first case and the step links each case to the next.",
             "inductionPrincipleBaseStep": "<strong>Induction base case:</strong> verify that the property holds for the initial element n₀ ∈ S.",
             "inductionPrincipleInductiveStep": "<strong>Inductive step:</strong> prove that, assuming the property holds for an arbitrary n ∈ S, it also holds for its successor:",
 
             "powerSetIntro": "We want to prove that for every finite set X, the cardinality of its power set P(X) (or ℘(X)) is 2^{|X|}, using induction on n = |X| ≥ 0.",
+            "powerSetExampleIntro": "Before the general proof, consider X = {a, b}. For each element, choose whether to include it: there are four possibilities.",
+            "powerSetVennCaption": "Each region represents a different subset: outside both circles ∅, only a {a}, only b {b}, and the overlap {a, b}. Altogether, 4 = 2².",
+            "powerSetVennDescription": "Venn diagram of the subsets of X = {a, b}: the four regions represent the empty set, {a}, {b}, and {a, b}.",
+            "powerSetPartitionCaption": "Example with X = {a, b} and x₀ = b. The two families are disjoint and cover P(X). Removing b from every set in the right family gives the left family: each has 2 elements, so |P(X)| = 2 + 2 = 4.",
+            "powerSetPartitionDescription": "Euler-Venn diagram splitting the power set of X, where X is {a, b}, into two disjoint families: subsets that do not contain b and subsets that contain b.",
             "powerSetBaseIntro": "If X = ∅, then |X| = 0. The power set is:",
             "powerSetBaseConclusion": "Its cardinality is:",
             "powerSetBaseStatement": "The statement is therefore verified.",
@@ -1002,6 +1213,7 @@
             "powerSetInductiveSet": "Take a set X such that |X| = n + 1. Fix an element x₀ ∈ X.",
             "powerSetPartitionIntro": "Observe that the power set P(X) can be partitioned into two disjoint subsets:",
             "powerSetFirstFamilyIntro": "We can establish a bijection between the first family, where x₀ ∈ Y, and the power set of X \\ {x₀}. If Y ⊆ X is such that x₀ ∈ Y, by setting Z = Y \\ {x₀}, we have Z ⊆ X \\ {x₀} with |Z| = n.",
+            "powerSetBijectionInverse": "This correspondence is reversible: given a subset Z of X without x₀, reconstruct Y by adding x₀. Thus the two families have the same cardinality.",
             "powerSetFirstFamilyConclusion": "Therefore:",
             "powerSetSecondFamilyIntro": "Similarly, for the second family, where x₀ ∉ Y, every such Y is a subset of X \\ {x₀}, hence:",
             "powerSetFinalIntro": "Adding the two disjoint contributions, we obtain:",
@@ -1024,7 +1236,10 @@
             "euclideanDivisionRemainder": "Set:",
             "euclideanDivisionRemainderBounds": "From the definition of S, we know that q ∈ S, hence:",
             "euclideanDivisionConclusion": "Therefore, we have found r = a − qb such that 0 ≤ r < b and, consequently:",
-            "euclideanDivisionFinal": "We have therefore proved the existence of the Euclidean division.",
+            "euclideanDivisionFinal": "This proves existence. To finish, we show that the quotient and remainder are unique.",
+            "euclideanUniquenessIntro": "Suppose the same number a has two valid representations:",
+            "euclideanUniquenessContradiction": "If q < q', then q' ≥ q + 1. From the first representation r < b; from the second r' ≥ 0. Therefore:",
+            "euclideanUniquenessConclusion": "This inequality would imply a < a, which is impossible. By symmetry q = q'; substituting gives r = r'. The pair is unique.",
 
             "sequenceDefinition": "A <strong>sequence</strong> is a function a: ℕ → S, where S is a set. It is usually written as aₙ := a(n).",
             "sequenceExamples": "Examples:",
@@ -1039,9 +1254,10 @@
             "recursiveSequenceObservation": "By the induction principle, defining a sequence recursively really does define a sequence!",
 
             "fibonacciIntro": "Let f₀ = 0, f₁ = 1 and consider the recurrence relation:",
+            "fibonacciTrialIntro": "To find an explicit formula, try an exponential solution fₙ = rⁿ: shifting the index is equivalent to multiplying by r, so the recurrence becomes an equation in r.",
             "fibonacciTermsIntro": "Let us calculate the first terms:",
             "fibonacciObservation": "Suppose there were a solution of the form fₙ = rⁿ for some r ∈ ℝ. Then we would have:",
-            "fibonacciDivide": "Dividing by rⁿ⁻², with r ≠ 0:",
+            "fibonacciDivide": "For n ≥ 2 and r ≠ 0, divide by rⁿ⁻²:",
             "fibonacciRoots": "The roots are:",
             "fibonacciHomeworkIntro": "All sequences of the form:",
             "fibonacciHomeworkConclusion": "are solutions of fₙ = fₙ₋₁ + fₙ₋₂, subject to the initial conditions f₀, f₁.",
@@ -1063,6 +1279,239 @@
             "recurrenceExampleGeneralSolution": "Therefore, the general solution is:",
             "recurrenceExampleInitialCondition": "Using the initial condition:",
             "recurrenceExampleFinal": "The particular solution is therefore:"
+        }
+    },
+    "modernComputers": {
+        "hero": {
+            "titleStart": "Modern computers and",
+            "titleHighlight": "technological evolution",
+            "subtitle": "From software and hardware layers to the physical limits that shaped computer architecture."
+        },
+        "actions": { "print": "Print / Save PDF" },
+        "sections": {
+            "title": "Study path",
+            "overview": "Architecture as a layered model",
+            "computerTypes": "Computer types and networks",
+            "softwareLayers": "From program to machine code",
+            "architectureIdeas": "Eight architectural ideas",
+            "technologyEvolution": "Transistors, Moore, and physical limits"
+        },
+        "labels": {
+            "keyIdea": "Key idea",
+            "networks": "Why connect computers",
+            "example": "Example",
+            "transistor": "Transistor",
+            "mooreLaw": "Moore's law",
+            "componentNames": {
+                "input": "Input",
+                "memory": "Memory",
+                "output": "Output",
+                "processor": "Processor",
+                "control": "Control"
+            },
+            "ideaNames": {
+                "moore": "Moore's law",
+                "abstraction": "Abstraction",
+                "commonCase": "Common case",
+                "parallelism": "Parallelism",
+                "pipeline": "Pipeline",
+                "prediction": "Prediction",
+                "memoryHierarchy": "Memory hierarchy",
+                "reliability": "Reliability and redundancy"
+            }
+        },
+        "interactions": {
+            "componentsPrompt": "Explore the computer components",
+            "computerTypePrompt": "Choose a computer type",
+            "translationPrompt": "Select a translation step",
+            "translationNames": {
+                "source": "Source",
+                "compiler": "Compiler",
+                "assembly": "Assembly",
+                "assembler": "Assembler",
+                "machine": "Machine code"
+            },
+            "yearsLabel": "Years elapsed",
+            "growthResult": "The model predicts {{factor}}× growth from the starting value."
+        },
+        "content": {
+            "overview": "Computer architecture describes how hardware and software components work together to run programs. It is studied in layers: each layer uses the one below without needing to know every implementation detail.",
+            "abstractionIdea": "A computer can be described through five functions: input, output, memory, processing, and control. This is an abstraction: it organizes the system without listing every transistor.",
+            "components": {
+                "input": "Input: receives data and commands.",
+                "output": "Output: returns results.",
+                "memory": "Memory: stores data and instructions.",
+                "processor": "Processing: performs operations on data.",
+                "control": "Control: coordinates execution."
+            },
+            "computerTypesIntro": "The underlying technology is similar; goals and constraints differ.",
+            "types": {
+                "pc": {
+                    "title": "PCs and laptops",
+                    "description": "Typically serve one user; cost, usability, and responsiveness matter."
+                },
+                "server": {
+                    "title": "Servers",
+                    "description": "Serve many users and network applications; capacity, throughput, and reliability matter."
+                },
+                "embedded": {
+                    "title": "Embedded systems",
+                    "description": "Perform specific tasks in cars, appliances, and IoT devices; power and cost are strict constraints."
+                }
+            },
+            "networks": "LANs connect devices over a limited area; WANs span large distances. Networks enable communication, resource sharing, and remote access.",
+            "softwareLayers": "A processor executes simple instructions, not the language used directly by a programmer. Translators convert the program one layer at a time:",
+            "translation": {
+                "source": "1. Source code (for example, C)",
+                "compiler": "2. The compiler produces assembly",
+                "assembly": "3. Assembly: a textual form of instructions",
+                "assembler": "4. The assembler produces machine code",
+                "machine": "5. The processor executes the bits"
+            },
+            "swapExplanation": "A high-level operation becomes several machine instructions: array elements are loaded into registers, swapped, and written back to memory.",
+            "ideas": {
+                "moore": "Moore's law: growth in transistor density.",
+                "abstraction": "Abstraction: hide details that are unnecessary at the current level.",
+                "commonCase": "Common case: make frequent operations fast.",
+                "parallelism": "Parallelism: perform independent tasks at the same time.",
+                "pipeline": "Pipelining: overlap different stages of multiple tasks.",
+                "prediction": "Prediction: anticipate a decision to avoid waiting.",
+                "memoryHierarchy": "Memory hierarchy: balance speed, capacity, and cost.",
+                "reliability": "Reliability: use redundancy to tolerate failures."
+            },
+            "transistor": "A transistor acts as a switch. Combining many transistors creates logic gates and circuits; large-scale integration makes complex chips possible.",
+            "mooreLaw": "Moore observed exponential growth in the number of transistors integrated on a chip. The historical estimate changed from doubling yearly to about every two years.",
+            "mooreCaveat": "It is an empirical trend, not a law of physics. Power and heat limits slowed frequency growth and favored multicore processors."
+        }
+    },
+    "performanceEvaluation": {
+        "hero": {
+            "titleStart": "Performance and",
+            "titleHighlight": "architecture evaluation",
+            "subtitle": "Measure execution time and understand trade-offs between speed, power, and parallelism."
+        },
+        "actions": { "print": "Print / Save PDF" },
+        "sections": {
+            "title": "Study path",
+            "basics": "What performance means",
+            "cpuTime": "CPU time and the core formula",
+            "cpiMips": "CPI and the limits of MIPS",
+            "amdahl": "Amdahl's law and speedup",
+            "benchmarks": "Benchmarks and comparing machines",
+            "powerMulticore": "Power and the shift to multicore"
+        },
+        "labels": {
+            "definition": "Definition",
+            "formula": "Core formula",
+            "example": "Worked example",
+            "mips": "MIPS caveat"
+        },
+        "interactions": {
+            "metricPrompt": "Explore the metrics",
+            "responseTime": "Response time",
+            "responseTimeDescription": "Measures how long one task takes. Use it when the user's wait matters.",
+            "throughput": "Throughput",
+            "throughputDescription": "Measures how many tasks finish in an interval. It matters for servers and busy systems.",
+            "calculatorTitle": "Calculate CPU time",
+            "instructionCount": "Instructions (millions)",
+            "averageCpi": "Average CPI",
+            "clockFrequency": "Frequency (GHz)",
+            "cpuTimeResult": "Estimated time",
+            "amdahlExplorer": "Explore Amdahl's law",
+            "parallelFraction": "Accelerated fraction",
+            "localSpeedup": "Local speedup",
+            "workSplit": "Work split between serial and accelerated parts",
+            "serialWork": "Not accelerated",
+            "parallelWork": "Accelerated",
+            "overallSpeedup": "Overall speedup",
+            "maximumSpeedup": "Theoretical limit"
+        },
+        "content": {
+            "basicsIntro": "Before comparing computers, choose a metric: response time measures how long one task takes; throughput measures how many tasks finish in an interval.",
+            "performanceDefinition": "For the same workload, less time means higher performance.",
+            "speedupExample": "If a program drops from 25 s to 20 s, the speedup is 25/20 = 1.25×.",
+            "cpuTimeIntro": "CPU time depends on the number of executed instructions, the cycles each instruction needs, and the duration of a cycle.",
+            "cpuTimeTerms": "IC = instruction count; CPI = average cycles per instruction; T_clock = seconds per cycle; f = frequency. The units cancel to seconds.",
+            "cpuTimeExample": "A program with 10⁹ instructions, CPI 2, and a 2 GHz clock takes:",
+            "cpiIntro": "Instructions have different costs: average CPI depends on both the processor and the program. MIPS counts millions of instructions per second but does not distinguish simple instructions from complex ones.",
+            "mipsLimit": "A higher MIPS value does not guarantee a shorter runtime: compare machines using the program's execution time, not MIPS alone.",
+            "amdahlIntro": "When only part of a program is improved, the rest limits the overall gain. f is the fraction of the original time improved and s is that part's speedup.",
+            "amdahlExample": "If half the runtime becomes five times faster, total speedup is about 1.67×. Even infinitely accelerating that half cannot exceed 2×.",
+            "benchmarkIntro": "A benchmark uses representative programs to compare machines. SPEC publishes suites and reference runtimes to make results repeatable.",
+            "geometricMean": "Compare ratios against the reference; use the geometric mean to summarize multiple ratios.",
+            "powerIntro": "Increasing frequency and voltage increases power. Thermal limits shifted the industry from ever-faster single cores toward multiple cores on one chip.",
+            "multicoreConclusion": "More cores can increase throughput; a sequential program does not automatically get faster. Parallelizable work and Amdahl's law determine the gain."
+        }
+    },
+    "combinationalLogic": {
+        "hero": {
+            "titleStart": "Combinational",
+            "titleHighlight": "logic networks",
+            "subtitle": "From bits to logic gates: specifying, implementing, and optimizing Boolean functions."
+        },
+        "sections": {
+            "title": "Contents",
+            "logicalLevel": "Why a logic level is needed",
+            "digitalNetwork": "The digital circuit",
+            "designLevels": "Design levels and synthesis",
+            "networkTypes": "Combinational and sequential networks",
+            "combinationalExample": "Combinational network",
+            "sequentialExample": "Sequential network",
+            "memoryDemo": "Compare: with and without memory",
+            "booleanFunctions": "Boolean functions",
+            "multiOutputDemo": "Two outputs, same inputs",
+            "truthTableGrowth": "Truth-table growth",
+            "booleanOperators": "Boolean operators",
+            "gateExplorer": "Explore logic gates",
+            "equalityExample": "Example: equality",
+            "logicCircuits": "From expression to circuit",
+            "naturalLanguage": "From specification to function",
+            "circuitExample": "Example: circuit structure",
+            "exactTwoDemo": "Try “exactly two”",
+            "synthesisOptimization": "Synthesis and optimization",
+            "majorityExample": "Example: majority",
+            "booleanLaws": "Boolean algebra laws",
+            "universalGates": "Universal gates",
+            "booleanAlgebra": "Boolean and switching algebra",
+            "algebraicSystem": "Sets and operations",
+            "switchingAlgebra": "Switching algebra",
+            "literalsProducts": "Literals and minterms",
+            "implicantsMaxterms": "Implicants and maxterms",
+            "algebraLaws": "Algebraic properties",
+            "absorptionDeMorgan": "Absorption and De Morgan",
+            "simplificationConsensus": "Simplification and consensus",
+            "provingIdentities": "Verifying identities",
+            "canonicalForms": "Canonical SoP and PoS forms",
+            "canonicalWorkbench": "Truth-table generator",
+            "shannonExpansion": "Shannon expansion",
+            "shannonExample": "Expansion example",
+            "workedSimplification": "Simplification example",
+            "conceptSummary": "Key distinctions"
+        },
+        "interactions": {
+            "gateExplorerTitle": "Explore a logic gate",
+            "gateExplorerIntro": "Choose a gate and change the inputs; the table and output update immediately.",
+            "gateLabel": "Select a logic gate",
+            "inputValue": "Input {{name}}: {{value}}",
+            "memoryDemoTitle": "Same input, with and without memory",
+            "memoryDemoIntro": "Compare a combinational input with a sequential switch that remembers each press.",
+            "combinationalDemo": "Without memory",
+            "sequentialDemo": "With memory",
+            "inputLabel": "Input",
+            "combinationalOutput": "Current output: {{value}}",
+            "pressToggle": "Press the switch",
+            "sequentialOutput": "Stored state: {{value}}",
+            "multiOutputTitle": "Two outputs from the same inputs",
+            "multiOutputIntro": "Set a and b to see equality and difference together.",
+            "whenEqual": "when a = b",
+            "whenDifferent": "when a ≠ b",
+            "exactTwoTitle": "Try the “exactly two” function",
+            "exactTwoIntro": "Toggle the inputs. The output is 1 only when exactly two inputs are active.",
+            "fourInputsLabel": "Values of inputs a, b, c, and d",
+            "onesCount": "Inputs set to 1: {{count}}",
+            "exactTwoTrue": "The condition is satisfied",
+            "exactTwoFalse": "The condition is not satisfied",
+            "truthRowValue": "Row {{a}}{{b}}, output {{value}}"
         }
     },
     "algorithmAnalysis": {

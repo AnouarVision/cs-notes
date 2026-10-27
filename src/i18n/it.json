@@ -2,12 +2,87 @@
     "navbar": {
         "links": {
             "topics": "Aree di studio",
-            "exercises": "Esercizi"
+            "exercises": "Esercizi",
+            "exams": "Esami"
         },
         "actions": {
             "notFound": "Nessun risultato trovato",
             "search": "Cerca",
             "placeholder": "Digita per cercare argomenti e sezioni…"
+        }
+    },
+    "exams": {
+        "eyebrow": "Preparazione agli esami",
+        "title": "Esami",
+        "description": "Consulta le prove d'esame e i materiali disponibili per ogni materia.",
+        "subjectsTitle": "Esami per materia",
+        "openExam": "Apri esame",
+        "openNotes": "Apri gli appunti",
+        "tabsLabel": "Contenuto dell'esame",
+        "examTab": "Esame",
+        "solutionsTab": "Soluzioni",
+        "notFound": "Materia non trovata",
+        "backToExams": "Tutti gli esami",
+        "examTitle": "Prova d'esame ufficiale",
+        "examDescription": "Prova ufficiale d'esame di Matematica discreta e logica.",
+        "examOverview": "Riepilogo della prova",
+        "examSummary": "Dati essenziali, punteggio e materiali disponibili.",
+        "durationValue": "120 min",
+        "durationLabel": "Durata della prova",
+        "questionCount": "11",
+        "questionCountLabel": "quesiti a risposta multipla",
+        "totalPointsLabel": "Punteggio massimo",
+        "totalPoints": "30 punti",
+        "passingGradeLabel": "Voto minimo",
+        "passingGrade": "18/30",
+        "scoreRule": "Quesiti da 1 a 8: 3 punti ciascuno. Quesiti da 9 a 11: 2 punti ciascuno. Risposte errate o omesse: 0 punti.",
+        "downloadPdf": "Scarica il PDF",
+        "downloadPdfDescription": "Prova completa pronta per la stampa",
+        "downloadLatex": "Scarica il sorgente LaTeX",
+        "downloadHint": "Sono disponibili la prova in PDF e il sorgente LaTeX.",
+        "solutionsTitle": "Soluzioni e svolgimenti",
+        "solutionsDescription": "Apri un quesito per consultare la risposta corretta e i passaggi del calcolo.",
+        "solutionPrompt": "Quesito {{number}}",
+        "correctAnswer": "Risposta corretta",
+        "workingLabel": "Svolgimento",
+        "solutions": {
+            "q1": "L’equazione caratteristica è (r−5)(r−7)=0. Per il termine noto 2ⁿ si cerca una soluzione particolare c·2ⁿ; sostituendo si ottiene 15c=1, dunque c=1/15. Le condizioni iniziali determinano i coefficienti della soluzione generale e danno l’espressione indicata nella risposta C.",
+            "q2": "Per inclusione ed esclusione si sottraggono le funzioni che non usano uno dei tre elementi di B e si riaggiungono quelle costanti: 3⁶−3·2⁶+3=540.",
+            "q3": "Dividendo ciascuna congruenza per il coefficiente invertibile si ottiene x≡2 (mod 7), x≡1 (mod 8), x≡2 (mod 9). Il teorema cinese del resto dà x≡65 (mod 504). Nell’intervallo richiesto le soluzioni sono 569 e 1073.",
+            "q4": "Si fattorizza 1386=2·3²·7·11. Quindi φ(1386)=1386·(1−1/2)·(1−1/3)·(1−1/7)·(1−1/11)=360. Convertendo 360 in base 5 si ottiene 2420₅.",
+            "q5": "Riducendo la base modulo 73 si ha 987654321≡18. Per il piccolo teorema di Fermat, 18¹²³≡18⁵¹ (mod 73); l’esponenziazione modulare dà resto 9.",
+            "q6": "Si scelgono le quattro posizioni delle vocali, si assegnano le vocali con ripetizione e si scelgono le sei consonanti in ordine non decrescente tra quattro simboli. Il conteggio è C(10,4)·5⁴·C(9,6)=210·625·84=11025000.",
+            "q7": "La relazione contiene tutte le coppie diagonali, quindi è riflessiva. Non contiene coppie distinte in entrambi i versi, quindi è antisimmetrica. Non è transitiva: contiene (a,b) e (b,c), ma non (a,c).",
+            "q8": "L’operazione minimo è associativa, perché il minimo di tre elementi non dipende dal raggruppamento. Su ℕ non esiste un elemento neutro per il minimo: dovrebbe essere maggiore o uguale a ogni naturale. Si ottiene quindi un semigruppo che non è un monoide.",
+            "q9": "Per essere un reticolo, ogni coppia deve avere un estremo superiore nell’insieme. I divisori 6 e 10 avrebbero minimo comune multiplo 30, che non appartiene ad A. La relazione non definisce quindi un reticolo.",
+            "q10": "La permutazione si scompone nei cicli disgiunti (1 2 3), (4 5) e (6 7 8). Il suo ordine è mcm(3,2,3)=6. I due cicli di lunghezza 3 sono pari e la trasposizione è dispari, quindi la permutazione è dispari.",
+            "q11": "Per inclusione ed esclusione si parte da 9!, si sottraggono le disposizioni con ab e quelle con cd adiacenti, poi si riaggiungono quelle con entrambi i blocchi: 9!−2·8!+7!=287280."
+        },
+        "answers": {
+            "q1": "C",
+            "q2": "B",
+            "q3": "B",
+            "q4": "A",
+            "q5": "C",
+            "q6": "B",
+            "q7": "A",
+            "q8": "A",
+            "q9": "C",
+            "q10": "D",
+            "q11": "D"
+        },
+        "problems": {
+            "q1": "Successioni ricorsive",
+            "q2": "Funzioni suriettive",
+            "q3": "Sistemi di congruenze",
+            "q4": "Elementi invertibili",
+            "q5": "Potenze modulari",
+            "q6": "Calcolo combinatorio",
+            "q7": "Relazioni",
+            "q8": "Strutture algebriche",
+            "q9": "Reticoli",
+            "q10": "Permutazioni",
+            "q11": "Permutazioni con vincoli"
         }
     },
     "home": {
@@ -109,6 +184,8 @@
         "openNotes": "Apri gli appunti",
         "openExercises": "Vedi esercizi",
         "topicExercisesTitle": "Esercizi della materia",
+        "topicSectionsTitle": "Sezioni degli appunti",
+        "noExercisesForSection": "Non ci sono ancora esercizi associati a questa sezione.",
         "backToExercises": "Torna agli esercizi",
         "backToSubject": "Torna alla materia",
         "notFound": "Area di esercizi non trovata",
@@ -122,6 +199,24 @@
         "stepPlaceholder": "Inserisci un passaggio della soluzione.",
         "codeTitle": "Codice o calcoli",
         "codePlaceholder": "// Inserisci qui la soluzione",
+        "powerSetIntersection": {
+            "promptTitle": "Enunciato",
+            "prompt": "Siano A e B due insiemi. Dimostra che l'insieme delle parti dell'intersezione coincide con l'intersezione degli insiemi delle parti.",
+            "diagramTitle": "Leggiamo l'identità con un diagramma",
+            "diagramIntro": "Prendiamo A = {1, 2} e B = {2, 3}. Il rettangolo contiene tutti i sottoinsiemi di A ∪ B; i cerchi contengono rispettivamente i sottoinsiemi di A e di B.",
+            "diagramDescription": "Diagramma di Eulero-Venn degli insiemi delle parti P(A) e P(B). La regione comune contiene l'insieme vuoto e l'insieme {2}.",
+            "diagramCaption": "La regione comune contiene ∅ e {2}: sono esattamente i sottoinsiemi di A ∩ B = {2}. Perciò P(A) ∩ P(B) = P(A ∩ B).",
+            "diagramOutside": "{1, 3} e {1, 2, 3} sono fuori da entrambi i cerchi",
+            "solutionTitle": "Dimostrazione passo passo",
+            "proofIntro": "Per dimostrare che due insiemi sono uguali, verifichiamo che hanno gli stessi elementi. Prendiamo un insieme X qualsiasi e seguiamo le equivalenze:",
+            "steps": {
+                "powerSet": "Definizione di insieme delle parti: X appartiene a P(A ∩ B) esattamente quando X è un sottoinsieme di A ∩ B.",
+                "intersection": "Un insieme è contenuto nell'intersezione quando è contenuto sia in A sia in B.",
+                "subsets": "Di nuovo per definizione di insieme delle parti, questi due contenimenti equivalgono a X ∈ P(A) e X ∈ P(B).",
+                "finish": "X appartiene a entrambi gli insiemi delle parti, quindi appartiene alla loro intersezione. L'equivalenza vale per ogni X."
+            },
+            "conclusion": "I due insiemi hanno gli stessi elementi; per estensionalità sono uguali: P(A ∩ B) = P(A) ∩ P(B)."
+        },
         "setDifferenceIdentity": {
             "promptTitle": "Enunciato",
             "prompt": "Siano A e B due insiemi. Dimostra formalmente l'uguaglianza A ∖ (A ∖ B) = A ∩ B usando le definizioni di differenza e intersezione.",
@@ -164,7 +259,56 @@
                 "k": "Vera: A = {1, 2}, e l'insieme {1, 2} è un elemento di B. Dunque A ∈ B."
             }
         },
+        "nestedSetOperations": {
+            "promptTitle": "Dati e consegna",
+            "prompt": "Siano A = {0}, B = {0, A} e C = {0, {0}, {A}}. Calcola A ∩ B, B ∖ (A ∖ B), A △ B, (B ∪ C) ∖ A e (A ∩ B) ∪ (A ∩ C).",
+            "notationNote": "0, ∅ e A = {0} sono oggetti distinti.",
+            "diagramDescription": "Diagramma di Eulero-Venn con A contenuto in B e B contenuto in C. 0 è in A, A è in B ma non in A, e {A} è in C ma non in B.",
+            "diagramCaption": "A ⊂ B ⊂ C: 0 è in A, A è in B, {A} è in C.",
+            "solutionTitle": "Svolgimento passo per passo",
+            "steps": {
+                "intersection": "Intersezione A ∩ B",
+                "intersectionExplanation": "0 è l'unico elemento di A ed è anche in B.",
+                "nestedDifference": "Differenza dentro la parentesi, poi fuori",
+                "nestedDifferenceExplanation": "A ∖ B = ∅ perché 0 è in B; quindi B ∖ ∅ = B.",
+                "symmetricDifference": "Differenza simmetrica A △ B",
+                "symmetricDifferenceExplanation": "B ∖ A = {A} e A ∖ B = ∅; resta {A}.",
+                "unionDifference": "Unione e differenza con C",
+                "unionDifferenceExplanation": "B ∪ C = {0, A, {A}}; tolto 0, resta {A, {A}}.",
+                "intersectionUnion": "Unione di due intersezioni",
+                "intersectionUnionExplanation": "A ∩ B = A ∩ C = {0}; la loro unione è {0}."
+            },
+            "sourceCorrection": "Correzione: ∅ non è un elemento di B. Il risultato corretto è {0, A}."
+        },
+        "inductionInequality": {
+            "promptTitle": "Enunciato",
+            "prompt": "Dimostra per induzione che la disuguaglianza vale per ogni intero n ≥ 4.",
+            "solutionTitle": "Dimostrazione",
+            "baseTitle": "1. Caso base",
+            "baseIntro": "Verifichiamo la proprietà per n = 4:",
+            "hypothesisTitle": "2. Ipotesi induttiva",
+            "hypothesisIntro": "Supponiamo che la proprietà sia vera per un n ≥ 4 fissato:",
+            "stepTitle": "3. Passo induttivo",
+            "stepIntro": "Usiamo l'ipotesi per dimostrarla al successivo n + 1:",
+            "stepReason": "L'ultimo confronto vale perché n ≥ 4, dunque n + 9 ≥ 0.",
+            "conclusion": "Caso base e passo induttivo sono verificati: la disuguaglianza vale per ogni n ≥ 4."
+        },
         "items": {
+            "inductionInequality": {
+                "title": "Dimostrazione per induzione di una disuguaglianza",
+                "description": "Dimostra passo per passo che 2ⁿ ≥ n + 10 per ogni n ≥ 4.",
+                "difficulty": "Base"
+            },
+            "nestedSetOperations": {
+                "title": "Operazioni con insiemi annidati",
+                "description": "Calcola intersezioni, differenze e unioni distinguendo numeri, insiemi e insiemi di insiemi.",
+                "difficulty": "Intermedio"
+            },
+            "powerSetIntersection": {
+                "title": "Insieme delle parti di un’intersezione",
+                "description": "Dimostra P(A ∩ B) = P(A) ∩ P(B) e interpreta l’intersezione con un diagramma di Eulero-Venn.",
+                "difficulty": "Intermedio"
+            },
             "setDifferenceIdentity": {
                 "title": "Dimostrare un'identità tra insiemi",
                 "description": "Dimostra che A ∖ (A ∖ B) = A ∩ B usando le definizioni e interpreta il risultato con un diagramma di Eulero-Venn.",
@@ -930,6 +1074,65 @@
             "invertibilityProofConclusion": "Pertanto f è iniettiva e suriettiva, dunque è biettiva."
         }
     },
+    "realNumbers": {
+        "sections": {
+            "title": "In questa pagina",
+            "naturalNumbers": "Naturali e induzione",
+            "rationalsIrrationals": "Razionali e irrazionali",
+            "completeness": "Completezza dei reali",
+            "topology": "Intervalli e topologia",
+            "bounds": "Massimo, minimo e limitatezza",
+            "supInf": "Supremo e infimo",
+            "extremeExamples": "Esempi di estremi",
+            "existence": "Esistenza degli estremi",
+            "successor": "Naturali e successore",
+            "induction": "Principio di induzione",
+            "gaussSum": "Somma di Gauss",
+            "bernoulli": "Disuguaglianza di Bernoulli",
+            "integers": "Numeri interi",
+            "rationals": "Numeri razionali",
+            "sqrtTwo": "Irrazionalità di √2",
+            "completenessAxiom": "Assioma di continuità",
+            "intervals": "Intervalli",
+            "neighborhoods": "Intorni",
+            "openSets": "Insiemi aperti",
+            "maxMin": "Massimo e minimo",
+            "upperLowerBounds": "Maggioranti e minoranti",
+            "supInfDefinitions": "Definizioni",
+            "epsilon": "Caratterizzazione con ε",
+            "unboundedIntervals": "Intervalli illimitati",
+            "maxNoMin": "Massimo senza minimo",
+            "unboundedAbove": "Illimitato superiormente",
+            "supExistence": "Esistenza del supremo",
+            "infExistence": "Esistenza dell’infimo"
+        }
+    },
+    "functions": {
+        "sections": {
+            "title": "In questa pagina",
+            "definition": "Definizione di funzione",
+            "injectivity": "Iniettività e suriettività",
+            "preimage": "Immagine e controimmagine",
+            "inverse": "Funzione inversa",
+            "domain": "Campo di esistenza",
+            "graph": "Grafico e retta verticale",
+            "symmetry": "Parità e periodicità",
+            "monotonicity": "Monotonia",
+            "composition": "Composizione",
+            "elementary": "Funzioni elementari",
+            "trigonometric": "Funzioni goniometriche",
+            "formulas": "Formule trigonometriche",
+            "affine": "Funzioni affini",
+            "absoluteValue": "Valore assoluto",
+            "powersRoots": "Potenze e radici",
+            "realPowers": "Potenze reali",
+            "exponential": "Esponenziale",
+            "logarithm": "Logaritmo",
+            "tangent": "Tangente",
+            "inverseTrig": "Goniometriche inverse",
+            "trigEquations": "Equazioni goniometriche"
+        }
+    },
     "inductionRecursion": {
         "hero": {
             "titleStart": "Induzione e",
@@ -949,6 +1152,7 @@
             "wellOrderingPrinciple": "Principio del minimo (o del buon ordinamento)",
             "euclideanDivision": "Divisione euclidea",
             "sequences": "Successioni",
+            "sequenceDefinition": "Definizione di successione",
             "recursiveSequences": "Successioni ricorsive",
             "fibonacci": "Numeri di Fibonacci",
             "linearRecurrences": "Relazioni di ricorrenza lineari",
@@ -962,6 +1166,7 @@
             "proposition": "Proposizione",
             "proof": "Dimostrazione",
             "theorem": "Teorema",
+            "intuition": "Intuizione",
             "naturalNumbersAxiom": "Assioma dei numeri naturali",
             "observation": "Osservazione",
             "homework": "Esercizio per casa"
@@ -988,10 +1193,16 @@
             "finalStatement": "Quindi abbiamo dimostrato che:",
 
             "inductionPrincipleStepsIntro": "Il principio di induzione standard (I forma) si sviluppa in due passaggi fondamentali:",
+            "inductionDominoes": "Immagina una fila infinita di tessere: la base fa cadere la prima; il passo induttivo garantisce che ogni tessera faccia cadere la successiva. Di conseguenza cadono tutte. In una dimostrazione, la base verifica il primo caso e il passo collega un caso al seguente.",
             "inductionPrincipleBaseStep": "<strong>Base dell'induzione:</strong> si verifica che la proprietà valga per l'elemento iniziale n₀ ∈ S.",
             "inductionPrincipleInductiveStep": "<strong>Passo induttivo:</strong> si dimostra l'implicazione che, assumendo la proprietà vera per un generico n ∈ S, essa valga anche per il successivo:",
 
             "powerSetIntro": "Vogliamo dimostrare che per ogni insieme finito X, la cardinalità del suo insieme delle parti P(X) (o ℘(X)) è 2^{|X|}, procedendo per induzione su n = |X| ≥ 0.",
+            "powerSetExampleIntro": "Prima della dimostrazione generale, consideriamo X = {a, b}. Per ogni elemento scegliamo se includerlo o no: le possibilità sono quattro.",
+            "powerSetVennCaption": "Ogni regione del diagramma rappresenta un sottoinsieme diverso: fuori da entrambi i cerchi ∅, solo a {a}, solo b {b}, nell'intersezione {a, b}. In totale sono 4 = 2².",
+            "powerSetVennDescription": "Diagramma di Venn dei sottoinsiemi di X = {a, b}: le quattro regioni rappresentano l'insieme vuoto, {a}, {b} e {a, b}.",
+            "powerSetPartitionCaption": "Esempio con X = {a, b} e x₀ = b. Le due famiglie sono disgiunte e coprono P(X). Togliendo b dagli elementi della famiglia destra si ottiene la famiglia sinistra: entrambe hanno 2 elementi, quindi |P(X)| = 2 + 2 = 4.",
+            "powerSetPartitionDescription": "Diagramma di Eulero-Venn che divide P di X, con X uguale a {a, b}, in due famiglie disgiunte: sottoinsiemi che non contengono b e sottoinsiemi che contengono b.",
             "powerSetBaseIntro": "Se X = ∅, allora |X| = 0. L'insieme delle parti è:",
             "powerSetBaseConclusion": "La cui cardinalità è:",
             "powerSetBaseStatement": "L'affermazione è quindi verificata.",
@@ -999,6 +1210,7 @@
             "powerSetInductiveSet": "Prendiamo un insieme X tale che |X| = n + 1. Fissiamo un elemento x₀ ∈ X.",
             "powerSetPartitionIntro": "Osserviamo che l'insieme delle parti P(X) può essere partizionato in due sottoinsiemi disgiunti:",
             "powerSetFirstFamilyIntro": "Possiamo stabilire una biiezione tra la prima famiglia, dove x₀ ∈ Y, e l'insieme delle parti di X \\ {x₀}. Se Y ⊆ X è tale che x₀ ∈ Y, ponendo Z = Y \\ {x₀} si ha Z ⊆ X \\ {x₀} con |Z| = n.",
+            "powerSetBijectionInverse": "La corrispondenza è reversibile: da un sottoinsieme Z di X senza x₀ ricostruiamo Y aggiungendo x₀. Quindi le due famiglie hanno la stessa cardinalità.",
             "powerSetFirstFamilyConclusion": "Pertanto:",
             "powerSetSecondFamilyIntro": "Analogamente, per la seconda famiglia, dove x₀ ∉ Y, ogni tale Y è un sottoinsieme di X \\ {x₀}, quindi:",
             "powerSetFinalIntro": "Sommando i due contributi disgiunti, otteniamo:",
@@ -1021,7 +1233,10 @@
             "euclideanDivisionRemainder": "Poniamo:",
             "euclideanDivisionRemainderBounds": "Dalla definizione di S sappiamo che q ∈ S, quindi:",
             "euclideanDivisionConclusion": "Pertanto abbiamo trovato r = a − qb tale che 0 ≤ r < b e, di conseguenza:",
-            "euclideanDivisionFinal": "Abbiamo quindi dimostrato l'esistenza della divisione euclidea.",
+            "euclideanDivisionFinal": "Questo dimostra l'esistenza della divisione euclidea. Per concludere, dimostriamo che quoziente e resto sono unici.",
+            "euclideanUniquenessIntro": "Supponiamo che lo stesso numero a abbia due rappresentazioni valide:",
+            "euclideanUniquenessContradiction": "Se q < q', allora q' ≥ q + 1. Dalla prima rappresentazione r < b; dalla seconda r' ≥ 0. Ne segue:",
+            "euclideanUniquenessConclusion": "La disuguaglianza implicherebbe a < a, impossibile. Per simmetria q = q'; sostituendo, anche r = r'. La coppia è quindi unica.",
 
             "sequenceDefinition": "Una <strong>successione</strong> è una funzione a: ℕ → S, dove S è un insieme. Di solito si scrive aₙ := a(n).",
             "sequenceExamples": "Esempi:",
@@ -1036,9 +1251,10 @@
             "recursiveSequenceObservation": "Per il principio di induzione, definire una successione in modo ricorsivo dà davvero una successione!",
 
             "fibonacciIntro": "Poniamo f₀ = 0, f₁ = 1 e consideriamo la relazione di ricorrenza:",
+            "fibonacciTrialIntro": "Per trovare una formula esplicita proviamo una soluzione esponenziale fₙ = rⁿ: spostare l'indice equivale a moltiplicare per r, così la ricorrenza diventa un'equazione su r.",
             "fibonacciTermsIntro": "Calcoliamo i primi termini:",
             "fibonacciObservation": "Notiamo che, se ci fosse una soluzione della forma fₙ = rⁿ per qualche r ∈ ℝ, avremmo:",
-            "fibonacciDivide": "Dividendo per rⁿ⁻², con r ≠ 0:",
+            "fibonacciDivide": "Per n ≥ 2 e r ≠ 0, dividiamo per rⁿ⁻²:",
             "fibonacciRoots": "Le radici sono:",
             "fibonacciHomeworkIntro": "Tutte le successioni della forma:",
             "fibonacciHomeworkConclusion": "sono soluzioni di fₙ = fₙ₋₁ + fₙ₋₂, a meno delle condizioni iniziali f₀, f₁.",
@@ -1060,6 +1276,239 @@
             "recurrenceExampleGeneralSolution": "Quindi la soluzione generale è:",
             "recurrenceExampleInitialCondition": "Sfruttando la condizione iniziale:",
             "recurrenceExampleFinal": "La soluzione particolare è dunque:"
+        }
+    },
+    "modernComputers": {
+        "hero": {
+            "titleStart": "Moderni elaboratori e",
+            "titleHighlight": "evoluzione tecnologica",
+            "subtitle": "Dai livelli software e hardware ai vincoli fisici che hanno guidato l’evoluzione dei computer."
+        },
+        "actions": { "print": "Stampa / Salva PDF" },
+        "sections": {
+            "title": "Percorso di studio",
+            "overview": "Architettura: una visione a livelli",
+            "computerTypes": "Tipi di elaboratori e reti",
+            "softwareLayers": "Dal programma al codice macchina",
+            "architectureIdeas": "Le otto idee dell’architettura",
+            "technologyEvolution": "Transistor, Moore e limiti fisici"
+        },
+        "labels": {
+            "keyIdea": "Idea chiave",
+            "networks": "Perché collegare i computer",
+            "example": "Esempio",
+            "transistor": "Transistor",
+            "mooreLaw": "Legge di Moore",
+            "componentNames": {
+                "input": "Input",
+                "memory": "Memoria",
+                "output": "Output",
+                "processor": "Processore",
+                "control": "Controllo"
+            },
+            "ideaNames": {
+                "moore": "Legge di Moore",
+                "abstraction": "Astrazione",
+                "commonCase": "Caso comune",
+                "parallelism": "Parallelismo",
+                "pipeline": "Pipeline",
+                "prediction": "Predizione",
+                "memoryHierarchy": "Gerarchia di memoria",
+                "reliability": "Affidabilità e ridondanza"
+            }
+        },
+        "interactions": {
+            "componentsPrompt": "Esplora i componenti dell’elaboratore",
+            "computerTypePrompt": "Scegli il tipo di elaboratore",
+            "translationPrompt": "Seleziona un passaggio della traduzione",
+            "translationNames": {
+                "source": "Sorgente",
+                "compiler": "Compilatore",
+                "assembly": "Assembly",
+                "assembler": "Assemblatore",
+                "machine": "Codice macchina"
+            },
+            "yearsLabel": "Anni trascorsi",
+            "growthResult": "Il modello prevede una crescita di {{factor}}× rispetto al valore iniziale."
+        },
+        "content": {
+            "overview": "L’architettura descrive come componenti hardware e software collaborano per eseguire programmi. Si studia per livelli: ogni livello usa quello sottostante senza doverne conoscere tutti i dettagli.",
+            "abstractionIdea": "Un elaboratore si può descrivere con cinque funzioni: input, output, memoria, elaborazione e controllo. Il modello è un’astrazione: organizza il sistema senza elencare ogni transistor.",
+            "components": {
+                "input": "Input: riceve dati e comandi.",
+                "output": "Output: restituisce i risultati.",
+                "memory": "Memoria: conserva dati e istruzioni.",
+                "processor": "Elaborazione: esegue operazioni sui dati.",
+                "control": "Controllo: coordina l’esecuzione."
+            },
+            "computerTypesIntro": "La tecnologia di base è simile; cambiano obiettivi e vincoli d’uso.",
+            "types": {
+                "pc": {
+                    "title": "PC e notebook",
+                    "description": "Un utente alla volta; costo, usabilità e reattività sono centrali."
+                },
+                "server": {
+                    "title": "Server",
+                    "description": "Servono molti utenti e applicazioni via rete; contano capacità, throughput e affidabilità."
+                },
+                "embedded": {
+                    "title": "Sistemi embedded",
+                    "description": "Eseguono compiti specifici in auto, elettrodomestici e dispositivi IoT; consumo e costo sono vincoli forti."
+                }
+            },
+            "networks": "Le LAN collegano dispositivi in un’area limitata; le WAN coprono grandi distanze. Le reti permettono comunicazione, condivisione di risorse e accesso remoto.",
+            "softwareLayers": "Il processore esegue istruzioni semplici, non direttamente il linguaggio usato da chi programma. I traduttori trasformano il programma un livello alla volta:",
+            "translation": {
+                "source": "1. Codice sorgente (per esempio C)",
+                "compiler": "2. Il compilatore genera assembly",
+                "assembly": "3. Assembly: forma testuale delle istruzioni",
+                "assembler": "4. L’assemblatore produce codice macchina",
+                "machine": "5. Il processore esegue i bit"
+            },
+            "swapExplanation": "Un’operazione ad alto livello diventa più istruzioni macchina: gli elementi dell’array vengono caricati nei registri, scambiati e riscritti in memoria.",
+            "ideas": {
+                "moore": "Legge di Moore: crescita della densità dei transistor.",
+                "abstraction": "Astrazione: nascondere dettagli non necessari al livello corrente.",
+                "commonCase": "Caso comune: velocizzare le operazioni più frequenti.",
+                "parallelism": "Parallelismo: svolgere attività indipendenti nello stesso momento.",
+                "pipeline": "Pipeline: sovrapporre fasi diverse di più lavori.",
+                "prediction": "Predizione: anticipare una decisione per non restare in attesa.",
+                "memoryHierarchy": "Gerarchia di memoria: combinare velocità, capacità e costo.",
+                "reliability": "Affidabilità: usare ridondanza per tollerare guasti."
+            },
+            "transistor": "Il transistor funziona da interruttore. Combinandone molti si costruiscono porte logiche e circuiti; l’integrazione su larga scala rende possibili chip complessi.",
+            "mooreLaw": "Moore osservò una crescita esponenziale del numero di transistor integrabili su un chip. La formulazione storica passò da un raddoppio annuale a circa ogni due anni.",
+            "mooreCaveat": "È una tendenza empirica, non una legge fisica. Consumi e dissipazione termica hanno frenato l’aumento della frequenza e favorito i processori multicore."
+        }
+    },
+    "performanceEvaluation": {
+        "hero": {
+            "titleStart": "Prestazioni e",
+            "titleHighlight": "valutazione delle architetture",
+            "subtitle": "Misurare il tempo di esecuzione e capire i compromessi tra velocità, potenza e parallelismo."
+        },
+        "actions": { "print": "Stampa / Salva PDF" },
+        "sections": {
+            "title": "Percorso di studio",
+            "basics": "Che cosa significa prestazione",
+            "cpuTime": "Tempo di CPU e formula fondamentale",
+            "cpiMips": "CPI e limiti del MIPS",
+            "amdahl": "Legge di Amdahl e speedup",
+            "benchmarks": "Benchmark e confronto tra macchine",
+            "powerMulticore": "Potenza e svolta multicore"
+        },
+        "labels": {
+            "definition": "Definizione",
+            "formula": "Formula fondamentale",
+            "example": "Esempio svolto",
+            "mips": "Attenzione al MIPS"
+        },
+        "interactions": {
+            "metricPrompt": "Esplora le metriche",
+            "responseTime": "Tempo di risposta",
+            "responseTimeDescription": "Misura quanto impiega un singolo lavoro. È la metrica giusta quando conta l’attesa dell’utente.",
+            "throughput": "Throughput",
+            "throughputDescription": "Misura quanti lavori vengono completati in un intervallo. È utile per server e sistemi con molti utenti.",
+            "calculatorTitle": "Calcola il tempo di CPU",
+            "instructionCount": "Istruzioni (milioni)",
+            "averageCpi": "CPI medio",
+            "clockFrequency": "Frequenza (GHz)",
+            "cpuTimeResult": "Tempo stimato",
+            "amdahlExplorer": "Prova la legge di Amdahl",
+            "parallelFraction": "Parte accelerata",
+            "localSpeedup": "Speedup locale",
+            "workSplit": "Suddivisione tra lavoro seriale e accelerabile",
+            "serialWork": "Non accelerato",
+            "parallelWork": "Accelerato",
+            "overallSpeedup": "Speedup totale",
+            "maximumSpeedup": "Limite teorico"
+        },
+        "content": {
+            "basicsIntro": "Prima di confrontare due elaboratori, scegli la misura: il tempo di risposta misura quanto attende un singolo lavoro; il throughput misura quanti lavori finiscono in un intervallo.",
+            "performanceDefinition": "A parità di lavoro, meno tempo significa prestazioni maggiori.",
+            "speedupExample": "Se un programma passa da 25 s a 20 s, il miglioramento è 25/20 = 1,25 volte.",
+            "cpuTimeIntro": "Il tempo di CPU dipende da quante istruzioni vengono eseguite, da quanti cicli richiede ciascuna e dalla durata del ciclo.",
+            "cpuTimeTerms": "IC = numero di istruzioni; CPI = cicli medi per istruzione; T_clock = secondi per ciclo; f = frequenza. Le unità si semplificano fino a ottenere secondi.",
+            "cpuTimeExample": "Un programma con 10⁹ istruzioni, CPI 2 e frequenza 2 GHz richiede:",
+            "cpiIntro": "Istruzioni diverse hanno costi diversi: il CPI medio dipende sia dal processore sia dal programma. Il MIPS conta milioni di istruzioni al secondo, ma non distingue istruzioni semplici da istruzioni complesse.",
+            "mipsLimit": "Un MIPS più alto non garantisce un tempo minore: confronta le macchine sul tempo del programma, non sul solo MIPS.",
+            "amdahlIntro": "Se si accelera solo una parte del programma, il resto limita il guadagno complessivo. f è la frazione del tempo migliorata e s lo speedup di quella parte.",
+            "amdahlExample": "Se metà del tempo diventa cinque volte più veloce, il guadagno totale è circa 1,67×. Anche rendendo infinita la velocità della parte migliorata, il limite è 2×.",
+            "benchmarkIntro": "Un benchmark usa programmi rappresentativi per confrontare macchine. SPEC pubblica suite e tempi di riferimento per rendere i risultati ripetibili.",
+            "geometricMean": "Si confrontano i rapporti con il riferimento; per riassumere più rapporti si usa la media geometrica.",
+            "powerIntro": "Aumentare frequenza e tensione aumenta la potenza. Il limite termico ha spinto il settore da un singolo core sempre più veloce verso più core sullo stesso chip.",
+            "multicoreConclusion": "Più core possono aumentare il throughput; un programma sequenziale non diventa automaticamente più veloce. La parte parallelizzabile e la legge di Amdahl determinano il guadagno."
+        }
+    },
+    "combinationalLogic": {
+        "hero": {
+            "titleStart": "Reti logiche",
+            "titleHighlight": "combinatorie",
+            "subtitle": "Dai bit alle porte logiche: descrivere, realizzare e ottimizzare funzioni booleane."
+        },
+        "sections": {
+            "title": "Contenuti",
+            "logicalLevel": "Perché serve un livello logico",
+            "digitalNetwork": "Il circuito digitale",
+            "designLevels": "Livelli di progetto e sintesi",
+            "networkTypes": "Reti combinatorie e sequenziali",
+            "combinationalExample": "Rete combinatoria",
+            "sequentialExample": "Rete sequenziale",
+            "memoryDemo": "Confronto: con e senza memoria",
+            "booleanFunctions": "Funzioni booleane",
+            "multiOutputDemo": "Due uscite, stessi ingressi",
+            "truthTableGrowth": "Crescita della tabella di verità",
+            "booleanOperators": "Operatori booleani",
+            "gateExplorer": "Esplora le porte logiche",
+            "equalityExample": "Esempio: uguaglianza",
+            "logicCircuits": "Dall’espressione al circuito",
+            "naturalLanguage": "Dalla specifica alla funzione",
+            "circuitExample": "Esempio: struttura del circuito",
+            "exactTwoDemo": "Prova “esattamente due”",
+            "synthesisOptimization": "Sintesi e ottimizzazione",
+            "majorityExample": "Esempio: maggioranza",
+            "booleanLaws": "Leggi dell’algebra di Boole",
+            "universalGates": "Porte universali",
+            "booleanAlgebra": "Algebra di Boole e commutazione",
+            "algebraicSystem": "Insiemi e operazioni",
+            "switchingAlgebra": "Algebra di commutazione",
+            "literalsProducts": "Letterali e mintermini",
+            "implicantsMaxterms": "Implicanti e maxtermini",
+            "algebraLaws": "Proprietà algebriche",
+            "absorptionDeMorgan": "Assorbimento e De Morgan",
+            "simplificationConsensus": "Semplificazione e consenso",
+            "provingIdentities": "Verifica delle identità",
+            "canonicalForms": "Forme canoniche SoP e PoS",
+            "canonicalWorkbench": "Generatore da tabella",
+            "shannonExpansion": "Espansione di Shannon",
+            "shannonExample": "Esempio di espansione",
+            "workedSimplification": "Esempio di semplificazione",
+            "conceptSummary": "Distinzioni fondamentali"
+        },
+        "interactions": {
+            "gateExplorerTitle": "Esplora una porta logica",
+            "gateExplorerIntro": "Scegli la porta e cambia gli ingressi: la tabella e l’uscita si aggiornano subito.",
+            "gateLabel": "Seleziona la porta logica",
+            "inputValue": "Ingresso {{name}}: {{value}}",
+            "memoryDemoTitle": "Stesso ingresso, con e senza memoria",
+            "memoryDemoIntro": "Confronta un ingresso combinatorio e un interruttore sequenziale che ricorda ogni pressione.",
+            "combinationalDemo": "Senza memoria",
+            "sequentialDemo": "Con memoria",
+            "inputLabel": "Ingresso",
+            "combinationalOutput": "Uscita corrente: {{value}}",
+            "pressToggle": "Premi l’interruttore",
+            "sequentialOutput": "Stato memorizzato: {{value}}",
+            "multiOutputTitle": "Due uscite dagli stessi ingressi",
+            "multiOutputIntro": "Imposta a e b per osservare insieme uguaglianza e differenza.",
+            "whenEqual": "se a = b",
+            "whenDifferent": "se a ≠ b",
+            "exactTwoTitle": "Prova la funzione “esattamente due”",
+            "exactTwoIntro": "Attiva o disattiva gli ingressi. L’uscita vale 1 soltanto quando esattamente due sono attivi.",
+            "fourInputsLabel": "Valori degli ingressi a, b, c e d",
+            "onesCount": "Ingressi a 1: {{count}}",
+            "exactTwoTrue": "La condizione è soddisfatta",
+            "exactTwoFalse": "La condizione non è soddisfatta",
+            "truthRowValue": "Riga {{a}}{{b}}, uscita {{value}}"
         }
     },
     "algorithmAnalysis": {

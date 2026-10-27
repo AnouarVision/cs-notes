@@ -150,7 +150,7 @@ export default function SetsAndOperations() {
             <p>{t("setsAndOperations.content.subsetDefinition")}</p>
             <MathExpression expression={String.raw`A \subseteq B \iff \forall a \in A,\; a \in B`} display />
           </div>
-          <h3>{t("setsAndOperations.content.inclusionTypes")}</h3>
+          <h3 id="inclusion-types">{t("setsAndOperations.content.inclusionTypes")}</h3>
           <ul className={styles.mathList}>
             <li>
               <MathExpression expression={String.raw`A \subsetneq B \iff (A \subseteq B \land A \neq B)`} />
@@ -168,7 +168,7 @@ export default function SetsAndOperations() {
             <MathExpression expression={String.raw`A \not\subseteq B \iff \exists a \in A : a \notin B`} display />
             <MathExpression expression={String.raw`B \subseteq A \iff \forall b \in B,\; b \in A`} display />
           </div>
-          <h3>{t("setsAndOperations.content.powerSetTitle")}</h3>
+          <h3 id="power-set">{t("setsAndOperations.content.powerSetTitle")}</h3>
           <p>{t("setsAndOperations.content.powerSetIntro")}</p>
           <MathExpression expression={String.raw`A = \{a_1,a_2,a_3\}`} display />
           <MathExpression expression={String.raw`\mathcal{P}(A) = \{\varnothing,\{a_1\},\{a_2\},\{a_3\},\{a_1,a_2\},\{a_1,a_3\},\{a_2,a_3\},\{a_1,a_2,a_3\}\}`} display />

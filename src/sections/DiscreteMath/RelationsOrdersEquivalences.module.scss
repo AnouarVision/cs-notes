@@ -7,9 +7,11 @@
 .actions {
   display: flex;
   justify-content: flex-end;
-  max-width: 1200px;
+  width: calc(100% - 24px);
+  max-width: 900px;
   margin: 0 auto;
-  padding: $space-3 $space-4 0;
+  margin-bottom: -$space-2;
+  padding: $space-3 0 0;
 }
 
 .printButton {
@@ -152,12 +154,23 @@
 
 @media (max-width: 768px) {
   .actions {
-    padding: $space-2 $space-3 0;
+    padding: $space-2 0 0;
   }
 }
 
 @page {
-  margin: 18mm;
+  margin: 12mm;
+
+  @top-left { content: none; }
+  @top-center { content: none; }
+  @top-right { content: none; }
+  @bottom-left { content: none; }
+  @bottom-center {
+    content: counter(page);
+    color: #666;
+    font-size: 9pt;
+  }
+  @bottom-right { content: none; }
 }
 
 @media print {
@@ -178,8 +191,8 @@
     color: #111 !important;
 
     :global(header) {
-      padding: 0 0 12px;
-      border-bottom: 1px solid #bbb;
+      padding: 0 0 8px;
+      border: 0;
       background: transparent;
       color: #111 !important;
     }
@@ -187,7 +200,8 @@
     :global(main) {
       width: 100%;
       max-width: none;
-      padding: 16px 0 0;
+      margin: 0;
+      padding: 0;
       border: 0;
       background: transparent;
       color: #111 !important;
@@ -203,12 +217,22 @@
     }
   }
 
-  .lessonSection,
-  .definition,
-  .note,
-  .proof,
-  .formula,
-  .conclusion {
+  .page > :global(div:last-child) {
+    padding: 0 !important;
+  }
+
+  .page > :global(div:last-child) > :global(div) {
+    max-width: none;
+    gap: 0;
+  }
+
+  .lessonSection h2,
+  .lessonSection h3,
+  .lessonSection h4 {
+    break-after: avoid;
+  }
+
+  .formula {
     break-inside: avoid;
   }
 

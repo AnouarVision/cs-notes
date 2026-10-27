@@ -1,1 +1,0 @@
-Introduzione ai concetti di base della programmazione orientata agli oggetti. Classi e oggetti. Interfacce ed ereditarietà̀. Eccezioni. Programmazione Generica. Strutture di dati e Collezioni.

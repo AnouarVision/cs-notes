@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import styles from "./HomeHero.module.scss";
+import HeroBackground from "./HeroBackground";
 import { topics } from "../../data/topics";
 
 export default function HomeHero() {
@@ -14,6 +15,7 @@ export default function HomeHero() {
 
   return (
     <section className={styles.hero}>
+      <HeroBackground />
       <div className={`${styles.inner} container`}>
         <h1 className={styles.title}>
           The <span className={styles.highlight}>Computer Science</span> Personal

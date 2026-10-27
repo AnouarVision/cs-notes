@@ -1,4 +1,4 @@
-export const lowLevelRepresentationTOC = {
+﻿export const lowLevelRepresentationTOC = {
   title: "lowLevelRepresentation.sections.title",
   items: [
     {
@@ -16,7 +16,6 @@ export const lowLevelRepresentationTOC = {
     {
       id: "data-representation",
       label: "lowLevelRepresentation.sections.dataRepresentation",
-      open: true,
       children: [
         {
           id: "numeric-types",
@@ -41,6 +40,88 @@ export const lowLevelRepresentationTOC = {
   ]
 };
 
+export const combinationalLogicTOC = {
+  title: "combinationalLogic.sections.title",
+  items: [
+    { id: "logical-level", label: "combinationalLogic.sections.logicalLevel" },
+    { id: "digital-network", label: "combinationalLogic.sections.digitalNetwork" },
+    { id: "design-levels", label: "combinationalLogic.sections.designLevels" },
+    {
+      id: "network-types",
+      label: "combinationalLogic.sections.networkTypes",
+      children: [
+        { id: "combinational-example", label: "combinationalLogic.sections.combinationalExample" },
+        { id: "sequential-example", label: "combinationalLogic.sections.sequentialExample" },
+        { id: "memory-demo", label: "combinationalLogic.sections.memoryDemo" },
+      ],
+    },
+    {
+      id: "boolean-functions",
+      label: "combinationalLogic.sections.booleanFunctions",
+      children: [
+        { id: "multi-output-demo", label: "combinationalLogic.sections.multiOutputDemo" },
+        { id: "truth-table-growth", label: "combinationalLogic.sections.truthTableGrowth" },
+      ],
+    },
+    {
+      id: "boolean-operators",
+      label: "combinationalLogic.sections.booleanOperators",
+      children: [
+        { id: "gate-explorer", label: "combinationalLogic.sections.gateExplorer" },
+        { id: "equality-example", label: "combinationalLogic.sections.equalityExample" },
+      ],
+    },
+    { id: "logic-circuits", label: "combinationalLogic.sections.logicCircuits" },
+    {
+      id: "natural-language",
+      label: "combinationalLogic.sections.naturalLanguage",
+      children: [
+        { id: "circuit-example", label: "combinationalLogic.sections.circuitExample" },
+        { id: "exact-two-demo", label: "combinationalLogic.sections.exactTwoDemo" },
+      ],
+    },
+    {
+      id: "synthesis-optimization",
+      label: "combinationalLogic.sections.synthesisOptimization",
+      children: [
+        { id: "majority-example", label: "combinationalLogic.sections.majorityExample" },
+        { id: "boolean-laws", label: "combinationalLogic.sections.booleanLaws" },
+        { id: "universal-gates", label: "combinationalLogic.sections.universalGates" },
+      ],
+    },
+    {
+      id: "boolean-algebra",
+      label: "combinationalLogic.sections.booleanAlgebra",
+      children: [
+        { id: "algebraic-system", label: "combinationalLogic.sections.algebraicSystem" },
+        { id: "switching-algebra", label: "combinationalLogic.sections.switchingAlgebra" },
+        { id: "literals-products", label: "combinationalLogic.sections.literalsProducts" },
+        { id: "implicants-maxterms", label: "combinationalLogic.sections.implicantsMaxterms" },
+        { id: "algebra-laws-table", label: "combinationalLogic.sections.algebraLaws" },
+        { id: "absorption-demorgan", label: "combinationalLogic.sections.absorptionDeMorgan" },
+        { id: "simplification-consensus", label: "combinationalLogic.sections.simplificationConsensus" },
+        { id: "proving-identities", label: "combinationalLogic.sections.provingIdentities" },
+        {
+          id: "canonical-forms",
+          label: "combinationalLogic.sections.canonicalForms",
+          children: [
+            { id: "canonical-workbench", label: "combinationalLogic.sections.canonicalWorkbench" },
+          ],
+        },
+        {
+          id: "shannon-expansion",
+          label: "combinationalLogic.sections.shannonExpansion",
+          children: [
+            { id: "shannon-example", label: "combinationalLogic.sections.shannonExample" },
+          ],
+        },
+        { id: "worked-simplification", label: "combinationalLogic.sections.workedSimplification" },
+        { id: "concept-summary", label: "combinationalLogic.sections.conceptSummary" },
+      ],
+    },
+  ],
+};
+
 export const algorithmAnalysisTOC = {
   title: "algorithmAnalysis.sections.title",
   items: [
@@ -51,7 +132,6 @@ export const algorithmAnalysisTOC = {
     {
       id: "fundamentals",
       label: "algorithmAnalysis.sections.fundamentals",
-      open: true,
       children: [
         {
           id: "algorithms",
@@ -66,7 +146,6 @@ export const algorithmAnalysisTOC = {
     {
       id: "algorithm-evaluation",
       label: "algorithmAnalysis.algorithm_evaluation.title",
-      open: true,
       children: [
         {
           id: "time-measurement",
@@ -87,7 +166,6 @@ export const setsAndOperationsTOC = {
     {
       id: "what-is-a-set",
       label: "setsAndOperations.sections.whatIsASet",
-      open: true,
       children: [
         {
           id: "membership",
@@ -110,8 +188,15 @@ export const setsAndOperationsTOC = {
     {
       id: "subsets",
       label: "setsAndOperations.sections.subsets",
-      open: true,
       children: [
+        {
+          id: "inclusion-types",
+          label: "setsAndOperations.content.inclusionTypes"
+        },
+        {
+          id: "power-set",
+          label: "setsAndOperations.content.powerSetTitle"
+        },
         {
           id: "empty-set-properties",
           label: "setsAndOperations.sections.emptySetProperties"
@@ -125,7 +210,6 @@ export const setsAndOperationsTOC = {
     {
       id: "set-operations",
       label: "setsAndOperations.sections.setOperations",
-      open: true,
       children: [
         {
           id: "intersection-union",
@@ -167,7 +251,6 @@ export const relationsOrdersEquivalencesTOC = {
     {
       id: "relations",
       label: "relationsOrdersEquivalences.sections.relations",
-      open: true,
       children: [
         {
           id: "relation-example",
@@ -183,7 +266,6 @@ export const relationsOrdersEquivalencesTOC = {
     {
       id: "functions",
       label: "relationsOrdersEquivalences.sections.functions",
-      open: true,
       children: [
         {
           id: "function-image",
@@ -221,14 +303,13 @@ export const inductionRecursionTOC = {
     {
       id: "induction-principle",
       label: "inductionRecursion.sections.inductionPrinciple",
-      open: true,
       children: [
         {
           id: "induction-principle-definition",
           label: "inductionRecursion.sections.inductionPrincipleDefinition"
         },
         {
-          id: "induction-example",
+          id: "example",
           label: "inductionRecursion.sections.example"
         },
         {
@@ -252,23 +333,22 @@ export const inductionRecursionTOC = {
     {
       id: "sequences",
       label: "inductionRecursion.sections.sequences",
-      open: true,
       children: [
         {
           id: "sequence-definition",
           label: "inductionRecursion.sections.sequenceDefinition"
         },
         {
-          id: "recursive-sequence",
-          label: "inductionRecursion.sections.recursiveSequence"
+          id: "recursive-sequences",
+          label: "inductionRecursion.sections.recursiveSequences"
         },
         {
           id: "fibonacci",
           label: "inductionRecursion.sections.fibonacci"
         },
         {
-          id: "linear-recurrence",
-          label: "inductionRecursion.sections.linearRecurrence"
+          id: "linear-recurrences",
+          label: "inductionRecursion.sections.linearRecurrences"
         },
         {
           id: "recurrence-examples",
@@ -277,4 +357,138 @@ export const inductionRecursionTOC = {
       ]
     }
   ]
+};
+
+export const modernComputersTOC = {
+  title: "modernComputers.sections.title",
+  items: [
+    { id: "architecture-overview", label: "modernComputers.sections.overview" },
+    { id: "computer-types", label: "modernComputers.sections.computerTypes" },
+    { id: "software-layers", label: "modernComputers.sections.softwareLayers" },
+    { id: "architecture-ideas", label: "modernComputers.sections.architectureIdeas" },
+    { id: "technology-evolution", label: "modernComputers.sections.technologyEvolution" },
+  ],
+};
+
+export const performanceEvaluationTOC = {
+  title: "performanceEvaluation.sections.title",
+  items: [
+    { id: "performance-basics", label: "performanceEvaluation.sections.basics" },
+    { id: "cpu-time", label: "performanceEvaluation.sections.cpuTime" },
+    { id: "cpi-mips", label: "performanceEvaluation.sections.cpiMips" },
+    { id: "amdahl-law", label: "performanceEvaluation.sections.amdahl" },
+    { id: "benchmarks", label: "performanceEvaluation.sections.benchmarks" },
+    { id: "power-multicore", label: "performanceEvaluation.sections.powerMulticore" },
+  ],
+};
+
+export const realNumbersTOC = {
+  title: "realNumbers.sections.title",
+  items: [
+    {
+      id: "natural-numbers",
+      label: "realNumbers.sections.naturalNumbers",
+      children: [
+        { id: "successor", label: "realNumbers.sections.successor" },
+        { id: "induction", label: "realNumbers.sections.induction" },
+        { id: "gauss-sum", label: "realNumbers.sections.gaussSum" },
+        { id: "bernoulli", label: "realNumbers.sections.bernoulli" },
+      ],
+    },
+    {
+      id: "rationals-irrationals",
+      label: "realNumbers.sections.rationalsIrrationals",
+      children: [
+        { id: "integers", label: "realNumbers.sections.integers" },
+        { id: "rationals", label: "realNumbers.sections.rationals" },
+        { id: "sqrt-two", label: "realNumbers.sections.sqrtTwo" },
+      ],
+    },
+    {
+      id: "completeness",
+      label: "realNumbers.sections.completeness",
+      children: [
+        { id: "completeness-axiom", label: "realNumbers.sections.completenessAxiom" },
+      ],
+    },
+    {
+      id: "topology",
+      label: "realNumbers.sections.topology",
+      children: [
+        { id: "intervals", label: "realNumbers.sections.intervals" },
+        { id: "neighborhoods", label: "realNumbers.sections.neighborhoods" },
+        { id: "open-sets", label: "realNumbers.sections.openSets" },
+      ],
+    },
+    {
+      id: "bounds",
+      label: "realNumbers.sections.bounds",
+      children: [
+        { id: "max-min", label: "realNumbers.sections.maxMin" },
+        { id: "upper-lower-bounds", label: "realNumbers.sections.upperLowerBounds" },
+      ],
+    },
+    {
+      id: "sup-inf",
+      label: "realNumbers.sections.supInf",
+      children: [
+        { id: "sup-inf-definitions", label: "realNumbers.sections.supInfDefinitions" },
+        { id: "epsilon", label: "realNumbers.sections.epsilon" },
+        { id: "unbounded-intervals", label: "realNumbers.sections.unboundedIntervals" },
+      ],
+    },
+    {
+      id: "extreme-examples",
+      label: "realNumbers.sections.extremeExamples",
+      children: [
+        { id: "max-no-min", label: "realNumbers.sections.maxNoMin" },
+        { id: "unbounded-above", label: "realNumbers.sections.unboundedAbove" },
+      ],
+    },
+    {
+      id: "existence",
+      label: "realNumbers.sections.existence",
+      children: [
+        { id: "sup-existence", label: "realNumbers.sections.supExistence" },
+        { id: "inf-existence", label: "realNumbers.sections.infExistence" },
+      ],
+    },
+  ],
+};
+
+export const functionsTOC = {
+  title: "functions.sections.title",
+  items: [
+    { id: "definition", label: "functions.sections.definition" },
+    { id: "injectivity", label: "functions.sections.injectivity" },
+    { id: "preimage", label: "functions.sections.preimage" },
+    { id: "inverse", label: "functions.sections.inverse" },
+    { id: "domain", label: "functions.sections.domain" },
+    { id: "graph", label: "functions.sections.graph" },
+    { id: "symmetry", label: "functions.sections.symmetry" },
+    { id: "monotonicity", label: "functions.sections.monotonicity" },
+    { id: "composition", label: "functions.sections.composition" },
+    {
+      id: "elementary",
+      label: "functions.sections.elementary",
+      children: [
+        { id: "affine", label: "functions.sections.affine" },
+        { id: "absolute-value", label: "functions.sections.absoluteValue" },
+        { id: "powers-roots", label: "functions.sections.powersRoots" },
+        { id: "real-powers", label: "functions.sections.realPowers" },
+        { id: "exponential", label: "functions.sections.exponential" },
+        { id: "logarithm", label: "functions.sections.logarithm" },
+      ],
+    },
+    {
+      id: "trigonometric",
+      label: "functions.sections.trigonometric",
+      children: [
+        { id: "tangent", label: "functions.sections.tangent" },
+        { id: "inverse-trig", label: "functions.sections.inverseTrig" },
+        { id: "trig-equations", label: "functions.sections.trigEquations" },
+      ],
+    },
+    { id: "formulas", label: "functions.sections.formulas" },
+  ],
 };

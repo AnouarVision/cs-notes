@@ -7,7 +7,16 @@ export default function SidebarSection({ title, items = [] }) {
   const [activeId, setActiveId] = useState(
     () => (typeof window !== "undefined" && window.location.hash ? window.location.hash.replace('#','') : items[0]?.id)
   );
-  const [openItems, setOpenItems] = useState({});
+  const [openItems, setOpenItems] = useState(() => {
+    const initial = {};
+    const collect = (list) =>
+      list.forEach((item) => {
+        if (item.open) initial[item.id] = true;
+        if (item.children) collect(item.children);
+      });
+    collect(items);
+    return initial;
+  });
 
   // Listen for hash changes to update the active item
   useEffect(() => {
@@ -62,10 +71,24 @@ export default function SidebarSection({ title, items = [] }) {
           <button
             type="button"
             className={`${styles.toggle} ${isActive ? styles.active : ""}`}
-            onClick={() => toggleOpen(item.id)}
+            onClick={() => {
+              setActiveId(item.id);
+              document.getElementById(item.id)?.scrollIntoView({ behavior: "smooth" });
+              window.history.replaceState(null, "", `#${item.id}`);
+              setOpenItems(prev => ({ ...prev, [item.id]: true }));
+            }}
           >
             {t(item.label)}
-            <span className={isOpen ? styles.open : ""}>▾</span>
+            <span
+              className={isOpen ? styles.open : ""}
+              role="presentation"
+              onClick={(event) => {
+                event.stopPropagation();
+                toggleOpen(item.id);
+              }}
+            >
+              ▾
+            </span>
           </button>
 
           {isOpen && (

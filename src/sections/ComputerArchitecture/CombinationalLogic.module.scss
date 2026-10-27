@@ -1,0 +1,308 @@
+@use "../../assets/styles/variables" as *;
+
+.page {
+	width: 100%;
+}
+
+.lessonSection {
+	margin-bottom: $space-5;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	h2,
+	h3 {
+		scroll-margin-top: 96px;
+	}
+
+	p {
+		line-height: 1.7;
+	}
+}
+
+.definition,
+.note,
+.example {
+	margin: $space-3 0;
+	padding: $space-2 $space-3;
+	border-left: 3px solid $primary;
+	background: rgba($primary, 0.07);
+
+	> :first-child {
+		margin-top: 0;
+	}
+
+	> :last-child {
+		margin-bottom: 0;
+	}
+}
+
+.note {
+	border-left-color: $border-color;
+	background: rgba(255, 255, 255, 0.035);
+}
+
+.twoColumns {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: $space-3;
+}
+
+.tableWrap {
+	max-width: 100%;
+	margin: $space-3 0;
+	overflow-x: auto;
+
+	table {
+		width: 100%;
+		border-collapse: collapse;
+	}
+
+	th,
+	td {
+		padding: $space-2;
+		border-bottom: 1px solid $border-color;
+		text-align: left;
+		white-space: nowrap;
+	}
+
+	th {
+		color: $text-white;
+	}
+}
+
+.formula {
+	display: block;
+	max-width: 100%;
+	margin: $space-2 0;
+	padding: $space-2;
+	overflow-x: auto;
+	border-radius: 6px;
+	background: rgba(255, 255, 255, 0.04);
+	color: $text-white;
+	text-align: center;
+
+	:global(.katex-display) {
+		margin: 0;
+	}
+}
+
+.inlineFormula {
+	display: inline-block;
+	margin: 0 $space-1;
+	color: $text-white;
+}
+
+.codeBlock {
+	max-width: 100%;
+	padding: $space-3;
+	overflow-x: auto;
+	border-left: 3px solid $primary;
+	background: rgba(255, 255, 255, 0.04);
+}
+
+.interactivePanel {
+	margin: $space-4 0;
+	padding: $space-3;
+	border: 1px solid $border-color;
+	border-radius: 6px;
+	background: rgba(255, 255, 255, 0.025);
+}
+
+.interactiveHeading {
+	margin-bottom: $space-3;
+
+	h3 {
+		margin-top: 0;
+	}
+
+	p {
+		margin-bottom: 0;
+	}
+}
+
+.gateChoices {
+	display: grid;
+	grid-template-columns: repeat(6, minmax(0, 1fr));
+	gap: 1px;
+	margin-bottom: $space-3;
+	border: 1px solid $border-color;
+	background: $border-color;
+}
+
+.gateChoice {
+	min-height: 42px;
+	border: 0;
+	background: transparent;
+	color: $text-gray-400;
+	font: inherit;
+	font-weight: 700;
+	cursor: pointer;
+
+	&:hover,
+	&:focus-visible {
+		color: $text-white;
+	}
+
+	&:focus-visible {
+		outline: 2px solid $primary;
+		outline-offset: -2px;
+	}
+}
+
+.gateChoiceActive {
+	background: $primary;
+	color: $text-white;
+}
+
+.interactiveGrid {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(120px, 0.45fr);
+	align-items: stretch;
+	gap: $space-3;
+}
+
+.demoColumns {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: $space-3;
+}
+
+.demoColumn {
+	min-width: 0;
+	padding-top: $space-2;
+	border-top: 1px solid $border-color;
+
+	h4 {
+		margin-top: 0;
+	}
+}
+
+.actionButton {
+	min-height: 44px;
+	padding: 0 $space-2;
+	border: 1px solid $primary;
+	border-radius: 6px;
+	background: transparent;
+	color: $text-white;
+	font: inherit;
+	font-weight: 600;
+	cursor: pointer;
+
+	&:hover {
+		background: rgba($primary, 0.12);
+	}
+
+	&:focus-visible {
+		outline: 2px solid $primary;
+		outline-offset: 2px;
+	}
+}
+
+.inputControls {
+	display: flex;
+	flex-wrap: wrap;
+	gap: $space-2;
+}
+
+.inputToggle {
+	display: inline-flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: $space-3;
+	min-width: 84px;
+	min-height: 48px;
+	padding: 0 $space-2;
+	border: 1px solid $border-color;
+	border-radius: 6px;
+	background: transparent;
+	color: $text-gray-400;
+	font: inherit;
+	cursor: pointer;
+
+	strong {
+		color: $text-white;
+		font-size: 1.25rem;
+	}
+
+	&[aria-pressed="true"] {
+		border-color: $primary;
+		background: rgba($primary, 0.12);
+	}
+
+	&:focus-visible {
+		outline: 2px solid $primary;
+		outline-offset: 2px;
+	}
+}
+
+.gateResult,
+.exactTwoResult {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: $space-2;
+	min-height: 64px;
+	padding: $space-2 $space-3;
+	border-left: 3px solid $primary;
+	background: rgba($primary, 0.07);
+	color: $text-gray-400;
+}
+
+.gateResult strong,
+.exactTwoResult strong {
+	font-size: 1.75rem;
+}
+
+.signalOn {
+	color: $primary;
+}
+
+.signalOff {
+	color: $text-gray-400;
+}
+
+.activeTruthRow {
+	background: rgba($primary, 0.12);
+	color: $text-white;
+}
+
+.exactTwoResult {
+	justify-content: flex-start;
+	margin-top: $space-3;
+	flex-wrap: wrap;
+}
+
+.outputPair {
+	display: grid;
+	grid-template-columns: 1fr auto;
+	align-items: center;
+	gap: $space-1 $space-3;
+	padding: $space-2 $space-3;
+	border-left: 3px solid $primary;
+	background: rgba($primary, 0.07);
+	color: $text-gray-400;
+
+	strong {
+		font-size: 1.4rem;
+	}
+}
+
+@media (max-width: 640px) {
+	.twoColumns {
+		grid-template-columns: 1fr;
+	}
+
+	.gateChoices {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+
+	.interactiveGrid {
+		grid-template-columns: 1fr;
+	}
+
+	.demoColumns {
+		grid-template-columns: 1fr;
+	}
+}

@@ -1,0 +1,371 @@
+@use "../../assets/styles/variables" as *;
+
+.page {
+  width: 100%;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  width: calc(100% - 24px);
+  max-width: 900px;
+  margin: 0 auto;
+  margin-bottom: -($space-2);
+  padding: $space-3 0 0;
+}
+
+.printButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-1;
+  min-height: 44px;
+  padding: 0 $space-2;
+  border: 1px solid $primary;
+  border-radius: 8px;
+  background: transparent;
+  color: $primary;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+
+  &:hover {
+    background: rgba($primary, 0.12);
+  }
+
+  &:focus-visible {
+    outline: 2px solid $primary;
+    outline-offset: 3px;
+  }
+}
+
+.lessonSection {
+  margin-bottom: $space-5;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  h2,
+  h3,
+  h4 {
+    scroll-margin-top: 96px;
+  }
+
+  h3 {
+    margin-top: $space-4;
+  }
+
+  p,
+  li {
+    line-height: 1.7;
+  }
+
+  li + li {
+    margin-top: $space-1;
+  }
+}
+
+.definition,
+.example,
+.observation {
+  margin: $space-3 0;
+  padding: $space-2 $space-3;
+  border-left: 4px solid;
+  border-radius: 4px;
+
+  > :first-child {
+    margin-top: 0;
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+.definition {
+  border-color: $primary;
+  background: rgba($primary, 0.07);
+}
+
+.example {
+  border-color: #38bdf8;
+  background: rgba(56, 189, 248, 0.08);
+}
+
+.observation {
+  border-color: #f59e0b;
+  background: rgba(245, 158, 11, 0.07);
+}
+
+.formula {
+  display: block;
+  max-width: 100%;
+  margin: $space-2 0;
+  padding: $space-2;
+  overflow-x: auto;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.04);
+  color: $text-white;
+  text-align: center;
+
+  :global(.katex-display) {
+    margin: 0;
+  }
+}
+
+.inlineFormula {
+  display: inline-block;
+  margin: 0 0.2em;
+  color: $text-white;
+}
+
+.figure {
+  max-width: 680px;
+  margin: $space-4 auto;
+  padding: $space-2;
+  border: 1px solid $border-color;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.035);
+  break-inside: avoid;
+
+  figcaption {
+    margin-top: $space-1;
+    color: $text-gray-400;
+    font-size: $fs-small;
+    line-height: 1.5;
+    text-align: center;
+  }
+}
+
+.svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  font-family: inherit;
+}
+
+.txt,
+.txtMuted {
+  font-size: 14px;
+}
+
+.txt {
+  fill: $text-white;
+  font-weight: 600;
+}
+
+.txtMuted {
+  fill: $text-gray-400;
+}
+
+.axis,
+.tick {
+  stroke: $text-gray-400;
+  stroke-width: 2;
+  fill: none;
+}
+
+.arrowHead {
+  fill: $text-gray-400;
+}
+
+.dash {
+  stroke: $text-gray-500;
+  stroke-width: 1.5;
+  stroke-dasharray: 5 5;
+  fill: none;
+}
+
+.amberStroke {
+  stroke: #f59e0b;
+}
+
+.dashCurve {
+  fill: none;
+  stroke: #f59e0b;
+  stroke-width: 2;
+  stroke-dasharray: 5 5;
+}
+
+.green {
+  color: $primary;
+}
+
+.blue {
+  color: #38bdf8;
+}
+
+.amber {
+  color: #f59e0b;
+}
+
+.red {
+  color: #f87171;
+}
+
+.white {
+  color: $text-white;
+}
+
+.txt.green,
+.txt.blue,
+.txt.amber,
+.txt.red,
+.txt.white,
+.txtMuted.green,
+.txtMuted.blue,
+.txtMuted.amber,
+.txtMuted.red {
+  fill: currentColor;
+}
+
+.seg {
+  stroke: currentColor;
+  stroke-width: 6;
+}
+
+.fillCurrent {
+  fill: currentColor;
+}
+
+.dotFilled {
+  fill: currentColor;
+  stroke: currentColor;
+  stroke-width: 2.5;
+}
+
+.dotOpen {
+  fill: $bg-dark-2;
+  stroke: currentColor;
+  stroke-width: 2.5;
+}
+
+.curve {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 3;
+}
+
+.curveDashed {
+  stroke-dasharray: 8 6;
+}
+
+.arrowLine {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+}
+
+.dashColor {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-dasharray: 6 5;
+}
+
+.ell {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+}
+
+.cellG {
+  fill: rgba($primary, 0.3);
+  stroke: $primary;
+  stroke-width: 1.5;
+}
+
+.cellB {
+  fill: rgba(56, 189, 248, 0.3);
+  stroke: #38bdf8;
+  stroke-width: 1.5;
+}
+
+.zoneBlue {
+  fill: rgba(56, 189, 248, 0.18);
+  stroke: #38bdf8;
+  stroke-width: 1;
+  stroke-dasharray: 4 3;
+}
+
+@media (max-width: 768px) {
+  .actions {
+    padding-top: $space-2;
+  }
+
+  .figure {
+    padding: $space-1;
+  }
+}
+
+@page {
+  margin: 12mm;
+}
+
+@media print {
+  :global(nav),
+  :global(footer),
+  .actions,
+  .page :global(aside) {
+    display: none !important;
+  }
+
+  .page {
+    color: #111 !important;
+
+    :global(h1),
+    :global(h2),
+    :global(h3),
+    :global(h4),
+    :global(p),
+    :global(li),
+    :global(th),
+    :global(td),
+    :global(strong) {
+      color: #111 !important;
+    }
+  }
+
+  .formula {
+    overflow: visible;
+    border: 1px solid #ccc;
+    background: transparent;
+    color: #111 !important;
+  }
+
+  .figure {
+    border-color: #999;
+    background: transparent;
+
+    figcaption {
+      color: #333;
+    }
+  }
+
+  .txt,
+  .txtMuted {
+    fill: #111;
+  }
+
+  .axis,
+  .tick,
+  .arrowHead {
+    stroke: #555;
+  }
+
+  .arrowHead {
+    fill: #555;
+  }
+
+  .dotOpen {
+    fill: #fff;
+  }
+
+  .definition,
+  .example,
+  .observation {
+    break-inside: avoid;
+    background: transparent;
+  }
+}

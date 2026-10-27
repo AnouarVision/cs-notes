@@ -47,6 +47,14 @@ export default function Navbar() {
             </li>
             <li>
               <NavLink
+                to="/exams"
+                className={({ isActive }) => isActive ? styles.active : undefined}
+              >
+                {t("navbar.links.exams")}
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
                 to="/about"
                 end
                 className={({ isActive }) => isActive ? styles.active : undefined}

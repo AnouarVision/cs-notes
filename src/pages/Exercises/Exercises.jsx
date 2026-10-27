@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams, useSearchParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import katex from "katex";
-import "katex/dist/katex.min.css";
 import {
   FaArrowLeft,
   FaBookOpen,
@@ -11,75 +9,19 @@ import {
   FaListAlt,
 } from "react-icons/fa";
 import styles from "./Exercises.module.scss";
-
-const exerciseAreas = [
-  {
-    key: "cybersecurity",
-    slug: "cybersecurity",
-    exercises: ["accessControl", "threatModel"],
-  },
-  {
-    key: "programming",
-    slug: "programming",
-    exercises: ["javaControlFlow", "recursion"],
-  },
-  {
-    key: "objectOrientedProgramming",
-    slug: "object-oriented-programming",
-    exercises: ["classDesign", "interfaces"],
-  },
-  {
-    key: "introCs",
-    slug: "introductory-computer-science",
-    exercises: ["dataRepresentation", "cPointers"],
-  },
-  {
-    key: "dataStructures",
-    slug: "data-structures",
-    exercises: ["complexity", "stacksAndQueues"],
-  },
-  {
-    key: "databases",
-    slug: "database-systems",
-    exercises: ["sqlQuery", "normalization"],
-  },
-  {
-    key: "computerArchitecture",
-    slug: "computer-architecture",
-    exercises: ["binaryArithmetic", "pipeline"],
-  },
-  {
-    key: "discreteMathLogic",
-    slug: "discrete-mathematics-logic",
-    exercises: ["setDifferenceIdentity", "setMembership"],
-  },
-  {
-    key: "linearAlgebra",
-    slug: "linear-algebra-geometry",
-    exercises: ["linearSystem", "eigenvalues"],
-  },
-  {
-    key: "analysis",
-    slug: "mathematical-analysis",
-    exercises: ["functionLimit", "derivative"],
-  },
-  {
-    key: "networking",
-    slug: "networking",
-    exercises: ["subnetting", "routing"],
-  },
-  {
-    key: "physics",
-    slug: "physics",
-    exercises: ["newtonLaw", "energy"],
-  },
-];
+import ExerciseSectionList from "./ExerciseSectionList";
+import { exerciseAreas } from "./exerciseCatalog";
+import MathExpression from "./ExerciseMath";
+import PowerSetIntersectionExercise from "./PowerSetIntersectionExercise";
+import InductionInequalityExercise from "./InductionInequalityExercise";
+import NestedSetOperationsExercise from "./NestedSetOperationsExercise";
 
 const exerciseModes = [
   { key: "review", icon: FaBookOpen },
   { key: "practice", icon: FaCode },
   { key: "mixed", icon: FaLayerGroup },
 ];
+
 
 export default function Exercises() {
   const { t, i18n } = useTranslation();
@@ -246,25 +188,7 @@ function ExerciseAreaPage({ areaSlug, t }) {
           <p className={styles.intro}>{t(`home.topics.${area.key}.description`)}</p>
         </header>
 
-        <section className={styles.exercisePageSection} aria-labelledby="area-exercises-title">
-          <h2 id="area-exercises-title">{t("exercises.topicExercisesTitle")}</h2>
-          <div className={styles.exercisePageList}>
-            {area.exercises.map((exerciseKey, index) => (
-                <Link
-                  to={`/exercises/${area.slug}/${exerciseKey}`}
-                  className={styles.exercisePageCard}
-                  key={exerciseKey}
-                >
-                <div className={styles.exerciseMeta}>
-                  <span>{t("exercises.exerciseLabel")} {index + 1}</span>
-                  <span>{t(`exercises.items.${exerciseKey}.difficulty`)}</span>
-                </div>
-                <h3>{t(`exercises.items.${exerciseKey}.title`)}</h3>
-                <p>{t(`exercises.items.${exerciseKey}.description`)}</p>
-                </Link>
-            ))}
-          </div>
-        </section>
+        <ExerciseSectionList key={area.slug} area={area} t={t} />
       </div>
     </main>
   );
@@ -291,8 +215,20 @@ function ExerciseDetailPage({ areaSlug, exerciseKey, t }) {
     return <SetMembershipExercisePage area={area} t={t} />;
   }
 
+  if (exerciseKey === "powerSetIntersection") {
+    return <PowerSetIntersectionExercise area={area} t={t} />;
+  }
+
   if (exerciseKey === "setDifferenceIdentity") {
     return <SetDifferenceIdentityPage area={area} t={t} />;
+  }
+
+  if (exerciseKey === "nestedSetOperations") {
+    return <NestedSetOperationsExercise area={area} t={t} />;
+  }
+
+  if (exerciseKey === "inductionInequality") {
+    return <InductionInequalityExercise area={area} t={t} />;
   }
 
   return (
@@ -387,7 +323,7 @@ function SetDifferenceIdentityPage({ area, t }) {
           <FaArrowLeft aria-hidden="true" /> {t("exercises.backToSubject")}
         </Link>
         <header className={styles.header}>
-          <p className={styles.eyebrow}>{t("exercises.exerciseLabel")} 1</p>
+          <p className={styles.eyebrow}>{t("exercises.exerciseLabel")} 3</p>
           <h1>{t("exercises.items.setDifferenceIdentity.title")}</h1>
           <p className={styles.intro}>{t(`home.topics.${area.key}.title`)}</p>
         </header>
@@ -454,22 +390,6 @@ const setMembershipAnswers = [
   { id: "k", expression: String.raw`A \in B`, isTrue: true, focus: ["aObject"] },
 ];
 
-function MathExpression({ expression, display = false }) {
-  const markup = katex.renderToString(expression, {
-    displayMode: display,
-    output: "htmlAndMathml",
-    throwOnError: false,
-  });
-  const Element = display ? "div" : "span";
-
-  return (
-    <Element
-      className={display ? styles.exerciseFormula : styles.inlineExerciseFormula}
-      dangerouslySetInnerHTML={{ __html: markup }}
-    />
-  );
-}
-
 function SetMembershipDiagram({ answer, t }) {
   const focusClass = answer.isTrue ? styles.diagramFocusTrue : styles.diagramFocusFalse;
   const focus = (key) => answer.focus.includes(key) ? focusClass : "";
@@ -522,7 +442,7 @@ function SetMembershipExercisePage({ area, t }) {
           <FaArrowLeft aria-hidden="true" /> {t("exercises.backToSubject")}
         </Link>
         <header className={styles.header}>
-          <p className={styles.eyebrow}>{t("exercises.exerciseLabel")}</p>
+          <p className={styles.eyebrow}>{t("exercises.exerciseLabel")} 1</p>
           <h1>{t("exercises.items.setMembership.title")}</h1>
           <p className={styles.intro}>{t(`home.topics.${area.key}.title`)}</p>
         </header>

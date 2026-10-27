@@ -149,9 +149,9 @@ export default function RelationsOrdersEquivalences() {
         </section>
 
         <section className={styles.lessonSection}>
-          <h2 id="inverse-relation">
+          <h3 id="inverse-relation">
             {t("relationsOrdersEquivalences.sections.inverseRelation")}
-          </h2>
+          </h3>
 
           <div className={styles.definition}>
             <span className={styles.calloutLabel}>
@@ -264,9 +264,9 @@ export default function RelationsOrdersEquivalences() {
         </section>
 
         <section className={styles.lessonSection}>
-          <h2 id="function-image">
+          <h3 id="function-image">
             {t("relationsOrdersEquivalences.sections.functionImage")}
-          </h2>
+          </h3>
 
           <p>
             {t(
@@ -328,9 +328,9 @@ export default function RelationsOrdersEquivalences() {
         </section>
 
         <section className={styles.lessonSection}>
-          <h2 id="function-types">
+          <h3 id="function-types">
             {t("relationsOrdersEquivalences.sections.functionTypes")}
-          </h2>
+          </h3>
 
           <p>
             {t(
@@ -394,9 +394,9 @@ export default function RelationsOrdersEquivalences() {
         </section>
 
         <section className={styles.lessonSection}>
-          <h2 id="composition">
+          <h3 id="composition">
             {t("relationsOrdersEquivalences.sections.composition")}
-          </h2>
+          </h3>
 
           <div className={styles.definition}>
             <span className={styles.calloutLabel}>
@@ -539,11 +539,11 @@ export default function RelationsOrdersEquivalences() {
         </section>
 
         <section className={styles.lessonSection}>
-          <h2 id="composition-proposition">
+          <h3 id="composition-proposition">
             {t(
               "relationsOrdersEquivalences.sections.compositionProposition"
             )}
-          </h2>
+          </h3>
 
           <div className={styles.definition}>
             <span className={styles.calloutLabel}>
@@ -725,11 +725,11 @@ export default function RelationsOrdersEquivalences() {
         </section>
 
         <section className={styles.lessonSection}>
-          <h2 id="inverse-functions">
+          <h3 id="inverse-functions">
             {t(
               "relationsOrdersEquivalences.sections.inverseFunctions"
             )}
-          </h2>
+          </h3>
 
           <p>
             <Trans
@@ -930,11 +930,11 @@ export default function RelationsOrdersEquivalences() {
         </section>
 
         <section className={styles.lessonSection}>
-          <h2 id="invertibility">
+          <h3 id="invertibility">
             {t(
               "relationsOrdersEquivalences.sections.invertibility"
             )}
-          </h2>
+          </h3>
 
           <div className={styles.definition}>
             <span className={styles.calloutLabel}>

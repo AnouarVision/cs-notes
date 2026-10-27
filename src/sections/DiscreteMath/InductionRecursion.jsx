@@ -56,16 +56,21 @@ export default function InductionRecursion() {
             {t("inductionRecursion.sections.inductionPrinciple")}
           </h2>
 
-          <p>{t("inductionRecursion.content.propositionIntro")}</p>
+          <div className={styles.proposition}>
+            <h4 className={styles.blockLabel}>
+              {t("inductionRecursion.labels.proposition")}
+            </h4>
+            <p>{t("inductionRecursion.content.propositionIntro")}</p>
+            <MathExpression
+              expression={String.raw`
+                \forall n\geq 1,\quad
+                1+3+5+7+\dots+\bigl(2(n-1)+1\bigr)=n^2
+              `}
+              display
+            />
+          </div>
 
-          <MathExpression
-            expression={String.raw`
-              1+3+5+7+\dots+\bigl(2(n-1)+1\bigr)=n^2
-            `}
-            display
-          />
-
-          <div className={styles.definition}>
+          <div id="induction-principle-definition" className={styles.definition}>
             <span className={styles.calloutLabel}>
               {t(
                 "inductionRecursion.sections.inductionPrincipleDefinition"
@@ -150,14 +155,21 @@ export default function InductionRecursion() {
               </li>
             </ol>
           </div>
+
+          <div className={styles.intuition}>
+            <h4 className={styles.blockLabel}>
+              {t("inductionRecursion.labels.intuition")}
+            </h4>
+            <p>{t("inductionRecursion.content.inductionDominoes")}</p>
+          </div>
         </section>
 
         <section className={styles.lessonSection}>
-          <h2 id="example">
+          <h3 id="example">
             {t("inductionRecursion.sections.example")}
-          </h2>
+          </h3>
 
-          <div className={styles.note}>
+          <div className={styles.example}>
             <h4>{t("inductionRecursion.labels.example")}</h4>
 
             <p>
@@ -188,7 +200,7 @@ export default function InductionRecursion() {
             />
           </div>
 
-          <div className={styles.note}>
+          <div className={styles.proof}>
             <h4>{t("inductionRecursion.labels.base")}</h4>
 
             <p>
@@ -214,7 +226,7 @@ export default function InductionRecursion() {
             />
           </div>
 
-          <div className={styles.note}>
+          <div className={styles.proof}>
             <h4>
               {t("inductionRecursion.labels.inductiveStep")}
             </h4>
@@ -279,7 +291,7 @@ export default function InductionRecursion() {
             />
           </div>
 
-          <div className={styles.note}>
+          <div className={styles.proof}>
             <p>
               {t("inductionRecursion.content.finalConclusion")}
             </p>
@@ -297,41 +309,103 @@ export default function InductionRecursion() {
 
             <MathExpression
               expression={String.raw`
+                \forall n\geq1,\quad
                 \boxed{
                   1+3+5+\dots+\bigl(2(n-1)+1\bigr)=n^2
                 }
               `}
               display
             />
-
-            <p>
-              <MathExpression
-                expression={String.raw`\forall n\in\mathbb{N}`}
-              />
-              .
-            </p>
           </div>
         </section>
 
         <section className={styles.lessonSection}>
-          <h2 id="power-set-cardinality">
+          <h3 id="power-set-cardinality">
             {t(
               "inductionRecursion.sections.powerSetCardinality"
             )}
-          </h2>
+          </h3>
 
-          <p>
-            {t("inductionRecursion.content.powerSetIntro")}
-          </p>
+          <div className={styles.proposition}>
+            <h4 className={styles.blockLabel}>
+              {t("inductionRecursion.labels.proposition")}
+            </h4>
+            <p>{t("inductionRecursion.content.powerSetIntro")}</p>
+            <MathExpression
+              expression={String.raw`|P(X)|=2^{|X|}`}
+              display
+            />
+          </div>
 
-          <MathExpression
-            expression={String.raw`
-              |P(X)|=2^{|X|}
-            `}
-            display
-          />
+          <div className={styles.example}>
+            <h4>{t("inductionRecursion.labels.example")}</h4>
+            <p>{t("inductionRecursion.content.powerSetExampleIntro")}</p>
+            <MathExpression
+              expression={String.raw`
+                X=\{a,b\},\qquad
+                P(X)=\{\varnothing,\{a\},\{b\},\{a,b\}\},\qquad
+                |P(X)|=4=2^2
+              `}
+              display
+            />
+            <figure className={styles.vennFigure}>
+              <svg
+                className={styles.vennDiagram}
+                viewBox="0 0 380 220"
+                role="img"
+                aria-label={t(
+                  "inductionRecursion.content.powerSetVennDescription"
+                )}
+              >
+                <rect
+                  className={styles.vennUniverse}
+                  x="20"
+                  y="20"
+                  width="340"
+                  height="180"
+                  rx="12"
+                />
+                <text className={styles.vennUniverseLabel} x="38" y="44">
+                  P(X)
+                </text>
+                <circle
+                  className={styles.vennSetA}
+                  cx="145"
+                  cy="120"
+                  r="62"
+                />
+                <circle
+                  className={styles.vennSetB}
+                  cx="230"
+                  cy="120"
+                  r="62"
+                />
+                <text className={styles.vennText} x="118" y="83">
+                  a ∈ Y
+                </text>
+                <text className={styles.vennText} x="253" y="83">
+                  b ∈ Y
+                </text>
+                <text className={styles.vennText} x="55" y="133">
+                  ∅
+                </text>
+                <text className={styles.vennText} x="120" y="145">
+                  {"{a}"}
+                </text>
+                <text className={styles.vennText} x="187" y="145">
+                  {"{a, b}"}
+                </text>
+                <text className={styles.vennText} x="263" y="145">
+                  {"{b}"}
+                </text>
+              </svg>
+              <figcaption className={styles.vennCaption}>
+                {t("inductionRecursion.content.powerSetVennCaption")}
+              </figcaption>
+            </figure>
+          </div>
 
-          <div className={styles.note}>
+          <div className={styles.proof}>
             <h4>{t("inductionRecursion.labels.base")}</h4>
 
             <MathExpression
@@ -370,7 +444,7 @@ export default function InductionRecursion() {
             </p>
           </div>
 
-          <div className={styles.note}>
+          <div className={styles.proof}>
             <h4>
               {t("inductionRecursion.labels.inductiveStep")}
             </h4>
@@ -419,6 +493,58 @@ export default function InductionRecursion() {
               display
             />
 
+            <figure className={styles.vennFigure}>
+              <svg
+                className={styles.vennDiagram}
+                viewBox="0 0 380 220"
+                role="img"
+                aria-label={t(
+                  "inductionRecursion.content.powerSetPartitionDescription"
+                )}
+              >
+                <rect
+                  className={styles.vennUniverse}
+                  x="10"
+                  y="15"
+                  width="360"
+                  height="190"
+                  rx="12"
+                />
+                <text className={styles.vennUniverseLabel} x="40" y="42">
+                  P(X)
+                </text>
+                <ellipse
+                  className={styles.vennSetA}
+                  cx="105"
+                  cy="120"
+                  rx="67"
+                  ry="65"
+                />
+                <ellipse
+                  className={styles.vennSetB}
+                  cx="275"
+                  cy="120"
+                  rx="67"
+                  ry="65"
+                />
+                <text className={styles.vennText} x="105" y="103">
+                  x₀ ∉ Y
+                </text>
+                <text className={styles.vennText} x="105" y="137">
+                  {"∅, {a}"}
+                </text>
+                <text className={styles.vennText} x="275" y="103">
+                  x₀ ∈ Y
+                </text>
+                <text className={styles.vennText} x="275" y="137">
+                  {"{b}, {a,b}"}
+                </text>
+              </svg>
+              <figcaption className={styles.vennCaption}>
+                {t("inductionRecursion.content.powerSetPartitionCaption")}
+              </figcaption>
+            </figure>
+
             <p>
               {t(
                 "inductionRecursion.content.powerSetFirstFamilyIntro"
@@ -435,6 +561,10 @@ export default function InductionRecursion() {
               `}
               display
             />
+
+            <p>
+              {t("inductionRecursion.content.powerSetBijectionInverse")}
+            </p>
 
             <p>
               {t(
@@ -578,11 +708,10 @@ export default function InductionRecursion() {
             />
           </div>
 
-          <div className={styles.definition}>
-            <span className={styles.calloutLabel}>
+          <div className={styles.proposition}>
+            <h4 className={styles.blockLabel}>
               {t("inductionRecursion.labels.proposition")}
-            </span>
-
+            </h4>
             <p>
               {t(
                 "inductionRecursion.content.inductionEquivalence"
@@ -598,11 +727,9 @@ export default function InductionRecursion() {
             )}
           </h2>
 
-          <div className={styles.definition}>
+          <div className={styles.proposition}>
             <span className={styles.calloutLabel}>
-              {t(
-                "inductionRecursion.labels.naturalNumbersAxiom"
-              )}
+              {t("inductionRecursion.labels.theorem")}
             </span>
 
             <p>
@@ -632,7 +759,7 @@ export default function InductionRecursion() {
             )}
           </h2>
 
-          <div className={styles.note}>
+          <div className={styles.example}>
             <h4>{t("inductionRecursion.labels.example")}</h4>
 
             <p>
@@ -651,7 +778,7 @@ export default function InductionRecursion() {
             />
           </div>
 
-          <div className={styles.note}>
+          <div className={styles.proof}>
             <h4>{t("inductionRecursion.labels.proof")}</h4>
 
             <p>
@@ -773,6 +900,32 @@ export default function InductionRecursion() {
                 "inductionRecursion.content.euclideanDivisionFinal"
               )}
             </p>
+
+            <p>
+              {t("inductionRecursion.content.euclideanUniquenessIntro")}
+            </p>
+            <MathExpression
+              expression={String.raw`
+                a=qb+r=q'b+r',\qquad 0\leq r,r'<b
+              `}
+              display
+            />
+            <p>
+              {t(
+                "inductionRecursion.content.euclideanUniquenessContradiction"
+              )}
+            </p>
+            <MathExpression
+              expression={String.raw`
+                a=qb+r < (q+1)b \leq q'b \leq q'b+r'=a
+              `}
+              display
+            />
+            <p>
+              {t(
+                "inductionRecursion.content.euclideanUniquenessConclusion"
+              )}
+            </p>
           </div>
         </section>
 
@@ -781,7 +934,7 @@ export default function InductionRecursion() {
             {t("inductionRecursion.sections.sequences")}
           </h2>
 
-          <div className={styles.definition}>
+          <div id="sequence-definition" className={styles.definition}>
             <span className={styles.calloutLabel}>
               {t("inductionRecursion.labels.definition")}
             </span>
@@ -803,7 +956,7 @@ export default function InductionRecursion() {
             />
           </div>
 
-          <div className={styles.note}>
+          <div className={styles.example}>
             <h4>{t("inductionRecursion.labels.example")}</h4>
 
             <p>
@@ -876,11 +1029,11 @@ export default function InductionRecursion() {
         </section>
 
         <section className={styles.lessonSection}>
-          <h2 id="recursive-sequences">
+          <h3 id="recursive-sequences">
             {t(
               "inductionRecursion.sections.recursiveSequences"
             )}
-          </h2>
+          </h3>
 
           <div className={styles.definition}>
             <span className={styles.calloutLabel}>
@@ -923,9 +1076,9 @@ export default function InductionRecursion() {
         </section>
 
         <section className={styles.lessonSection}>
-          <h2 id="fibonacci">
+          <h3 id="fibonacci">
             {t("inductionRecursion.sections.fibonacci")}
-          </h2>
+          </h3>
 
           <p>
             {t("inductionRecursion.content.fibonacciIntro")}
@@ -961,6 +1114,9 @@ export default function InductionRecursion() {
 
           <div className={styles.note}>
             <p>
+              {t("inductionRecursion.content.fibonacciTrialIntro")}
+            </p>
+            <p>
               {t(
                 "inductionRecursion.content.fibonacciObservation"
               )}
@@ -978,6 +1134,11 @@ export default function InductionRecursion() {
             <p>
               {t("inductionRecursion.content.fibonacciDivide")}
             </p>
+
+            <MathExpression
+              expression={String.raw`r^2=r+1`}
+              display
+            />
 
             <MathExpression
               expression={String.raw`
@@ -1096,11 +1257,11 @@ export default function InductionRecursion() {
         </section>
 
         <section className={styles.lessonSection}>
-          <h2 id="linear-recurrences">
+          <h3 id="linear-recurrences">
             {t(
               "inductionRecursion.sections.linearRecurrences"
             )}
-          </h2>
+          </h3>
 
           <div className={styles.definition}>
             <span className={styles.calloutLabel}>
@@ -1133,11 +1294,10 @@ export default function InductionRecursion() {
             </p>
           </div>
 
-          <div className={styles.definition}>
-            <span className={styles.calloutLabel}>
+          <div className={styles.proposition}>
+            <h4 className={styles.blockLabel}>
               {t("inductionRecursion.labels.proposition")}
-            </span>
-
+            </h4>
             <p>
               {t(
                 "inductionRecursion.content.linearRecurrencePropositionIntro"
@@ -1199,13 +1359,13 @@ export default function InductionRecursion() {
         </section>
 
         <section className={styles.lessonSection}>
-          <h2 id="recurrence-examples">
+          <h3 id="recurrence-examples">
             {t(
               "inductionRecursion.sections.recurrenceExamples"
             )}
-          </h2>
+          </h3>
 
-          <div className={styles.note}>
+          <div className={styles.example}>
             <h4>{t("inductionRecursion.labels.example")}</h4>
 
             <p>

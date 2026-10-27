@@ -222,15 +222,18 @@ export const topicContent = {
     related: [
       {
         slug: "computer-evolution",
-        titleKey: "topics.computerArchitecture.related.computerEvolution"
+        titleKey: "topics.computerArchitecture.related.computerEvolution",
+        status: "completed"
       },
       {
         slug: "performance",
-        titleKey: "topics.computerArchitecture.related.performance"
+        titleKey: "topics.computerArchitecture.related.performance",
+        status: "completed"
       },
       {
         slug: "combinational-logic",
-        titleKey: "topics.computerArchitecture.related.combinationalLogic"
+        titleKey: "topics.computerArchitecture.related.combinationalLogic",
+        status: "completed"
       },
       {
         slug: "timing-memory",
@@ -394,7 +397,8 @@ export const topicContent = {
       },
       {
         slug: "induction-and-recursion",
-        titleKey: "topics.discreteMathLogic.related.inductionAndRecursion"
+        titleKey: "topics.discreteMathLogic.related.inductionAndRecursion",
+        status: "completed"
       },
       {
         slug: "modular-arithmetic",
@@ -438,7 +442,8 @@ export const topicContent = {
     related: [
       {
         slug: "real-numbers",
-        titleKey: "topics.analysis.related.realNumbers"
+        titleKey: "topics.analysis.related.realNumbers",
+        status: "completed"
       },
       {
         slug: "logic-and-sets",
@@ -446,7 +451,8 @@ export const topicContent = {
       },
       {
         slug: "functions",
-        titleKey: "topics.analysis.related.functions"
+        titleKey: "topics.analysis.related.functions",
+        status: "completed"
       },
       {
         slug: "differential-calculus",

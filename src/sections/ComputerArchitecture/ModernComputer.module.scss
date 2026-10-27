@@ -1,0 +1,486 @@
+@use "../../assets/styles/variables" as *;
+
+.page {
+	width: 100%;
+}
+
+.actions {
+	display: flex;
+	justify-content: flex-end;
+	width: calc(100% - 24px);
+	max-width: 900px;
+	margin: 0 auto (-$space-2);
+	padding-top: $space-3;
+}
+
+.printButton {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: $space-1;
+	min-height: 44px;
+	padding: 0 $space-2;
+	border: 1px solid $primary;
+	border-radius: 8px;
+	background: transparent;
+	color: $primary;
+	font: inherit;
+	font-weight: 600;
+	cursor: pointer;
+
+	&:hover {
+		background: rgba($primary, 0.12);
+	}
+
+	&:focus-visible {
+		outline: 2px solid $primary;
+		outline-offset: 3px;
+	}
+}
+
+.lessonSection {
+	margin-bottom: $space-5;
+
+	h2 {
+		scroll-margin-top: 96px;
+	}
+
+	h3,
+	h4 {
+		color: $text-white;
+	}
+
+	p {
+		line-height: 1.7;
+	}
+}
+
+.definition,
+.proposition,
+.note,
+.example,
+.proof {
+	margin: $space-3 0;
+	padding: $space-2 $space-3;
+	border-left: 3px solid $primary;
+	border-radius: 4px;
+	background: rgba($primary, 0.06);
+
+	> :first-child {
+		margin-top: 0;
+	}
+
+	> :last-child {
+		margin-bottom: 0;
+	}
+}
+
+.proposition {
+	border-color: #38bdf8;
+	background: rgba(56, 189, 248, 0.07);
+}
+
+.note {
+	border-color: $border-color;
+	background: rgba(255, 255, 255, 0.035);
+}
+
+.proof {
+	border-color: #f59e0b;
+	background: rgba(245, 158, 11, 0.06);
+}
+
+.calloutLabel {
+	display: block;
+	margin-bottom: $space-2;
+	color: $primary;
+	font-size: $fs-small;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.studyGrid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: $space-3;
+	margin: $space-3 0;
+}
+
+.componentDiagram {
+	display: grid;
+	grid-template-areas:
+		"input processor output"
+		". memory ."
+		". control .";
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: $space-2;
+	margin: $space-3 0;
+	padding: $space-3;
+	border: 1px solid $border-color;
+	border-radius: 6px;
+	background: $bg-dark-1;
+}
+
+.diagramNode {
+	min-height: 54px;
+	padding: $space-2;
+	border: 1px solid $border-color;
+	border-radius: 6px;
+	background: $bg-dark-2;
+	color: $text-gray-300;
+	font: inherit;
+	font-weight: 600;
+	cursor: pointer;
+
+	&:hover,
+	&:focus-visible {
+		border-color: $primary;
+	}
+
+	&:focus-visible {
+		outline: 2px solid $primary;
+		outline-offset: 2px;
+	}
+}
+
+.diagramNodeActive {
+	border-color: $primary;
+	background: rgba($primary, 0.12);
+	color: $primary;
+}
+
+.nodeInput { grid-area: input; }
+.nodeMemory { grid-area: memory; }
+.nodeOutput { grid-area: output; }
+.nodeProcessor { grid-area: processor; }
+.nodeControl { grid-area: control; }
+
+.interactionFeedback {
+	min-height: 48px;
+	margin: $space-2 0;
+	color: $text-gray-300;
+	line-height: 1.6;
+}
+
+.choiceTabs {
+	display: flex;
+	flex-wrap: wrap;
+	gap: $space-1;
+	margin: $space-3 0;
+}
+
+.choiceTab {
+	min-height: 42px;
+	padding: 0 $space-2;
+	border: 1px solid $border-color;
+	border-radius: 6px;
+	background: transparent;
+	color: $text-gray-300;
+	font: inherit;
+	cursor: pointer;
+
+	&:hover,
+	&:focus-visible {
+		border-color: $primary;
+	}
+
+	&:focus-visible {
+		outline: 2px solid $primary;
+		outline-offset: 2px;
+	}
+}
+
+.choiceTabActive {
+	border-color: $primary;
+	background: rgba($primary, 0.12);
+	color: $primary;
+}
+
+.typePanel {
+	min-height: 112px;
+	padding: $space-3 0;
+	border-top: 1px solid $border-color;
+	border-bottom: 1px solid $border-color;
+
+	h3 {
+		margin-top: 0;
+		color: $primary;
+	}
+}
+
+.translationFlow {
+	display: grid;
+	grid-template-columns: repeat(5, minmax(0, 1fr));
+	gap: $space-1;
+	margin: $space-3 0;
+}
+
+.translationStep {
+	display: grid;
+	align-content: start;
+	gap: $space-1;
+	min-height: 76px;
+	padding: $space-2;
+	border: 1px solid $border-color;
+	border-radius: 6px;
+	background: $bg-dark-1;
+	color: $text-gray-300;
+	text-align: left;
+	font: inherit;
+	font-size: $fs-small;
+	cursor: pointer;
+
+	&:focus-visible {
+		outline: 2px solid $primary;
+		outline-offset: 2px;
+	}
+}
+
+.translationStepActive {
+	border-color: $primary;
+	color: $primary;
+}
+
+.stepNumber,
+.ideaNumber {
+	color: $text-gray-500;
+	font-size: 0.75rem;
+	font-variant-numeric: tabular-nums;
+}
+
+.ideaList {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: $space-1 $space-3;
+}
+
+.ideaItem {
+	border-bottom: 1px solid $border-color;
+
+	summary {
+		display: flex;
+		align-items: baseline;
+		gap: $space-2;
+		padding: $space-2 0;
+		color: $text-white;
+		cursor: pointer;
+	}
+
+	p {
+		margin: 0 0 $space-2;
+		color: $text-gray-400;
+		line-height: 1.55;
+	}
+}
+
+.mooreControl {
+	display: grid;
+	grid-template-columns: 1fr auto;
+	align-items: center;
+	gap: $space-2;
+	margin: $space-3 0;
+
+	label {
+		color: $text-gray-300;
+		font-weight: 600;
+	}
+
+	input {
+		grid-column: 1 / -1;
+		width: 100%;
+		accent-color: $primary;
+	}
+}
+
+.growthDiagram {
+	max-width: 440px;
+	margin: $space-2 auto;
+
+	svg {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+}
+
+.growthAxis {
+	fill: none;
+	stroke: $border-color;
+	stroke-width: 2;
+}
+
+.growthLine {
+	fill: none;
+	stroke: $primary;
+	stroke-width: 4;
+}
+
+.growthPoint {
+	fill: $text-white;
+	stroke: $primary;
+	stroke-width: 4;
+}
+
+.studyExample {
+	padding: $space-3;
+	border-top: 1px solid $border-color;
+
+	h3 {
+		margin-top: 0;
+		color: $primary;
+		font-size: $fs-card-title;
+	}
+}
+
+.formula {
+	display: block;
+	max-width: 100%;
+	margin: $space-2 0;
+	padding: $space-2;
+	overflow-x: auto;
+	border-radius: 6px;
+	background: rgba(255, 255, 255, 0.04);
+	color: $text-white;
+	text-align: center;
+
+	:global(.katex-display) {
+		margin: 0;
+	}
+}
+
+.inlineFormula {
+	display: inline-block;
+	margin: 0 $space-1;
+	color: $text-white;
+}
+
+.mathList {
+	display: grid;
+	gap: $space-2;
+	padding-left: $space-3;
+
+	li {
+		color: $text-gray-400;
+		line-height: 1.7;
+	}
+}
+
+.codeBlock {
+	overflow-x: auto;
+	margin: $space-2 0;
+	padding: $space-3;
+	border: 1px solid $border-color;
+	border-radius: 6px;
+	background: $bg-dark-1;
+	color: $text-gray-300;
+	white-space: pre-wrap;
+}
+
+.conclusion {
+	margin-top: $space-4;
+	padding-top: $space-2;
+	border-top: 1px solid $border-color;
+}
+
+@media (max-width: 768px) {
+	.actions {
+		padding-top: $space-2;
+	}
+
+	.studyGrid {
+		grid-template-columns: 1fr;
+	}
+
+	.componentDiagram {
+		grid-template-areas:
+			"input output"
+			"processor memory"
+			"control control";
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.translationFlow {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.ideaList {
+		grid-template-columns: 1fr;
+	}
+}
+
+@page {
+	margin: 12mm;
+
+	@top-left { content: none; }
+	@top-center { content: none; }
+	@top-right { content: none; }
+	@bottom-left { content: none; }
+	@bottom-center {
+		content: counter(page);
+		color: #666;
+		font-size: 9pt;
+	}
+	@bottom-right { content: none; }
+}
+
+@media print {
+	:global(body) {
+		background: #fff !important;
+		color: #111 !important;
+	}
+
+	:global(nav),
+	:global(footer),
+	.actions,
+	.page :global(aside) {
+		display: none !important;
+	}
+
+	.page {
+		background: #fff !important;
+		color: #111 !important;
+
+		:global(header) {
+			padding: 0 0 8px;
+			border: 0;
+			background: transparent;
+			color: #111 !important;
+		}
+
+		:global(main) {
+			width: 100%;
+			max-width: none;
+			margin: 0;
+			padding: 0;
+			border: 0;
+			background: transparent;
+			color: #111 !important;
+		}
+
+		:global(h1),
+		:global(h2),
+		:global(h3),
+		:global(h4),
+		:global(p),
+		:global(li),
+		:global(strong) {
+			color: #111 !important;
+		}
+	}
+
+	.lessonSection,
+	.definition,
+	.proposition,
+	.note,
+	.example,
+	.proof,
+	.formula {
+		break-inside: avoid;
+		border-color: #999;
+		background: transparent;
+	}
+
+	.formula {
+		overflow: visible;
+	}
+}

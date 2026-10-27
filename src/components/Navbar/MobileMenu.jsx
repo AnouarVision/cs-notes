@@ -161,6 +161,9 @@ export default function MobileMenu({ open, onClose }) {
             <Link to="/exercises" onClick={onClose}>
               {t("navbar.links.exercises")}
             </Link>
+            <Link to="/exams" onClick={onClose}>
+              {t("navbar.links.exams")}
+            </Link>
             <Link to="/about" onClick={onClose}>
               About
             </Link>
