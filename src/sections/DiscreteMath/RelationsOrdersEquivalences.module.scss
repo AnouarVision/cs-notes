@@ -146,6 +146,321 @@
   }
 }
 
+.lab {
+  margin: $space-4 0;
+  padding: $space-3;
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  background: $bg-dark-2;
+  h3 { margin-top: 0; }
+}
+
+.relationLab {
+  border-top: 3px solid $primary;
+}
+
+.relationHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $space-2;
+
+  h3 { margin: 0; }
+}
+
+.domainTag {
+  flex: 0 0 auto;
+  padding: 6px 10px;
+  border: 1px solid rgba($primary, 0.4);
+  border-radius: 4px;
+  background: rgba($primary, 0.08);
+  color: $primary;
+  font-family: $font-main;
+  font-size: $fs-small;
+  font-weight: 700;
+}
+
+.relationIntro {
+  margin: $space-2 0;
+  color: $text-gray-300;
+}
+
+.relationToolbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: $space-1 $space-2;
+  margin: $space-3 0;
+}
+
+.toolbarLabel {
+  color: $text-gray-400;
+  font-size: $fs-small;
+  font-weight: 700;
+}
+
+.presetGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid $border-color;
+  border-radius: 6px;
+  background: $bg-dark-1;
+}
+
+.presetButton {
+  min-height: 40px;
+  padding: 0 12px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: transparent;
+  color: $text-gray-300;
+  font: inherit;
+  cursor: pointer;
+  transition: background-color 140ms ease, color 140ms ease, border-color 140ms ease;
+
+  &:hover {
+    border-color: $border-color;
+    color: $text-white;
+  }
+
+  &[aria-pressed="true"] {
+    background: $primary;
+    color: $bg-dark-1;
+    font-weight: 700;
+  }
+}
+
+.relationWorkspace {
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) minmax(260px, 0.9fr);
+  align-items: stretch;
+  border-top: 1px solid $border-color;
+}
+
+.matrixPanel {
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  padding: $space-2 $space-3 $space-2 0;
+}
+
+.relationMatrix {
+  width: auto;
+  margin: 0;
+  table-layout: fixed;
+
+  caption {
+    padding: $space-2 0;
+    color: $text-gray-400;
+    font-size: $fs-small;
+  }
+
+  th {
+    min-width: 48px;
+    border: 0;
+    color: $text-gray-300;
+    font-size: $fs-small;
+  }
+
+  td {
+    width: 58px;
+    height: 58px;
+    padding: 0;
+    border: 1px solid $border-color;
+    background: $bg-dark-1;
+  }
+}
+
+.matrixCell {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  min-width: 44px;
+  min-height: 44px;
+  place-items: center;
+  cursor: pointer;
+
+  input {
+    width: 24px;
+    height: 24px;
+    margin: 0;
+    accent-color: $primary;
+    cursor: pointer;
+  }
+
+  &:has(input:checked) {
+    background: rgba($primary, 0.12);
+  }
+
+  &:has(input:focus-visible) {
+    outline: 2px solid $primary;
+    outline-offset: -3px;
+  }
+}
+
+.propertyPanel {
+  min-width: 0;
+  padding: $space-2 0 $space-2 $space-3;
+  border-left: 1px solid $border-color;
+
+  h4 {
+    margin: 0 0 $space-1;
+    font-size: $fs-body;
+  }
+}
+
+.propertyList {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: $space-1;
+    min-height: 44px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba($border-color, 0.7);
+    line-height: 1.5;
+  }
+}
+
+.propertyMark {
+  display: grid;
+  flex: 0 0 24px;
+  width: 24px;
+  height: 24px;
+  place-items: center;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  font-size: $fs-small;
+  font-weight: 800;
+}
+
+.propertyValid .propertyMark { color: $primary; }
+.propertyInvalid .propertyMark { color: #fb7185; }
+
+.propertyDetail {
+  min-width: 0;
+
+  > strong { display: block; }
+}
+
+.witness {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 $space-1;
+  color: $text-gray-400;
+  font-size: $fs-small;
+
+  :global(.katex) { color: $text-white; }
+}
+
+.relationConclusions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: $space-2;
+  padding-top: $space-2;
+  border-top: 1px solid $border-color;
+
+  p {
+    display: flex;
+    align-items: center;
+    gap: $space-1;
+    min-height: 48px;
+    margin: 0;
+    padding: $space-1 $space-2;
+    border-radius: 4px;
+    background: $bg-dark-1;
+  }
+
+  p > span:first-child {
+    font-size: 1.1rem;
+    font-weight: 800;
+  }
+
+  p > span:last-child {
+    margin-left: auto;
+    font-size: $fs-small;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+}
+
+.conclusionValid > span:first-child,
+.conclusionValid > span:last-child { color: $primary; }
+
+.conclusionInvalid > span:first-child,
+.conclusionInvalid > span:last-child { color: #fb7185; }
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: $space-2;
+  margin: $space-2 0;
+  label { display: flex; align-items: center; gap: $space-1; }
+  button, input, select {
+    min-height: 44px;
+    padding: $space-1;
+    border: 1px solid $border-color;
+    border-radius: 6px;
+    background: $bg-dark-3;
+    color: $text-white;
+    font: inherit;
+  }
+  input { width: 130px; max-width: 100%; }
+  button, select { cursor: pointer; }
+}
+
+.lab :is(button, input, select):focus-visible,
+.solution summary:focus-visible {
+  outline: 2px solid $primary;
+  outline-offset: 3px;
+}
+
+.matrix {
+  border-collapse: collapse;
+  margin: $space-2 auto;
+  caption { padding-bottom: $space-2; line-height: 1.5; }
+  th, td { border: 1px solid $border-color; padding: $space-1; text-align: center; }
+  input { display: block; width: 28px; height: 28px; margin: 8px; accent-color: $primary; cursor: pointer; }
+}
+
+.checks {
+  padding: 0;
+  list-style: none;
+  li { padding: $space-1 0; line-height: 1.7; }
+}
+
+.hasse {
+  display: block;
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  margin: auto;
+  line { stroke: $text-gray-400; stroke-width: 2; }
+  circle { fill: $bg-dark-3; stroke: $text-gray-300; stroke-width: 2; }
+  text { fill: $text-white; font-size: 14px; font-weight: 700; }
+  .boundNode { fill: $primary; stroke: $primary; }
+  g:has(.boundNode) text { fill: $bg-dark-1; }
+}
+
+.solution {
+  margin: $space-3 0;
+  border-left: 3px solid $primary;
+  padding: $space-2;
+  background: rgba($primary, 0.04);
+  summary { cursor: pointer; line-height: 1.7; font-weight: 600; }
+}
+
+.solutionContent { padding-top: $space-1; }
+
 .conclusion {
   margin-top: $space-4;
   padding-top: $space-2;
@@ -153,9 +468,30 @@
 }
 
 @media (max-width: 768px) {
+  .lab { padding: $space-2; }
+  .relationWorkspace { grid-template-columns: minmax(0, 1fr); }
+  .matrixPanel { padding: $space-2 0; }
+  .propertyPanel {
+    padding: $space-2 0 0;
+    border-top: 1px solid $border-color;
+    border-left: 0;
+  }
   .actions {
     padding: $space-2 0 0;
   }
+}
+
+@media (max-width: 480px) {
+  .relationHeader {
+    align-items: flex-start;
+    flex-direction: column-reverse;
+  }
+
+  .relationToolbar { align-items: stretch; flex-direction: column; }
+  .presetGroup { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .presetButton { padding: 0 $space-1; }
+  .relationMatrix td { width: 54px; height: 54px; }
+  .relationConclusions { grid-template-columns: minmax(0, 1fr); gap: $space-1; }
 }
 
 @page {
@@ -174,6 +510,16 @@
 }
 
 @media print {
+  .controls { display: none; }
+  .solution::details-content { content-visibility: visible; display: block; }
+  .solution > .solutionContent { display: block; }
+  .lab, .solution { background: transparent; border-color: #999; }
+  .hasse {
+    break-inside: avoid;
+    circle { fill: white; stroke: #333; }
+    text { fill: #111; }
+    .boundNode { fill: #ddd; stroke: #111; }
+  }
   :global(body) {
     background: #fff !important;
     color: #111 !important;
@@ -245,4 +591,6 @@
   .formula {
     overflow: visible;
   }
+
+  .inlineFormula, .formula, .calloutLabel { color: #111 !important; }
 }

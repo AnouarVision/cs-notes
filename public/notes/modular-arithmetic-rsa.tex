@@ -1,0 +1,244 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{fontspec}
+\usepackage[italian]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=2.4cm]{geometry}
+\usepackage{adjustbox}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\setlength{\emergencystretch}{3em}
+\title{Aritmetica modulare e RSA}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+\tableofcontents
+\bigskip
+Prova gli esercizi prima di consultare le soluzioni in fondo al documento.
+
+
+\section{Gli interi e gli algoritmi}
+
+Parti dai divisori, trova il MCD e costruisci un’identità di Bézout. Sono gli strumenti che rendono possibile calcolare gli inversi modulari.
+
+\subsection{Divisibilità, divisione euclidea e MCD}
+
+Gli interi con somma e prodotto formano un anello commutativo con unità: la somma è associativa e commutativa, ha neutro 0 e opposti; il prodotto è associativo e commutativo, ha unità 1 e distribuisce sulla somma. Un intero a divide b quando b è un multiplo intero di a. Il MCD di a e b, non entrambi nulli, è il massimo divisore comune positivo; il mcm è il minimo multiplo comune positivo se entrambi sono non nulli.
+
+\begin{center}\begin{adjustbox}{max width=\linewidth}$\displaystyle a\mid b\iff \exists k\in\mathbb Z:\ b=ak,\qquad \gcd(a,b)\operatorname{lcm}(a,b)=|ab|\quad(a,b\ne0)$\end{adjustbox}\end{center}
+
+Divisione euclidea: per ogni intero a e ogni intero b positivo esistono unici quoziente q e resto r. Anche per a negativo il resto si sceglie non negativo: per esempio $-$17 = ($-$4)$\cdot$5 + 3.
+
+\begin{center}\begin{adjustbox}{max width=\linewidth}$\displaystyle a=bq+r,\qquad 0\le r<b$\end{adjustbox}\end{center}
+
+\paragraph{Dimostrazione.} Unicità: sottraendo due divisioni si ottiene un multiplo di b di valore assoluto minore di b; deve essere zero. Esistenza: si prende il minimo elemento non negativo tra gli interi a$-$bq; se fosse almeno b, sottraendo b si contraddirebbe la minimalità.
+
+L’algoritmo di Euclide sostituisce la coppia con divisore e resto. I divisori comuni non cambiano; i resti diminuiscono strettamente finché diventano zero. L’ultimo resto non nullo è il MCD. Risalendo le divisioni si ottiene l’identità di Bézout.
+
+\begin{center}\begin{adjustbox}{max width=\linewidth}$\displaystyle \gcd(a,b)=\gcd(b,a-bq),\qquad \exists u,v\in\mathbb Z:\ au+bv=\gcd(a,b)$\end{adjustbox}\end{center}
+
+\begin{center}\begin{adjustbox}{max width=\linewidth}$\displaystyle 252=2\cdot105+42,\quad105=2\cdot42+21,\quad42=2\cdot21;\qquad21=5\cdot105-2\cdot252$\end{adjustbox}\end{center}
+
+\paragraph{Esercizio 1.} Quando ax+by=c ammette soluzioni intere? Trova tutte le soluzioni di 6x+9y=3.
+
+\subsection{Primi, fattorizzazione e basi}
+
+Un primo è un intero p>1 i cui soli divisori positivi sono 1 e p. Lemma di Euclide: se un primo divide un prodotto, divide almeno un fattore. Per Bézout, se p non divide a, allora MCD(p,a)=1; moltiplicando un’identità di Bézout per b si conclude che p divide b.
+
+\begin{center}\begin{adjustbox}{max width=\linewidth}$\displaystyle p\text{ primo},\quad p\mid ab\ \Longrightarrow\ p\mid a\ \text{ oppure }\ p\mid b$\end{adjustbox}\end{center}
+
+Teorema fondamentale dell’aritmetica: ogni intero n>1 si scrive come prodotto di primi, in modo unico a meno dell’ordine. L’esistenza segue per induzione; l’unicità dal lemma di Euclide, cancellando via via gli stessi fattori primi. I primi sono infiniti: se fossero p$_{1}$,$\ldots$,p$_{k}$, un divisore primo di p$_{1}$$\cdot$$\cdot$$\cdot$p$_{k}$+1 non sarebbe nella lista.
+
+\begin{center}\begin{adjustbox}{max width=\linewidth}$\displaystyle a=\prod_i p_i^{\alpha_i},\ b=\prod_i p_i^{\beta_i}\quad\Longrightarrow\quad\gcd(a,b)=\prod_i p_i^{\min(\alpha_i,\beta_i)},\quad\operatorname{lcm}(a,b)=\prod_i p_i^{\max(\alpha_i,\beta_i)}$\end{adjustbox}\end{center}
+
+In una base intera B$\ge$2, ogni naturale positivo ha una scrittura unica con cifre da 0 a B$-$1 e prima cifra non nulla. Le divisioni successive per B forniscono le cifre dal basso verso l’alto: il primo resto è la cifra delle unità. Il numero 0 si rappresenta con la sola cifra 0.
+
+\begin{center}\begin{adjustbox}{max width=\linewidth}$\displaystyle n=a_kB^k+\cdots+a_1B+a_0,\quad 0\le a_i<B;\qquad247=(11110111)_2$\end{adjustbox}\end{center}
+
+\paragraph{Esercizio 2.} Perché 1 non è primo? E perché 6 divide 2$\cdot$3 senza dividere nessuno dei due fattori?
+
+\section{Il linguaggio delle congruenze}
+
+Un intero può cambiare, ma il suo resto rimane lo stesso. Le classi raccolgono tutti i numeri che il modulo non distingue.
+
+\subsection{Classi di resto e operazioni}
+
+\begin{center}\begin{adjustbox}{max width=\linewidth}$\displaystyle a\equiv b\pmod n\iff n\mid(a-b),\qquad [a]_n=\{a+kn:k\in\mathbb Z\},\quad n\ge2$\end{adjustbox}\end{center}
+
+La congruenza è riflessiva, simmetrica e transitiva. Le sue classi partizionano $\mathbb Z$: due classi coincidono oppure sono disgiunte. Ogni classe ha un unico rappresentante tra 0 e n$-$1, dato dal resto della divisione euclidea. Anche per gli interi negativi il resto si sceglie non negativo.
+
+\begin{center}\begin{adjustbox}{max width=\linewidth}$\displaystyle \mathbb Z/n\mathbb Z=\{[0]_n,\ldots,[n-1]_n\},\qquad [-17]_5=[3]_5$\end{adjustbox}\end{center}
+
+\begin{center}\begin{adjustbox}{max width=\linewidth}$\displaystyle [a]_n+[b]_n=[a+b]_n,\qquad [a]_n[b]_n=[ab]_n$\end{adjustbox}\end{center}
+
+\paragraph{Dimostrazione.} Le operazioni non dipendono dai rappresentanti scelti. Se n divide a$-$a${}^{\prime}$ e b$-$b${}^{\prime}$, divide la differenza delle somme. Per i prodotti si usa ab$-$a${}^{\prime}$b${}^{\prime}$=(a$-$a${}^{\prime}$)b+a${}^{\prime}$(b$-$b${}^{\prime}$): anche questa differenza è multipla di n.
+
+L’insieme delle classi con queste operazioni è un anello commutativo con unità [1]. Il neutro della somma è [0] e l’opposto di [a] è [$-$a]. Le proprietà associativa, commutativa e distributiva discendono da quelle degli interi.
+
+\paragraph{Esercizio 3.} Calcola [8]+[6] e [8]$\cdot$[6] modulo 10.
+
+\subsection{Congruenze lineari e cancellazione}
+
+La congruenza ax$\equiv$b modulo n equivale all’equazione diofantea ax+ny=b. Posto d=MCD(a,n), è risolubile se e solo se d divide b. Se è risolubile, ha esattamente d classi soluzione modulo n. Dividi a, b e n per d per ottenere un coefficiente invertibile.
+
+\begin{center}\begin{adjustbox}{max width=\linewidth}$\displaystyle 6x\equiv3\pmod9\iff2x\equiv1\pmod3\iff x\equiv2\pmod3$\end{adjustbox}\end{center}
+
+\begin{center}\begin{adjustbox}{max width=\linewidth}$\displaystyle [x]_9\in\{[2]_9,[5]_9,[8]_9\}$\end{adjustbox}\end{center}
+
+Non cancellare un fattore senza controllare il MCD con il modulo. Da ac$\equiv$bc modulo n puoi dedurre a$\equiv$b con lo stesso modulo se MCD(c,n)=1. Altrimenti il modulo si riduce a n/MCD(c,n): per esempio 2x$\equiv$2 modulo 6 equivale a x$\equiv$1 modulo 3.
+
+I criteri di divisibilità sono applicazioni delle congruenze: poiché 10$\equiv$1 modulo 9 e modulo 3, un numero è congruente alla somma delle sue cifre. Poiché 10$\equiv$$-$1 modulo 11, conta la somma alternata delle cifre, iniziando con segno positivo dalle unità.
+
+\subsection{Il teorema cinese dei resti}
+
+Con moduli n$_{i}$$\ge$2 a due a due coprimi, qualsiasi scelta dei resti determina un’unica classe soluzione modulo N, il prodotto dei moduli. Per costruirla, poni N$_{i}$=N/n$_{i}$ e scegli u$_{i}$ inverso di N$_{i}$ modulo n$_{i}$.
+
+\begin{center}\begin{adjustbox}{max width=\linewidth}$\displaystyle x\equiv a_i\pmod{n_i}\quad\Longrightarrow\quad x\equiv\sum_i a_iN_iu_i\pmod N$\end{adjustbox}\end{center}
+
+\paragraph{Dimostrazione.} Ogni addendo restituisce il resto richiesto per il proprio modulo ed è zero per tutti gli altri. Due soluzioni hanno differenza divisibile da ciascun n$_{i}$; la coprimalità implica che anche il loro prodotto divide la differenza. Questo dimostra l’unicità modulo N.
+
+\begin{center}\begin{adjustbox}{max width=\linewidth}$\displaystyle \mathbb Z/N\mathbb Z\cong\prod_i\mathbb Z/n_i\mathbb Z,\qquad[x]_N\mapsto([x]_{n_1},\ldots,[x]_{n_k})$\end{adjustbox}\end{center}
+
+La corrispondenza conserva somma e prodotto: è un isomorfismo di anelli. In particolare, una classe modulo N è invertibile se e solo se lo sono tutte le sue componenti. Per due moduli non coprimi, il sistema è risolubile se e solo se i resti coincidono modulo il loro MCD; quando esiste, la soluzione è unica modulo il mcm.
+
+\paragraph{Esercizio 4.} Risolvi x$\equiv$2 modulo 3 e x$\equiv$3 modulo 5. Il sistema x$\equiv$1 modulo 4, x$\equiv$2 modulo 6 è risolubile?
+
+\section{Invertibili e divisori di zero}
+
+In un anello finito un prodotto può annullarsi senza che i fattori siano zero. Il MCD permette di riconoscere esattamente quando accade.
+
+\subsection{Il criterio di invertibilità}
+
+Una classe [a] è invertibile se esiste [b] con [a][b]=[1]. Il suo inverso è unico. Una classe non nulla è divisore di zero se esiste un’altra classe non nulla che moltiplicata per essa dà [0]. Per n$\ge$2, queste due possibilità distinguono tutte le classi non nulle.
+
+\begin{center}\begin{adjustbox}{max width=\linewidth}$\displaystyle [a]_n\text{ invertibile}\iff\gcd(a,n)=1$\end{adjustbox}\end{center}
+
+\paragraph{Dimostrazione.} Se ab$\equiv$1 modulo n, esiste k con ab+kn=1 e dunque il MCD è 1. Viceversa, Bézout fornisce au+nv=1: riducendo modulo n si vede che [u] è l’inverso di [a]. Questo è anche un algoritmo per trovarlo.
+
+\begin{center}\begin{adjustbox}{max width=\linewidth}$\displaystyle 5\cdot5-2\cdot12=1\quad\Longrightarrow\quad[5]_{12}^{-1}=[5]_{12}$\end{adjustbox}\end{center}
+
+\begin{center}\begin{adjustbox}{max width=\linewidth}$\displaystyle [a]_n\ne[0]_n:\quad[a]_n\text{ divisore di zero}\iff\gcd(a,n)>1$\end{adjustbox}\end{center}
+
+\paragraph{Dimostrazione.} Se d=MCD(a,n)>1 e [a] non è zero, la classe di n/d è non nulla e il prodotto a(n/d) è multiplo di n. Se invece [a] è invertibile, moltiplicando ab$\equiv$0 per l’inverso si ottiene b$\equiv$0: un invertibile non è divisore di zero.
+
+L’anello $\mathbb Z$/n$\mathbb Z$ è un campo se e solo se n è primo. Con n primo tutte le classi non nulle sono coprime con n; con n composto, una fattorizzazione n=ab con 1<a,b<n produce divisori di zero. In $\mathbb Z$ gli unici invertibili sono 1 e $-$1, e non ci sono divisori di zero.
+
+\paragraph{Esercizio 5.} Perché [2] è invertibile modulo 3 ma è divisore di zero modulo 4?
+
+\section{La funzione di Eulero}
+
+Conta gli invertibili, scomponi il modulo e riduci le potenze. Una condizione accompagna ogni teorema: controllala prima di calcolare.
+
+\subsection{Contare le classi invertibili}
+
+\begin{center}\begin{adjustbox}{max width=\linewidth}$\displaystyle \varphi(n)=|\{a:1\le a\le n,\ \gcd(a,n)=1\}|,\qquad\varphi(1)=1$\end{adjustbox}\end{center}
+
+Per n$\ge$2, $\varphi$(n) è il numero degli invertibili di $\mathbb Z$/n$\mathbb Z$. Se p è primo, tutti i numeri da 1 a p$-$1 sono coprimi con p. Tra 1 e p$^{k}$, gli unici non coprimi sono i p$^{k-1}$ multipli di p.
+
+\begin{center}\begin{adjustbox}{max width=\linewidth}$\displaystyle \varphi(p^k)=p^k-p^{k-1}\quad(k\ge1),\qquad\gcd(m,n)=1\Rightarrow\varphi(mn)=\varphi(m)\varphi(n)$\end{adjustbox}\end{center}
+
+\paragraph{Dimostrazione.} Per il teorema cinese, le classi modulo mn corrispondono alle coppie di classi modulo m e n. Una classe è invertibile esattamente quando entrambe le componenti lo sono. Il numero delle coppie invertibili è quindi il prodotto dei due conteggi.
+
+\begin{center}\begin{adjustbox}{max width=\linewidth}$\displaystyle n=\prod_i p_i^{\alpha_i}\quad\Longrightarrow\quad\varphi(n)=\prod_i(p_i^{\alpha_i}-p_i^{\alpha_i-1})=n\prod_{p\mid n}\left(1-\frac1p\right)$\end{adjustbox}\end{center}
+
+\begin{center}\begin{adjustbox}{max width=\linewidth}$\displaystyle 72=2^3\cdot3^2,\qquad\varphi(72)=(8-4)(9-3)=24$\end{adjustbox}\end{center}
+
+Per calcolare $\varphi$(n), scomponi n nelle sue potenze di primi. Applica la regola $\varphi$(p\textasciicircum{}k)=p\textasciicircum{}k$-$p\textasciicircum{}(k$-$1) a ciascuna potenza e moltiplica i risultati: le potenze di primi distinti sono coprime, quindi vale la regola del prodotto. La coprimalità è essenziale: $\varphi$(4)=2, mentre $\varphi$(2)$\varphi$(2)=1.
+
+\paragraph{Esercizio 6.} Calcola $\varphi$(100) e $\varphi$(143).
+
+\subsection{I teoremi di Eulero e Fermat}
+
+\begin{center}\begin{adjustbox}{max width=\linewidth}$\displaystyle \gcd(a,n)=1\quad\Longrightarrow\quad a^{\varphi(n)}\equiv1\pmod n$\end{adjustbox}\end{center}
+
+\paragraph{Dimostrazione.} Moltiplicare per un invertibile [a] permuta tutte le classi invertibili: l’applicazione è iniettiva per cancellazione e quindi biiettiva perché l’insieme è finito. Il prodotto delle immagini è uguale al prodotto iniziale. Si ottiene a\textasciicircum{}$\varphi$(n)$\cdot$P$\equiv$P; P è invertibile, quindi si può cancellare e resta a\textasciicircum{}$\varphi$(n)$\equiv$1.
+
+Se p è primo, $\varphi$(p)=p$-$1 e si ottiene il piccolo teorema di Fermat. La forma a$^{p}$$\equiv$a vale per ogni intero a, anche multiplo di p. La forma a$^{p-1}$$\equiv$1 richiede invece che p non divida a.
+
+\begin{center}\begin{adjustbox}{max width=\linewidth}$\displaystyle p\nmid a\Rightarrow a^{p-1}\equiv1\pmod p,\qquad a^p\equiv a\pmod p$\end{adjustbox}\end{center}
+
+Puoi ridurre un esponente modulo $\varphi$(n) soltanto dopo aver verificato MCD(a,n)=1. In caso contrario usa direttamente le potenze successive o scomponi il modulo con il teorema cinese.
+
+\begin{center}\begin{adjustbox}{max width=\linewidth}$\displaystyle 4526^{236}\equiv4^{236}\equiv4^2\equiv2\pmod7$\end{adjustbox}\end{center}
+
+\paragraph{Esercizio 7.} Trova le ultime due cifre di 237$^{242}$. Puoi usare Eulero per 2$^{4}$ modulo 8?
+
+\section{Potenze modulari veloci}
+
+Non costruire una potenza enorme: riduci dopo ogni prodotto e sfrutta le cifre binarie dell’esponente.
+
+\subsection{L’algoritmo delle quadrature successive (Fast Powering Algorithm)}
+
+Scrivi l’esponente in base 2. Calcola a, a$^{2}$, a$^{4}$, a$^{8}$ e così via, riducendo ogni volta modulo n. Moltiplica soltanto le potenze corrispondenti alle cifre 1. L’algoritmo funziona anche quando la base non è invertibile.
+
+\begin{center}\begin{adjustbox}{max width=\linewidth}$\displaystyle 11=(1011)_2=8+2+1,\qquad102^{11}\equiv102^8\cdot102^2\cdot102\pmod{247}$\end{adjustbox}\end{center}
+
+\begin{center}\begin{adjustbox}{max width=\linewidth}$\displaystyle 102^2\equiv30,\quad102^4\equiv159,\quad102^8\equiv87\pmod{247}$\end{adjustbox}\end{center}
+
+\begin{center}\begin{adjustbox}{max width=\linewidth}$\displaystyle 102^{11}\equiv87\cdot30\cdot102\equiv201\pmod{247}$\end{adjustbox}\end{center}
+
+La versione operativa mantiene un accumulatore r, una base b e un esponente residuo k. Se k è dispari, aggiorna r con r$\cdot$b modulo n; poi eleva b al quadrato modulo n e dimezza k scartando il resto. Parti da r=1, b=a modulo n e termina con k=0. Per esponente zero il risultato è 1 modulo n, seguendo la convenzione del prodotto vuoto.
+
+\paragraph{Dimostrazione.} L’invariante è r$\cdot$b$^{k}$$\equiv$a$^{E}$ modulo n, dove E è l’esponente iniziale. Se k è pari, sostituire b con b$^{2}$ e k con k/2 lo preserva. Se è dispari, assorbi prima un fattore b nell’accumulatore. Alla fine k=0, quindi r è il risultato.
+
+Il numero di moltiplicazioni modulari è proporzionale a log$_{2}$(E+1), anziché a E. Questa è una stima del numero di operazioni modulari: il costo di ciascuna dipende anche dalla dimensione del modulo.
+
+\section{Il sistema RSA}
+
+La chiave pubblica serve a cifrare. La chiave privata permette di tornare al messaggio. Il legame tra le due è un inverso modulare.
+
+\subsection{Dalla scelta dei primi alle chiavi}
+
+Nella crittografia simmetrica mittente e destinatario condividono una chiave segreta. Nella crittografia a chiave pubblica il destinatario rende pubblici i dati per cifrare, mantenendo segreti quelli per decifrare. Il cifrario di Cesare e le sostituzioni alfabetiche sono esempi storici di cifratura simmetrica.
+
+Per costruire RSA scegli due primi distinti p e q, poni n=pq e calcola $\varphi$(n)=(p$-$1)(q$-$1). Scegli 1<e<$\varphi$(n) coprimo con $\varphi$(n). Con Euclide esteso trova d, l’inverso di e modulo $\varphi$(n). La chiave pubblica è (n,e); d, p, q e $\varphi$(n) restano segreti.
+
+\begin{center}\begin{adjustbox}{max width=\linewidth}$\displaystyle ed\equiv1\pmod{\varphi(n)},\quad0\le M<n,\qquad C\equiv M^e\pmod n,\qquad M\equiv C^d\pmod n$\end{adjustbox}\end{center}
+
+Il messaggio deve essere codificato come un intero nell’intervallo indicato. Cifratura e decifratura usano l’algoritmo delle potenze modulari veloci. Per seguire i conti useremo numeri piccoli e il modello matematico elementare di RSA, che da solo non costituisce un sistema di cifratura sicuro.
+
+\subsection{Perché la decifratura funziona}
+
+\paragraph{Dimostrazione.} Se M è coprimo con n, scrivi ed=1+k$\varphi$(n). Il teorema di Eulero dà M$^{ed}$=M$\cdot$(M\textasciicircum{}$\varphi$(n))$^{k}$$\equiv$M modulo n. Questo argomento richiede la coprimalità, ma RSA funziona anche per i messaggi che non sono coprimi con n: serve una dimostrazione separata.
+
+\paragraph{Dimostrazione.} Lavora modulo p. Se p divide M, sia M$^{ed}$ sia M sono zero modulo p. Altrimenti Fermat e il fatto che p$-$1 divide ed$-$1 danno M$^{ed}$$\equiv$M modulo p. Lo stesso vale modulo q. Poiché p e q sono distinti e coprimi, il teorema cinese conclude M$^{ed}$$\equiv$M modulo pq per ogni messaggio.
+
+\begin{center}\begin{adjustbox}{max width=\linewidth}$\displaystyle p=11,\quad q=13,\quad n=143,\quad\varphi(n)=120,\quad e=7,\quad d=103$\end{adjustbox}\end{center}
+
+\begin{center}\begin{adjustbox}{max width=\linewidth}$\displaystyle 7\cdot103=721=1+6\cdot120,\qquad4^7\equiv82\pmod{143},\quad82^{103}\equiv4\pmod{143}$\end{adjustbox}\end{center}
+
+\paragraph{Esercizio 8.} Con gli stessi parametri prova M=11. Perché non puoi applicare direttamente Eulero modulo 143?
+
+\subsection{Il ruolo della fattorizzazione}
+
+Conoscere p e q permette di calcolare $\varphi$(n) e ricavare d. Per un prodotto di due primi distinti, conoscere n e $\varphi$(n) permette anche di recuperare i fattori: si conoscono sia il loro prodotto sia la loro somma.
+
+\begin{center}\begin{adjustbox}{max width=\linewidth}$\displaystyle S=n-\varphi(n)+1=p+q,\qquad p,q=\frac{S\pm\sqrt{S^2-4n}}2$\end{adjustbox}\end{center}
+
+Per questo la funzione di Eulero del modulo RSA deve rimanere segreta. Fattorizzare n è sufficiente per ricavare la chiave privata; non si sta affermando che qualsiasi possibile attacco a RSA debba necessariamente fattorizzare n. Nelle applicazioni reali si impiegano librerie crittografiche e schemi di codifica con padding, oltre a primi di dimensioni adeguate.
+
+\clearpage
+
+\section{Soluzioni degli esercizi}
+
+\paragraph{Soluzione 1.} Esistono soluzioni se e solo se il MCD divide c. Da una soluzione particolare si ottengono tutte le altre aggiungendo multipli dei coefficienti ridotti.
+\begin{center}\begin{adjustbox}{max width=\linewidth}$\displaystyle d=\gcd(a,b),\ d\mid c;\quad x=x_0+\frac bd t,\ y=y_0-\frac ad t.\qquad 6x+9y=3:\ (x,y)=(-1+3t,1-2t),\ t\in\mathbb Z$\end{adjustbox}\end{center}
+
+\paragraph{Soluzione 2.} Il numero 1 ha un solo divisore positivo e includerlo distruggerebbe l’unicità della fattorizzazione. Il secondo esempio mostra che l’ipotesi di primalità nel lemma di Euclide è essenziale.
+
+\paragraph{Soluzione 3.} Riduci il risultato di ogni operazione al rappresentante tra 0 e 9.
+\begin{center}\begin{adjustbox}{max width=\linewidth}$\displaystyle [8]_{10}+[6]_{10}=[4]_{10},\qquad[8]_{10}[6]_{10}=[8]_{10}$\end{adjustbox}\end{center}
+
+\paragraph{Soluzione 4.} Il primo dà x$\equiv$8 modulo 15. Il secondo è impossibile: i resti non coincidono modulo 2.
+
+\paragraph{Soluzione 5.} Modulo 3 il quadrato di 2 è 1. Modulo 4 lo stesso quadrato è 0. Il modulo cambia la struttura dell’anello.
+\begin{center}\begin{adjustbox}{max width=\linewidth}$\displaystyle [2]_3^2=[1]_3,\qquad[2]_4^2=[0]_4$\end{adjustbox}\end{center}
+
+\paragraph{Soluzione 6.} Usa 100=2$^{2}$$\cdot$5$^{2}$ e 143=11$\cdot$13, poi moltiplica i contributi delle potenze prime.
+\begin{center}\begin{adjustbox}{max width=\linewidth}$\displaystyle \varphi(100)=2\cdot20=40,\qquad\varphi(143)=10\cdot12=120$\end{adjustbox}\end{center}
+
+\paragraph{Soluzione 7.} 237$\equiv$37 modulo 100 e MCD(37,100)=1: riduci 242 modulo 40 e ottieni 37$^{2}$$\equiv$69. Per 2 modulo 8 manca la coprimalità: 2$^{4}$$\equiv$0, non 1.
+
+\paragraph{Soluzione 8.} MCD(11,143)=11, quindi la base non è invertibile. La correttezza segue dal ragionamento separato modulo 11 e modulo 13 e dal teorema cinese. Il simulatore permette di verificarlo.
+
+\end{document}

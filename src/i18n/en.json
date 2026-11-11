@@ -11,6 +11,31 @@
             "placeholder": "Start typing to search topics and sections..."
         }
     },
+    "modularArithmeticNavigation": {
+        "title": "On this page",
+        "chapters": {
+            "mod-integers": "Integers and algorithms",
+            "mod-congruences": "The language of congruences",
+            "mod-units": "Units and zero divisors",
+            "mod-euler": "Euler’s totient function",
+            "mod-power": "Fast modular powers",
+            "mod-rsa": "The RSA system"
+        },
+        "parts": {
+            "divisibility-euclid": "Divisibility, Euclidean division and gcd",
+            "primes-bases": "Primes, factorization and bases",
+            "mod-classes": "Residue classes and operations",
+            "mod-equations": "Linear congruences and cancellation",
+            "mod-crt": "The Chinese remainder theorem",
+            "mod-inverses": "The invertibility criterion",
+            "mod-totient": "Counting invertible classes",
+            "mod-euler-fermat": "Euler’s and Fermat’s theorems",
+            "mod-fpa": "The repeated squaring (Fast Powering) algorithm",
+            "mod-rsa-keys": "From primes to keys",
+            "mod-rsa-proof": "Why decryption works",
+            "mod-rsa-factorization": "The role of factorization"
+        }
+    },
     "exams": {
         "eyebrow": "Exam preparation",
         "title": "Exams",
@@ -966,7 +991,66 @@
             "differenceCounterexampleConclusion": "Since {1} ≠ {3}, we conclude that A \\ B ≠ B \\ A. Therefore set difference is <strong>not commutative</strong>."
         }
     },
+    "combinatoricsPage": {
+        "navigation": { "title": "On this page" },
+        "hero": {
+            "titleStart": "Combinatorial",
+            "titleHighlight": "counting",
+            "subtitle": "Cardinality, counting and inclusion-exclusion: tools for counting without listing every case."
+        },
+        "actions": { "print": "Print / Save PDF" },
+        "sections": {
+            "cardinality": "Cardinality and basic counting rules",
+            "permutations": "Permutations, variations and combinations",
+            "repetition": "Repetition and compositions",
+            "inclusion-exclusion": "The inclusion-exclusion principle",
+            "surjections": "Counting surjective functions",
+            "applications": "Applications"
+        },
+        "parts": {
+            "product-rule": "Cartesian products and functions",
+            "permutations-formula": "Permutations and variations",
+            "combinations-formula": "Combinations and the binomial theorem",
+            "compositions": "Positive compositions and bars",
+            "multisets": "Combinations with repetition",
+            "inclusion-exclusion-small": "Two and three sets",
+            "inclusion-exclusion-general": "The general formula",
+            "surjection-formula": "The formula",
+            "password-count": "A constrained password",
+            "forbidden-substrings": "Permutations avoiding forbidden substrings"
+        },
+        "calculator": {
+            "title": "Counting calculator",
+            "mode": "Model",
+            "n": "Available elements n",
+            "k": "Selected elements k",
+            "permutations": "Permutations",
+            "variations": "Variations",
+            "combinations": "Combinations",
+            "variationsRepetition": "Variations with repetition",
+            "combinationsRepetition": "Combinations with repetition",
+            "invalid": "Enter integer values within the stated range.",
+            "invalidNoRepetition": "Without repetition, k cannot exceed n."
+        }
+    },
     "relationsOrdersEquivalences": {
+        "study": {
+            "integers-algorithms": "Integers and algorithms",
+            "divisibility-euclid": "Divisibility, Euclidean division and gcd",
+            "primes-bases": "Primes, factorization and bases",
+            "equivalence-relations": "Equivalence relations",
+            "relation-properties": "Properties to check",
+            "partial-orders": "Partially ordered sets",
+            "posets-hasse": "Partial orders, total orders and Hasse diagrams",
+            "extrema-bounds": "Least, minimal, bounds and extrema",
+            "lattices": "Lattices",
+            "lattice-laws": "Meet, join and algebraic description",
+            "distributive-lattices": "Sublattices, morphisms and distributivity",
+            "boolean-algebras": "Boolean algebras",
+            "complements": "Bounded lattices and complements",
+            "atoms-representation": "Atoms and finite representation",
+            "divisor-boolean": "When is D(n) a Boolean algebra?"
+        },
         "hero": {
             "titleStart": "Relations, orders and",
             "titleHighlight": "equivalences",

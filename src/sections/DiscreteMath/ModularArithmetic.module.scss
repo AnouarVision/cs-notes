@@ -1,0 +1,114 @@
+@use "../../assets/styles/variables" as *;
+
+.page {
+  --ink: #{$text-white};
+  --muted: #{$text-gray-400};
+  --accent: #{$primary};
+  --gold: #{$text-gray-300};
+  --line: #{$border-color};
+  color: var(--ink);
+  background: $bg-dark-1;
+  width: 100%;
+  overflow-wrap: anywhere;
+  :is(a, button, input, select, summary):focus-visible { outline: 2px solid $primary; outline-offset: 3px; }
+  button, input, select { font: inherit; }
+  button, a, summary { -webkit-tap-highlight-color: transparent; }
+  input[type="number"], select { min-width: 0; width: 100%; min-height: 44px; border: 1px solid $border-color; border-radius: 6px; padding: 10px 12px; color: var(--ink); background: $bg-dark-3; }
+  button { cursor: pointer; }
+  button:disabled { opacity: .5; cursor: default; }
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: $space-1;
+  width: calc(100% - 24px);
+  max-width: 900px;
+  margin: 0 auto;
+  padding: $space-3 0 0;
+}
+
+.printButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-1;
+  min-height: 44px;
+  padding: 0 $space-2;
+  border: 1px solid $primary;
+  border-radius: 8px;
+  background: transparent;
+  color: $primary;
+  font: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover { background: rgba($primary, 0.12); }
+}
+
+.lessonSection {
+  margin-bottom: $space-5;
+
+  &:last-child { margin-bottom: 0; }
+
+  h2,
+  h3 { scroll-margin-top: 96px; }
+
+  p { line-height: 1.7; }
+}
+
+.intro { color: $text-gray-300; }
+
+.page :is(.detailLabel, .keyGrid span, .pipeline span) {
+  letter-spacing: 0;
+}
+
+.labActions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin: 24px 0; }
+.primary, .secondary { display: inline-flex; justify-content: center; align-items: center; gap: 14px; min-height: 48px; padding: 12px 18px; border-radius: 9px; text-decoration: none; font-size: 14px; font-weight: 650; line-height: 1.5; }
+.primary { background: var(--accent); color: #102219; border: 1px solid var(--accent); &:hover { background: #c7f3d7; } }
+.secondary { border: 1px solid #526459; background: transparent; color: var(--ink); &:hover { background: #23342a; } }
+.formula { max-width: 100%; overflow-x: auto; overflow-y: hidden; margin: $space-2 0; padding: $space-2; background: rgba(255, 255, 255, 0.04); border: 1px solid $border-color; border-radius: 6px; color: $text-white; :global(.katex-display) { margin: 0; } }
+.inlineMath { color: var(--ink); }
+.proof, .exercise { margin: $space-3 0; border: 1px solid $border-color; border-radius: 8px; background: rgba(255, 255, 255, 0.025); summary { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; padding: 18px; line-height: 1.7; cursor: pointer; list-style: none; font-size: 14px; &::-webkit-details-marker { display: none; } } &[open] .expandIcon { transform: rotate(45deg); } }
+.exercise { border-color: rgba($primary, 0.45); .detailLabel { color: $primary; } }
+.detailLabel { display: block; flex-basis: 100%; color: var(--accent); font-size: 9px; letter-spacing: .13em; font-weight: 700; }
+.expandIcon { margin-left: auto; font-size: 20px; color: var(--accent); }
+.solution { padding: 0 18px 6px; p { font-size: 14px; } }
+.lab { margin-top: $space-3; padding: $space-3; border: 1px solid $border-color; border-radius: $radius-card; background: $bg-dark-3; h3 { margin-top: $space-1; } p { font-size: $fs-small; } }
+.inputs { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 14px; margin: 24px 0; label { font-size: 12px; color: #c5d0c9; display: grid; align-content: start; gap: 8px; } }
+.steps { list-style: none; padding: 0; margin: $space-2 0; li { margin-bottom: $space-2; padding-left: $space-2; border-left: 2px solid $primary; p { margin: $space-1 0; } } }
+.result { padding: $space-2; border: 1px solid rgba($primary, 0.45); border-radius: 8px; background: rgba($primary, 0.07); margin: $space-2 0; > span { font-size: $fs-small; color: $primary; } .formula { background: none; border: none; padding: 6px; margin: 10px 0; } p:last-child { margin-bottom: 0; } }
+.textButton { display: inline-flex; align-items: center; background: none; border: 0; color: var(--accent); text-decoration: underline; text-underline-offset: 4px; padding: 10px 0; min-height: 44px; font-size: 12px; }
+.residues { display: flex; flex-wrap: wrap; gap: $space-1; margin: $space-2 0; button { min-width: 44px; min-height: 44px; border: 1px solid $border-color; border-radius: 8px; background: $bg-dark-2; color: $text-gray-300; font-family: monospace; &.unit { color: $primary; border-color: $primary; } &[aria-pressed="true"] { background: $primary; color: $bg-dark-1; box-shadow: 0 0 0 2px $bg-dark-2, 0 0 0 4px $primary; } } }
+.tableScroll { overflow-x: auto; margin-top: $space-2; border-radius: 8px; table { width: 100%; border-collapse: collapse; font: $fs-small monospace; } caption { padding: $space-1; text-align: left; color: $text-gray-400; } th, td { padding: 9px; text-align: center; border: 1px solid $border-color; min-width: 30px; } th { color: $primary; background: $bg-dark-3; } td { color: $text-gray-300; } .selectedRow td { background: rgba($primary, 0.12); color: $text-white; } }
+.totient { > label { display: grid; gap: 8px; font-size: 13px; max-width: 240px; } }
+.keyGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: $space-1; > div { display: grid; gap: $space-1; padding: $space-2; border: 1px solid $border-color; border-radius: 8px; background: $bg-dark-2; span { font-size: $fs-small; color: $text-gray-400; } strong { color: $primary; font: 23px monospace; } } }
+.pipeline { display: flex; align-items: center; justify-content: space-between; gap: $space-1; margin: $space-3 0; > div { flex: 1; display: grid; gap: $space-1; text-align: center; padding: $space-2 $space-1; background: $bg-dark-3; border: 1px solid $border-color; border-radius: 8px; span { font-size: $fs-small; color: $text-gray-400; } strong { color: $primary; font-family: $font-main; font-size: 24px; font-weight: 700; } } > span { color: $text-gray-300; } }
+.lab .error { color: #ffd2b0; }
+.small, .lab .small { font-size: 11px; }
+
+@media (max-width: 760px) {
+  .lab { padding: 18px 14px; }
+  .formula { padding: 16px 12px; font-size: .85rem; }
+  .inputs { grid-template-columns: 1fr 1fr; }
+  .keyGrid > div { padding: 12px; strong { font-size: 20px; } }
+}
+@media (max-width: 380px) {
+  .pipeline { flex-direction: column; > div { width: 100%; } > span { transform: rotate(90deg); } }
+}
+@media print {
+  :global(body) { background: white !important; }
+  :global(nav), :global(footer), .actions, .page :global(aside), .inputs, .labActions, .textButton, .primary, .secondary { display: none !important; }
+  .page { --ink: #111; --muted: #333; --accent: #164b30; --gold: #654514; --line: #aaa; background: white; padding: 0; }
+  .formula, .lab, .result, .keyGrid > div, .pipeline > div { background: white; border-color: #aaa; color: #111; }
+  .formula { overflow: visible; font-size: 10pt; padding: 10px 0; break-inside: avoid; }
+  .lessonSection h2, .lessonSection h3 { break-after: avoid; }
+  .proof::details-content, .exercise::details-content { content-visibility: visible; display: block; }
+  .solution { display: block; }
+  .expandIcon { display: none; }
+  .lab { padding: 12px; }
+  .tableScroll { overflow: visible; th, td { color: #111; background: white; border-color: #aaa; padding: 5px; } }
+  .keyGrid strong, .pipeline strong, .steps strong { color: #111; }
+}

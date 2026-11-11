@@ -244,6 +244,8 @@ export const setsAndOperationsTOC = {
   ]
 };
 
+import { studySections } from "../sections/DiscreteMath/relationsStudyContent";
+
 export const relationsOrdersEquivalencesTOC = {
   title: "relationsOrdersEquivalences.sections.title",
 
@@ -292,7 +294,15 @@ export const relationsOrdersEquivalencesTOC = {
           label: "relationsOrdersEquivalences.sections.invertibility"
         }
       ]
-    }
+    },
+    ...studySections.filter(section => section.id !== "integers-algorithms").map(section => ({
+      id: section.id,
+      label: `relationsOrdersEquivalences.study.${section.id}`,
+      children: section.parts.map(part => ({
+        id: part.id,
+        label: `relationsOrdersEquivalences.study.${part.id}`
+      }))
+    }))
   ]
 };
 

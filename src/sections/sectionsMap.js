@@ -2,6 +2,8 @@ import LowLevelRepresentation from "./FoundationsCS/LowLevelRepresentation";
 import AlgorithmAnalysis from "./AlgorithmsDataStructures/AlgorithmAnalysis";
 import SetsAndOperations from "./DiscreteMath/SetsAndOperations";
 import RelationsOrdersEquivalences from "./DiscreteMath/RelationsOrdersEquivalences";
+import ModularArithmetic from "./DiscreteMath/ModularArithmetic";
+import Combinatorics from "./DiscreteMath/Combinatorics";
 import InductionRecursion from "./DiscreteMath/InductionRecursion";
 import ModernComputers from "./ComputerArchitecture/ModernComputers";
 import PerformanceEvaluation from "./ComputerArchitecture/PerformanceEvaluation";
@@ -28,6 +30,8 @@ export const sectionsMap = {
   "discrete-mathematics-logic": {
     "sets-and-operations": SetsAndOperations,
     "relations-and-order": RelationsOrdersEquivalences,
+    "modular-arithmetic": ModularArithmetic,
+    combinatorics: Combinatorics,
     "induction-and-recursion": InductionRecursion
   },
 };

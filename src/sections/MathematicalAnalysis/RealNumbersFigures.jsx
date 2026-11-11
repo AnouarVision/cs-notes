@@ -383,7 +383,7 @@ export function BoundsFigure() {
     <Figure
       viewBox="0 0 600 270"
       label="L'insieme (0,1) con i suoi minoranti e maggioranti sulla retta"
-      caption="Per A = (0, 1): i minoranti formano (−∞, 0] e i maggioranti [1, +∞). Il più grande minorante è inf A = 0, il più piccolo maggiorante è sup A = 1."
+      caption="Per A = (0, 1): i minoranti formano (−∞, 0] e i maggioranti [1, +∞). L’estremo inferiore è inf A = 0, l’estremo superiore è sup A = 1."
     >
       <Guide x={sx(0)} y1={20} y2={225} />
       <Guide x={sx(1)} y1={20} y2={225} />
@@ -412,8 +412,8 @@ export function EpsilonFigure() {
   return (
     <Figure
       viewBox="0 0 600 150"
-      label="Il supremo s e un elemento di A nella finestra tra s meno epsilon e s"
-      caption="Caratterizzazione con ε: s = sup A se nessun ε > 0 sfugge, cioè nella finestra (s − ε, s] cade sempre almeno un elemento di A."
+      label="L’estremo superiore s è un elemento di A nella finestra tra s meno epsilon e s"
+      caption="Caratterizzazione con ε: s è l’estremo superiore di A se nessun ε > 0 sfugge, cioè nella finestra (s − ε, s] cade sempre almeno un elemento di A."
     >
       <rect x={sx(0.85)} y={42} width={sx(1) - sx(0.85)} height={56} className={styles.zoneBlue} />
       <Axis y={70} x1={40} x2={580} sx={() => 0} />
@@ -439,7 +439,7 @@ export function SequencesFigure() {
     <Figure
       viewBox="0 0 600 250"
       label="I punti n/(n+1) si accumulano verso 1 dal basso, i punti 1+1/n si accumulano verso 1 dall'alto"
-      caption="Sopra: i valori n/(n+1) crescono verso 1 senza raggiungerlo (min = 1/2, nessun massimo, sup = 1). Sotto: i valori 1+1/n decrescono verso 1 (max = 2, nessun minimo, inf = 1)."
+      caption="Sopra: i valori n/(n+1) crescono verso 1 senza raggiungerlo (minimo = 1/2, nessun massimo, estremo superiore = 1). Sotto: i valori 1+1/n decrescono verso 1 (massimo = 2, nessun minimo, estremo inferiore = 1)."
     >
       <rect x={sxA(0.9)} y={40} width={sxA(1) - sxA(0.9)} height={44} className={styles.zoneBlue} />
       <Axis y={62} x1={20} x2={580} sx={sxA} ticks={[{ v: 0.5, label: "1/2" }, { v: 1, label: "1" }]} />
@@ -500,8 +500,8 @@ export function SupSeparatorFigure() {
   return (
     <Figure
       viewBox="0 0 600 140"
-      label="L'insieme A a sinistra, l'insieme dei maggioranti a destra e il punto separatore x che è il supremo"
-      caption="A sta tutto a sinistra dei suoi maggioranti C: il punto separatore x non può che essere il più piccolo maggiorante, cioè sup A."
+      label="L’insieme A a sinistra, l’insieme dei maggioranti a destra e il punto separatore x che è l’estremo superiore"
+      caption="A sta tutto a sinistra dei suoi maggioranti C: il punto separatore x è l’estremo superiore, cioè il più piccolo maggiorante di A."
     >
       <Axis y={70} x1={30} x2={580} sx={sx} />
       <Seg x1={40} x2={sx(1)} y={70} color="green" arrowLeft b="open" />

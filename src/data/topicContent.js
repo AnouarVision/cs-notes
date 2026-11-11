@@ -393,7 +393,8 @@ export const topicContent = {
       },
       {
         slug: "relations-and-order",
-        titleKey: "topics.discreteMathLogic.related.relationsAndOrder"
+        titleKey: "topics.discreteMathLogic.related.relationsAndOrder",
+        status: "completed"
       },
       {
         slug: "induction-and-recursion",
@@ -402,11 +403,13 @@ export const topicContent = {
       },
       {
         slug: "modular-arithmetic",
-        titleKey: "topics.discreteMathLogic.related.modularArithmetic"
+        titleKey: "topics.discreteMathLogic.related.modularArithmetic",
+        status: "completed"
       },
       {
         slug: "combinatorics",
-        titleKey: "topics.discreteMathLogic.related.combinatorics"
+        titleKey: "topics.discreteMathLogic.related.combinatorics",
+        status: "completed"
       },
       {
         slug: "algebraic-structures",

@@ -6,6 +6,7 @@ import HeroSection from "../../components/HeroSection/HeroSection";
 import LayoutSection from "../../components/LayoutSection/LayoutSection";
 import { relationsOrdersEquivalencesTOC } from "../../data/tocSections";
 import styles from "./RelationsOrdersEquivalences.module.scss";
+import RelationsStudyLab from "./RelationsStudyLab";
 
 function MathExpression({ expression, display = false, tight = false }) {
   const markup = katex.renderToString(expression, {
@@ -223,7 +224,7 @@ export default function RelationsOrdersEquivalences() {
             <MathExpression
               expression={String.raw`
                 \forall a \in A,\; \exists! b \in B
-                \text{ t.c. } afb
+                	ext{ tale che } afb
               `}
               display
             />
@@ -1056,6 +1057,7 @@ export default function RelationsOrdersEquivalences() {
             </p>
           </div>
         </section>
+        <RelationsStudyLab MathExpression={MathExpression} />
       </LayoutSection>
     </article>
   );

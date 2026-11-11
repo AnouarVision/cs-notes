@@ -255,7 +255,7 @@ export default function RealNumbers() {
             <p>
               La non-vuotezza di A e B è essenziale. Con questa ipotesi la
               proprietà esprime la
-              completezza di ℝ ed è equivalente all’esistenza del supremo per
+              completezza di ℝ ed è equivalente all’esistenza dell’estremo superiore per
               ogni insieme non vuoto e limitato superiormente.
             </p>
           </Observation>
@@ -382,7 +382,8 @@ export default function RealNumbers() {
             <p>
               Se M è un maggiorante, anche ogni M′ &gt; M lo è. Per un insieme
               A = (0, 1), 𝓜(A) = [1, +∞) e 𝓶(A) = (−∞, 0]. Il maggiore dei
-              minoranti è 0 e il minore dei maggioranti è 1.
+              minoranti è 0, cioè l’estremo inferiore; il minore dei
+              maggioranti è 1, cioè l’estremo superiore.
             </p>
           </Observation>
           <Example>
@@ -391,7 +392,7 @@ export default function RealNumbers() {
             <p>
               Poiché 1 + 1/n ≤ 2 e 2 ∈ A, si ha max A = 2. L’insieme non ha
               minimo, perché 1 + 1/n &gt; 1 per ogni n, ma i suoi valori si
-              avvicinano a 1. Ne segue inf A = 1.
+              avvicinano a 1. Ne segue che l’estremo inferiore di A è 1.
             </p>
           </Example>
           <BoundsFigure />
@@ -419,13 +420,13 @@ export default function RealNumbers() {
           <Definition>
             <h4>Proposizione</h4>
             <p>
-              Se max A esiste, allora sup A = max A; se min A esiste, allora
-              inf A = min A.
+              Se max A esiste, l’estremo superiore di A coincide con max A; se
+              min A esiste, l’estremo inferiore coincide con min A.
             </p>
           </Definition>
           <p>
             Se M = max A, allora M è maggiorante. Ogni altro maggiorante M′
-            soddisfa M′ ≥ M perché M ∈ A. Quindi M è il minore dei maggioranti.
+            soddisfa M′ ≥ M perché M ∈ A. Quindi M è l’estremo superiore di A.
             Il secondo caso è analogo.
           </p>
           <Example>
@@ -438,10 +439,10 @@ export default function RealNumbers() {
           </Example>
           <h3 id="epsilon">Caratterizzazione con ε</h3>
           <Definition>
-            <h4>Caratterizzazione del supremo</h4>
+            <h4>Caratterizzazione dell’estremo superiore</h4>
             <p>
               Sia A ⊆ ℝ non vuoto e limitato superiormente. Un numero s ∈ ℝ è
-              sup A se e solo se:
+              l’estremo superiore di A se e solo se:
             </p>
             <ol>
               <li>a ≤ s per ogni a ∈ A (è maggiorante);</li>
@@ -451,29 +452,32 @@ export default function RealNumbers() {
             </ol>
           </Definition>
           <p>
-            Se s = sup A, è maggiorante. Per ogni ε &gt; 0, il numero s − ε &lt; s
-            non può essere maggiorante, per minimalità di s. Esiste dunque aε
+            Se s è l’estremo superiore di A, è maggiorante. Per ogni ε &gt; 0, il
+            numero s − ε &lt; s non può essere maggiorante, perché s è il più
+            piccolo dei maggioranti. Esiste dunque aε
             ∈ A con aε &gt; s − ε.
           </p>
           <p>
             Viceversa, se s è maggiorante e per ogni ε &gt; 0 esiste un elemento
             di A più grande di s − ε, nessun numero t &lt; s può essere
-            maggiorante: basta scegliere ε = s − t. Dunque s è il minimo dei
-            maggioranti.
+            maggiorante: basta scegliere ε = s − t. Dunque s è l’estremo
+            superiore di A.
           </p>
           <Definition>
-            <h4>Caratterizzazione dell’infimo</h4>
+            <h4>Caratterizzazione dell’estremo inferiore</h4>
             <p>
-              Sia A non vuoto e limitato inferiormente. m = inf A se e solo se
+              Sia A non vuoto e limitato inferiormente. m è l’estremo inferiore
+              di A se e solo se
             </p>
             <Formula>m\le a\quad\forall a\in A,\qquad \forall\varepsilon&gt;0\ \exists a_\varepsilon\in A:\ m\le a_\varepsilon&lt;m+\varepsilon.</Formula>
           </Definition>
           <Example>
-            <h4>Infimo di (1, 2)</h4>
+            <h4>Estremo inferiore di (1, 2)</h4>
             <p>
               Per ogni x ∈ (1, 2) si ha 1 ≤ x, quindi 1 è minorante. Per
               0 &lt; ε ≤ 1 prendiamo x = 1 + ε/2 ∈ (1, 2); allora x &lt; 1 + ε.
-              Per ε &gt; 1 possiamo prendere x = 3/2. Quindi inf(1, 2) = 1.
+              Per ε &gt; 1 possiamo prendere x = 3/2. Quindi l’estremo inferiore
+              di (1, 2) è 1.
             </p>
           </Example>
           <h3 id="unbounded-intervals">Intervalli illimitati e convenzioni</h3>
@@ -484,9 +488,10 @@ export default function RealNumbers() {
           <Formula expression={String.raw`\sup A=+\infty\quad\text{se }A\ne\varnothing\text{ è illimitato superiormente},`} />
           <Formula expression={String.raw`\inf A=-\infty\quad\text{se }A\ne\varnothing\text{ è illimitato inferiormente}.`} />
           <p>
-            Per l’insieme vuoto talvolta si pone sup ∅ = −∞ e inf ∅ = +∞,
-            <em> solo come convenzione negli estesi</em>. Per esempio A = (a, +∞)
-            ha inf A = a e sup A = +∞.
+            Per l’insieme vuoto talvolta si assegna l’estremo superiore −∞ e
+            quello inferiore +∞, <em>solo come convenzione nei reali estesi</em>.
+            Per esempio A = (a, +∞) ha estremo inferiore a ed estremo superiore
+            +∞.
           </p>
           <EpsilonFigure />
         </section>
@@ -499,13 +504,16 @@ export default function RealNumbers() {
           <p>Per ogni n ≥ 1,</p>
           <Formula expression={String.raw`\frac{n}{n+1}-\frac12=\frac{n-1}{2(n+1)}\ge0.`} />
           <p>
-            Poiché 1/2 ∈ A (per n = 1), si ha min A = inf A = 1/2. Inoltre
-            n/(n + 1) &lt; 1, dunque 1 è maggiorante. Per dimostrare che sup A = 1
+            Poiché 1/2 ∈ A (per n = 1), il minimo e l’estremo inferiore di A
+            coincidono e valgono 1/2. Inoltre
+            n/(n + 1) &lt; 1, dunque 1 è maggiorante. Per dimostrare che 1 è
+            l’estremo superiore di A
             cerchiamo, per ogni ε &gt; 0, un n con
           </p>
           <Formula expression={String.raw`\frac{n}{n+1}>1-\varepsilon\iff \frac1{n+1}<\varepsilon\iff n>\frac1\varepsilon-1.`} />
           <p>
-            Possiamo scegliere n = max{"{1, ⌊1/ε⌋ + 1}"}. Il supremo è 1, ma
+            Possiamo scegliere n = max{"{1, ⌊1/ε⌋ + 1}"}. L’estremo superiore
+            è 1, ma
             1 ∉ A, quindi non esiste massimo.
           </p>
           <SequencesFigure />
@@ -539,9 +547,9 @@ export default function RealNumbers() {
         </section>
 
         <section className={styles.lessonSection}>
-          <h2 id="existence">Esistenza di supremo e infimo dalla completezza</h2>
+          <h2 id="existence">Esistenza degli estremi superiore e inferiore dalla completezza</h2>
           <Definition>
-            <h3 id="sup-existence">Esistenza del supremo</h3>
+            <h3 id="sup-existence">Esistenza dell’estremo superiore</h3>
             <p>
               Ogni insieme non vuoto A ⊆ ℝ limitato superiormente ammette un
               estremo superiore in ℝ.
@@ -585,7 +593,7 @@ export default function RealNumbers() {
             </p>
           </Observation>
           <Definition>
-            <h3 id="inf-existence">Esistenza dell’infimo</h3>
+            <h3 id="inf-existence">Esistenza dell’estremo inferiore</h3>
             <p>
               Ogni insieme non vuoto A ⊆ ℝ limitato inferiormente ammette un
               estremo inferiore in ℝ.
@@ -593,7 +601,7 @@ export default function RealNumbers() {
           </Definition>
           <p>
             Si può ripetere l’argomento precedente usando l’insieme dei
-            minoranti, oppure applicare il risultato sul supremo all’insieme
+            minoranti, oppure applicare il risultato sull’estremo superiore all’insieme
             −A = {"{−a:a ∈ A}"}:
           </p>
           <Formula>\inf A=-\sup(-A).</Formula>

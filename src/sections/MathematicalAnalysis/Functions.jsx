@@ -230,7 +230,7 @@ export default function Functions() {
             <h4>Teorema (esistenza della radice aritmetica)</h4>
             <p>Per ogni <M c="y\ge0" /> e ogni intero <M c="n\ge1" /> esiste un unico <M c="x\ge0" /> con <M c="x^n=y" />; si indica <M c="x=\sqrt[n]{y}" />.</p>
           </Definition>
-          <p>L’esistenza si dimostra tramite l’assioma di completezza prendendo il supremo di <M c="A=\{t\ge0:t^n\le y\}" />. L’unicità segue dalla stretta crescita di <M c="t\mapsto t^n" /> su <M c="[0,+\infty)" />.</p>
+          <p>L’esistenza si dimostra tramite l’assioma di completezza prendendo l’estremo superiore di <M c="A=\{t\ge0:t^n\le y\}" />. L’unicità segue dalla stretta crescita di <M c="t\mapsto t^n" /> su <M c="[0,+\infty)" />.</p>
           <Formula c="\sqrt{x^2}=|x|,\quad\text{non }x\text{ per ogni }x\in\mathbb{R}." />
           <p>Ad esempio <M c="\sqrt{(-5)^2}=5" />. Per <M c="m\in\mathbb{Z},n\in\mathbb{N}" /> con <M c="n>0" />, e <M c="x>0" />:</p>
           <Formula c="x^{m/n}=\bigl(\sqrt[n]{x}\bigr)^m." />

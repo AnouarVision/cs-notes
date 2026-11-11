@@ -11,6 +11,31 @@
             "placeholder": "Digita per cercare argomenti e sezioni…"
         }
     },
+    "modularArithmeticNavigation": {
+        "title": "In questa pagina",
+        "chapters": {
+            "mod-integers": "Gli interi e gli algoritmi",
+            "mod-congruences": "Il linguaggio delle congruenze",
+            "mod-units": "Invertibili e divisori di zero",
+            "mod-euler": "La funzione di Eulero",
+            "mod-power": "Potenze modulari veloci",
+            "mod-rsa": "Il sistema RSA"
+        },
+        "parts": {
+            "divisibility-euclid": "Divisibilità, divisione euclidea e MCD",
+            "primes-bases": "Primi, fattorizzazione e basi",
+            "mod-classes": "Classi di resto e operazioni",
+            "mod-equations": "Congruenze lineari e cancellazione",
+            "mod-crt": "Il teorema cinese dei resti",
+            "mod-inverses": "Il criterio di invertibilità",
+            "mod-totient": "Contare le classi invertibili",
+            "mod-euler-fermat": "I teoremi di Eulero e Fermat",
+            "mod-fpa": "L’algoritmo delle quadrature successive (Fast Powering Algorithm)",
+            "mod-rsa-keys": "Dalla scelta dei primi alle chiavi",
+            "mod-rsa-proof": "Perché la decifratura funziona",
+            "mod-rsa-factorization": "Il ruolo della fattorizzazione"
+        }
+    },
     "exams": {
         "eyebrow": "Preparazione agli esami",
         "title": "Esami",
@@ -966,7 +991,66 @@
             "differenceCounterexampleConclusion": "Poiché {1} ≠ {3}, si deduce che A \\ B ≠ B \\ A. Quindi la differenza tra insiemi <strong>non è commutativa</strong>."
         }
     },
+    "combinatoricsPage": {
+        "navigation": { "title": "In questa pagina" },
+        "hero": {
+            "titleStart": "Calcolo",
+            "titleHighlight": "combinatorio",
+            "subtitle": "Cardinalità, conteggi e inclusione-esclusione: gli strumenti per contare senza elencare tutti i casi."
+        },
+        "actions": { "print": "Stampa / Salva PDF" },
+        "sections": {
+            "cardinality": "Cardinalità e regole di base",
+            "permutations": "Permutazioni, disposizioni e combinazioni",
+            "repetition": "Ripetizioni e composizioni",
+            "inclusion-exclusion": "Principio di inclusione-esclusione",
+            "surjections": "Conteggio delle funzioni suriettive",
+            "applications": "Applicazioni"
+        },
+        "parts": {
+            "product-rule": "Prodotti cartesiani e funzioni",
+            "permutations-formula": "Permutazioni e disposizioni",
+            "combinations-formula": "Combinazioni e binomio di Newton",
+            "compositions": "Composizioni positive e barre",
+            "multisets": "Combinazioni con ripetizione",
+            "inclusion-exclusion-small": "Due e tre insiemi",
+            "inclusion-exclusion-general": "La formula generale",
+            "surjection-formula": "La formula",
+            "password-count": "Una password con vincoli",
+            "forbidden-substrings": "Permutazioni senza sottostringhe vietate"
+        },
+        "calculator": {
+            "title": "Calcolatore di conteggi",
+            "mode": "Modello",
+            "n": "Elementi disponibili n",
+            "k": "Elementi scelti k",
+            "permutations": "Permutazioni",
+            "variations": "Disposizioni",
+            "combinations": "Combinazioni",
+            "variationsRepetition": "Disposizioni con ripetizione",
+            "combinationsRepetition": "Combinazioni con ripetizione",
+            "invalid": "Inserisci valori interi nel limite indicato.",
+            "invalidNoRepetition": "Senza ripetizione, k non può superare n."
+        }
+    },
     "relationsOrdersEquivalences": {
+        "study": {
+            "integers-algorithms": "Interi e algoritmi",
+            "divisibility-euclid": "Divisibilità, divisione euclidea e MCD",
+            "primes-bases": "Primi, fattorizzazione e basi",
+            "equivalence-relations": "Relazioni di equivalenza",
+            "relation-properties": "Proprietà da verificare",
+            "partial-orders": "Insiemi parzialmente ordinati",
+            "posets-hasse": "Ordini parziali, totali e diagrammi di Hasse",
+            "extrema-bounds": "Minimi, minimali, maggioranti ed estremi",
+            "lattices": "Reticoli",
+            "lattice-laws": "Estremo inferiore, estremo superiore e descrizione algebrica",
+            "distributive-lattices": "Sottoreticoli, morfismi e distributività",
+            "boolean-algebras": "Algebre di Boole",
+            "complements": "Reticoli limitati e complementi",
+            "atoms-representation": "Atomi e rappresentazione finita",
+            "divisor-boolean": "Quando D(n) è un’algebra di Boole?"
+        },
         "hero": {
             "titleStart": "Relazioni, ordini ed",
             "titleHighlight": "equivalenze",
@@ -1082,7 +1166,7 @@
             "completeness": "Completezza dei reali",
             "topology": "Intervalli e topologia",
             "bounds": "Massimo, minimo e limitatezza",
-            "supInf": "Supremo e infimo",
+            "supInf": "Estremo superiore ed estremo inferiore",
             "extremeExamples": "Esempi di estremi",
             "existence": "Esistenza degli estremi",
             "successor": "Naturali e successore",
@@ -1103,8 +1187,8 @@
             "unboundedIntervals": "Intervalli illimitati",
             "maxNoMin": "Massimo senza minimo",
             "unboundedAbove": "Illimitato superiormente",
-            "supExistence": "Esistenza del supremo",
-            "infExistence": "Esistenza dell’infimo"
+            "supExistence": "Esistenza dell’estremo superiore",
+            "infExistence": "Esistenza dell’estremo inferiore"
         }
     },
     "functions": {

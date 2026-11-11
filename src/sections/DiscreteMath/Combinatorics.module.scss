@@ -1,0 +1,122 @@
+@use "../../assets/styles/variables" as *;
+
+.page {
+  width: 100%;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  width: calc(100% - 24px);
+  max-width: 900px;
+  margin: 0 auto;
+  padding: $space-3 0 0;
+}
+
+.printButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-1;
+  min-height: 44px;
+  padding: 0 $space-2;
+  border: 1px solid $primary;
+  border-radius: 8px;
+  background: transparent;
+  color: $primary;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+
+  &:hover { background: rgba($primary, 0.12); }
+  &:focus-visible { outline: 2px solid $primary; outline-offset: 3px; }
+}
+
+.lessonSection {
+  margin-bottom: $space-5;
+
+  &:last-child { margin-bottom: 0; }
+
+  h2,
+  h3 { scroll-margin-top: 96px; }
+
+  p { line-height: 1.7; }
+}
+
+.formula {
+  display: block;
+  max-width: 100%;
+  margin: $space-2 0;
+  padding: $space-2;
+  overflow-x: auto;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.04);
+  color: $text-white;
+  text-align: center;
+
+  :global(.katex-display) { margin: 0; }
+}
+
+.inlineFormula {
+  display: inline-block;
+  margin: 0 $space-1;
+  color: $text-white;
+}
+
+.lab {
+  display: grid;
+  gap: $space-2;
+  max-width: 100%;
+  margin: $space-3 0;
+  padding: $space-3;
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  background: $bg-dark-3;
+
+  h3,
+  p { margin: 0; }
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr));
+  gap: $space-2;
+
+  label {
+    display: grid;
+    align-content: start;
+    gap: $space-1;
+    color: $text-gray-300;
+    font-size: $fs-small;
+  }
+
+  select,
+  input {
+    width: 100%;
+    min-width: 0;
+    min-height: 44px;
+    padding: $space-1 $space-2;
+    border: 1px solid $border-color;
+    border-radius: 6px;
+    background: $bg-dark-2;
+    color: $text-white;
+    font: inherit;
+  }
+
+  :is(select, input):focus-visible {
+    outline: 2px solid $primary;
+    outline-offset: 2px;
+  }
+}
+
+.error { color: #ffb4a8; }
+
+@media print {
+  :global(nav),
+  :global(footer),
+  .actions,
+  .page :global(aside) { display: none !important; }
+
+  .formula { overflow: visible; break-inside: avoid; }
+  .lab { background: transparent; }
+}
